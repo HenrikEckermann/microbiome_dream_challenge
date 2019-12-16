@@ -1,5 +1,5 @@
 library(tidyverse)
-library(randomForest)
+library(caret)
 
 load("data/tax_abundances.RDS")
 # superkingdom, phylum, class, order etc. can be loaded.
