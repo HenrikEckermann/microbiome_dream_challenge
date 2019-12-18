@@ -7,7 +7,7 @@ load(here("data/tax_abundances.RDS"))
 # superkingdom, phylum, class, order etc. can be loaded.
 # change tax_level as required. 
 # For pathway analyses load pathway_abundances.RDS like this
-# load("data/pathway_abundances.RDS")
+# load("data/processed/pathway_abundances.RDS")
 # df <- path_abu
 # head(path_id_info)
 

@@ -6,14 +6,25 @@ library(randomForest)
 
 
 
-########## Select data 
+########## Select taxonomic level or pathway 
 
 load(here("data/processed/tax_abundances.RDS"))
-# select taxonomic level for features
-tax_level = "species"
-df <- taxa_by_level[[tax_level]] %>%
-  select(-sampleID)
-head(taxa_id_info)
+features <- "genus"
+
+if (features %in% names(taxa_by_level)) {
+  df <- taxa_by_level[[features]] %>%
+    select(-sampleID)
+    } else {
+  load("data/processed/pathway_abundances.RDS")
+  df <- path_abu
+  # pathway df cannot be printed (too many col)
+}
+
+head(df)
+
+
+
+
  
  
  
@@ -29,7 +40,7 @@ train_index <- createDataPartition(df$group, times = k, p = p)
 ########## Model fitting 
 
 # fit rf models for k folds and store in list unless model exists already
-if (!file.exists(here(glue("data/models/{tax_level}_rf_models.Rds")))) {
+if (!file.exists(here(glue("data/models/{features}_rf_models.Rds")))) {
   rf_models <- map(train_index, function(ti) {
     train <- df[ti, ]
     test <- df[-ti, ]
@@ -42,17 +53,18 @@ if (!file.exists(here(glue("data/models/{tax_level}_rf_models.Rds")))) {
   })
 }
 # save models
-if (!file.exists(here(glue("data/models/{tax_level}_rf_models.Rds")))) {
+if (!file.exists(here(glue("data/models/{features}_rf_models.Rds")))) {
   save(
     rf_models, 
     train_index, 
-    file = here(glue("data/models/{tax_level}_rf_models.Rds")))
+    file = here(glue("data/models/{features}_rf_models.Rds")))
   }
 
 
 
 ########## Model evaluation
 
+load(file = here(glue("data/models/{features}_rf_models.Rds")))
 # calculate multilogloss from stored models and test data 
 multi_ll <- map2_df(rf_models, train_index, function(model, ti) {
   test <- df[-ti, ]
