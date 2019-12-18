@@ -82,5 +82,11 @@ path_abu <- left_join(path_abu_he, path_abu_sch, by = "PathID") %>%
 dim(path_abu)
 path_abu[c(1:5, 165:170), c(1:5, 12645:12650)]
 
-save(path_abu, path_id_info, file = here("data/pathway_abundances.RDS"))
-save(taxa_by_level, taxa_id_info, file = here("data/tax_abundances.RDS"))
+save(
+  path_abu, 
+  path_id_info, 
+  file = here("data/processed/pathway_abundances.RDS"))
+save(
+  taxa_by_level, 
+  taxa_id_info, 
+  file = here("data/processed/tax_abundances.RDS"))
