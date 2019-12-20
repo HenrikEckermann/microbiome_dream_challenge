@@ -1,5 +1,4 @@
 library(tidyverse)
-library(caret)
 library(glue)
 library(here)
 library(randomForest)
@@ -33,7 +32,7 @@ if (features != "pathway") {
 k = 10
 p <- 0.8
 set.seed(4)
-train_index <- createDataPartition(df$group, times = k, p = p)
+train_index <- caret::createDataPartition(df$group, times = k, p = p)
 
 
 

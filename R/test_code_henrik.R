@@ -1,5 +1,4 @@
 library(tidyverse)
-library(caret)
 library(glue)
 library(here)
 library(randomForest)
@@ -10,7 +9,7 @@ library(randomForest)
 
 load(here("data/processed/tax_abundances.RDS"))
 # use "pathway" for pathway abundances
-features <- "pathway"
+features <- "species"
 
 if (features %in% names(taxa_by_level)) {
   df <- taxa_by_level[[features]] %>%
@@ -21,7 +20,7 @@ if (features %in% names(taxa_by_level)) {
     select(-sampleID)
 }
 
-# pathway df cannot be printed (too many col)
+# pathway df cannot be printed (too many cols)
 if (features != "pathway") {
   head(df)
 }
@@ -33,7 +32,7 @@ if (features != "pathway") {
 k = 10
 p <- 0.8
 set.seed(4)
-train_index <- createDataPartition(df$group, times = k, p = p)
+train_index <- caret::createDataPartition(df$group, times = k, p = p)
 
 
 
@@ -58,7 +57,7 @@ if (classifier == "randomForest") {
     })
   }
  } else if (classifier == "XGBoost") {
-     
+   #### XGBoost ####
 }
 
 
@@ -87,10 +86,6 @@ multi_ll %>%
   gather() %>% 
   summarise(mean = mean(value), sd = sd(value))
 
-###### The following stats are based on basic RF models (no feature selection)
-# species: mean: 0.6889, sd: 0.0608
-# genus:   mean: 0.6959, sd: 0.0551
-# path:    mean: 0.4921, sd: 0.0669
 
 
 
@@ -98,8 +93,6 @@ multi_ll %>%
 
 
 
-# NOTE: I will replace the OOB class error as we cannot use it for other
-# algorithms
 # calculate evaluation metric from stored models and test data 
 class_error_oob <- map2_df(models, train_index, function(model, ti) {
   test <- df[-ti, ] 
