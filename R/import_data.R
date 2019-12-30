@@ -2,8 +2,10 @@ library(tidyverse)
 library(glue)
 library(here)
 
-### There are 2 datasets (Schirmer et al (sch) and He et al (he))
-### I will combine those for further analysis
+
+
+###### There are 2 datasets (Schirmer et al (sch) and He et al (he))
+###### I will combine those for further analysis
 
 # labels 
 labels_he <- read.delim(
@@ -12,12 +14,18 @@ labels_he <- read.delim(
 labels_sch <- read.delim(
   file = here("data/testset_subchallenge2_files/Class_labels_Schirmer.txt"),
   colClasses = c("integer", "character", "character"))
-labels <- bind_rows(labels_he, labels_sch) %>% select(-row)
+labels <- bind_rows(labels_he, labels_sch) %>% 
+  select(-row) %>%
+  mutate(                 # xgb requires one-hot coding
+    group = ifelse(
+      group == "nonIBD", 0, ifelse(
+        group == "CD", 1, 2))) 
 labels$group <- as.factor(labels$group)
 group_by(labels, group) %>% summarise(n = n())
 
 
-### taxonomic data
+
+###### taxonomic data
 
 taxa_id_info <- read.delim(
   file = here("data/testset_subchallenge2_files/TaxID_Description.txt"))

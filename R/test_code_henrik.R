@@ -92,7 +92,6 @@ multi_ll %>%
 
 
 
-
 # calculate evaluation metric from stored models and test data 
 class_error_oob <- map2_df(models, train_index, function(model, ti) {
   test <- df[-ti, ] 

@@ -1,12 +1,14 @@
 library(tidyverse)
 library(glue)
 library(here)
+library(mlr)
+library(xgboost)
 
 ########## Select taxonomic level or pathway 
 
 load(here("data/processed/tax_abundances.RDS"))
 # use "pathway" for pathway abundances
-features <- "species"
+features <- "genus"
 
 if (features %in% names(taxa_by_level)) {
   df <- taxa_by_level[[features]] %>%
@@ -31,33 +33,25 @@ set.seed(4)
 train_index <- caret::createDataPartition(df$group, times = k, p = p)
 
 
-
-
-library(mlr)
-library(xgboost)
-
-# 0 = nonIBD, 1 = CD, 2 = UC
-df_xgb <- df %>% mutate(
-  group_num = ifelse(
-    group == "nonIBD", 0, ifelse(
-      group == "CD", 1, 2))) %>%
-  select(-group)
-
 # prepare xgb data matrix object
-train <- df_xgb[train_index$Resample01, ]
-test <- df_xgb[-train_index$Resample01, ]
-labels_train <- train$group_num
-labels_test <- test$group_num
-train <- select(train, -group_num) %>% as.matrix()
-test <- select(test, -group_num) %>% as.matrix()
+train <- df[train_index$Resample01, ]
+test <- df[-train_index$Resample01, ]
+d_complete <- df
+labels_train <- train$group %>% as.numeric() -1
+labels_test <- test$group %>% as.numeric() -1
+labels_complete <- d_complete$group %>% as.numeric() -1
+train <- select(train, -group) %>% as.matrix()
+test <- select(test, -group) %>% as.matrix()
+d_complete <- select(d_complete, -group) %>% as.matrix()
 train_xgb <- xgb.DMatrix(data = train, label = labels_train)
 test_xgb <- xgb.DMatrix(data = test, label = labels_test)
+complete_xgb <- xgb.DMatrix(data = d_complete, label = labels_complete)
 
 # default parameters
 params <- list(
   booster = "gbtree",
   num_class = 3, 
-  objective = "multi:softmax",
+  objective = "multi:softprob",
   eta = 0.3,
   gamma = 0,
   max_depth = 6,
@@ -65,45 +59,56 @@ params <- list(
   subsample = 1,
   colsample_bytree = 1
 )
-# estimate test error using CV
+
+# find parameter nrounds (in classification this is number of
+# trees to grow) using CV; might later tune other parameters
 xgbcv <- xgb.cv(
   params = params, 
-  data = train_xgb,
+  data = complete_xgb,
   metrics = "mlogloss",
   nrounds = 100, 
-  nfold = 5, 
+  nfold = 10, 
   showsd = TRUE, 
   stratified = TRUE, 
   print_every_n = 10, 
   early_stop_round = 20, 
   maximize = F)
-
-filter(
+nrounds <- filter(
   xgbcv$evaluation_log, 
-  test_mlogloss_mean == min(xgbcv$evaluation_log$test_mlogloss_mean))
-# mlogloss 0.6779 sd = 0.0336
+  test_mlogloss_mean == min(xgbcv$evaluation_log$test_mlogloss_mean))$iter
+print(glue('Parameter "nrounds" is set to {nrounds}'))
 
+xgbcv$evaluation_log
 
-# filter(
-#   xgbcv$evaluation_log, 
-#   test_merror_mean == min(xgbcv$evaluation_log$test_merror_mean))
-# xgbcv$evaluation_log$test_merror_mean %>% mean()
+# nrounds tuning:
+# species: 8
+# pathways: 10 
 
-# calculate test error 
-xgb1 <- xgb.train(
+# train model using nrounds
+model <- xgb.train(
   params = params,
   data = train_xgb, 
-  nrounds = 10,
+  nrounds = nrounds,
   watchlist = list(val = test_xgb, train = train_xgb),
   print_every_n = 10, 
   early_stop_round = 10,
   maximize = FALSE,
   eval_metric = "mlogloss"
 )
-xgb1$evaluation_log
-xgb_pred <- predict(xgb1, test_xgb)
-conf_matrix <- caret::confusionMatrix(
-  xgb_pred %>% as.factor(), 
-  labels_test%>% as.factor()) 
 
-conf_matrix$byClass
+# get multilogloss
+row_n <- dim(model$evaluation_log)[1]
+mll <- model$evaluation_log$val_mlogloss[row_n]
+
+pred <- predict(model, test_xgb)
+pred <- matrix(pred, ncol = 3) %>% as_tibble()
+colnames(pred) <- c(0, 1, 2)
+
+pred
+labels_test
+pred_prob <- predict(model, test, type = "prob")
+mlm <- MLmetrics::MultiLogLoss(pred, labels_test)
+
+labels_test
+mlm
+model$evaluation_log
