@@ -8,7 +8,7 @@ library(xgboost)
 
 load(here("data/processed/tax_abundances.RDS"))
 # use "pathway" for pathway abundances
-features <- "genus"
+features <- "species"
 
 if (features %in% names(taxa_by_level)) {
   df <- taxa_by_level[[features]] %>%

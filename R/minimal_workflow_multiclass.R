@@ -20,7 +20,7 @@ library(xgboost)
 
 load(here("data/processed/tax_abundances.RDS"))
 # choose pathway, species, genus etc...
-features <- "genus"
+features <- "pathway"
 
 
 if (features %in% names(taxa_by_level)) {
@@ -131,10 +131,6 @@ load(file = here(glue("data/models/{features}_{classifier}.Rds")))
 multi_ll <- map2_df(models, train_index, function(model, ti) {
   test <- df[-ti, ]
   if (classifier == "XGBoost") { # XGBoost requires different data structure
-    # labels_test <- test$group %>% as.numeric() -1
-    # test <- select(test, -group)
-    # test <- xgb.DMatrix(data = as.matrix(test), label = labels_test)
-    # get multilogloss
     row_n <- dim(model$evaluation_log)[1]
     mll <- model$evaluation_log$val_mlogloss[row_n]
   } else {
@@ -154,13 +150,13 @@ multi_ll %>%
 
 ###### The following stats/findings are based on basic RF models
 ###### (no feature selection)
-# species: mean: 0.6889, sd: 0.0608
-# genus:   mean: 0.6959, sd: 0.0551
-# path:    mean: 0.4921, sd: 0.0669
-# we cannot classify UC at all with tax abu and weakly with pathway abu
+# species: mean: 0.6990, sd: 0.0906
+# genus:   mean: 0.7106, sd: 0.0943
+# path:    mean: 0.4883, sd: 0.0635
+
 
 ###### The following stats/findings are based on basic XGB models 
-###### (no feature selection and nrounds fixed)
+###### (no feature selection)
 # species: mean: 0.6945, sd: 0.1284
 # genus:   mean: 0.6985, sd: 0.1262
 # pathway: mean; 0.5382, sd: 0.1440
