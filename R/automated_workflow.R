@@ -214,23 +214,85 @@ fit_and_evaluate <- function(
   
 }
 
+
+  
+
+###### create final predictions/feature tab file according to template
+
+load(file = here("data/processed/testdataset.RDS"))
+
+create_pred_files <- function(best_model, task, feature_name) {
+  # select testdata according to feature_name 
+  if (feature_name %in% names(test_taxa_by_level)) {
+    testdata <- test_taxa_by_level[[feature_name]]
+  } else {
+    testdata <- testpath
+  }
+  
+  # make predictions 
+  if (classifier == "XGBoost") { # XGBoost requires different data structure
+    testdata_xgb <- as.matrix(select(testdata, -sampleID))
+    testdata_xgb <- xgb.DMatrix(data = testdata_xgb)
+    pred_prob <- predict(model, testdata_xgb) %>%
+      as.data.frame() %>%
+      select("1" = ".") %>%
+      mutate("0" = 1 - `1`)
+   } else {
+    pred_prob <- predict(model, testdata, type = "prob")
+   }
+  prediction <- pred_prob %>%
+    bind_cols(select(testdata, sampleID)) %>%
+    select(sampleID, "1", "0")
+
+  # adapt colnames according to tasks
+  if (task == "IBD_vs_nonIBD") {
+    c_names <- c("IBD", "nonIBD")
+   } else if (task == "CD_vs_nonIBD") {
+    c_names <- c("CD", "nonIBD")
+   } else if (task == "UC_vs_nonIBD") {
+    c_names <- c("UC", "nonIBD")
+   } else {
+    c_names <- c("CD", "UC")
+  }
+  
+  colnames(prediction) <- c(
+    "sampleID", 
+    glue("Confidence_Value_{c_names[1]}"), 
+    glue("Confidence_Value_{c_names[2]}")
+  )
+  
+    # filenames according to features
+    feature_name_file <- ifelse(
+      feature_name %in% names(taxa_by_level), "Taxonomy", "Pathways")
+      
+  write.table(
+    prediction, 
+    file = here(glue("data/output/SC2-Processed_{feature_name_file}_{task}_Prediction.txt")),
+    sep = "\t",
+    col.names = TRUE,
+    row.names = FALSE,
+    quote = FALSE
+  )
+
+
+  
+}
+
+
+###### test functions 
+
 test <- fit_and_evaluate(
   task = "IBD_vs_nonIBD", 
   feature_name = "species", 
-  classifier = "randomForest")
-  
-test$confusion_matrix
+  classifier = "XGBoost")
 
-###### create final predictions and importance scores
-load(file = here("data/processed/testdataset.RDS"))
+create_pred_files(test$models$Resample01, "IBD_vs_nonIBD", "species")
 
-create_pred_files <- function(best_model, task) {
-  # filename format: SC2-Processed_Pathways_CD_vs_nonIBD_Features.txt
-  # filename format: SC2-Processed_Taxonomy_CD_vs_nonIBD_Features.txt 
-  glue("SC2-Processed_Pathways_{task}_Features.txt")
-  glue("SC2-Processed_Pathways_{task}_Prediction.txt")
-  
-}
+
+
+
+
+
 
 
 
@@ -277,6 +339,7 @@ create_pred_files <- function(best_model, task) {
 # genus:   mean: 0.4592, sd: 0.0945
 # pathway: mean: 0.3093, sd: 0.0865
 # all:     mean: 0.3498, sd: 0.0634
+
 
 tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
 feature_list <- list("species", "genus", "pathway", "all")

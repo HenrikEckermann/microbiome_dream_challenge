@@ -107,14 +107,36 @@ testset_taxa <- read.delim(
     gather(sampleID, abundance, -TaxID) %>%
     spread(TaxID, abundance)
     
-testset_path <- read.delim(
+test_path <- read.delim(
   file = here("data/testset_subchallenge2_files/TestingDataset_PathwayAbundance_matrix.txt")) %>% 
     gather(sampleID, abundance, -PathID) %>%
     spread(PathID, abundance)
-    
-    
+test_taxa <- read.delim(
+  file = here("data/testset_subchallenge2_files/TestingDataset_TaxonomyAbundance_matrix.txt"))    
+
+# the abundances table includes all taxonomic levels 
+# therefore I split by taxonomic level 
+test_taxa_by_level <- test_taxa %>% 
+  left_join(taxa_id_info, by = "TaxID") %>%
+  select(TaxID, Taxon, everything()) %>%
+  group_by(Rank) %>% 
+  nest()
+  
+# store names for list (see below)
+list_names <- as.character(test_taxa_by_level$Rank)
+# transpose and add labels for analysis 
+test_taxa_by_level <- map(test_taxa_by_level$data, function(x) {
+  x %>% 
+    select(-Taxon) %>% 
+    gather(sampleID, abundance, -TaxID) %>%
+    spread(TaxID, abundance) %>%
+    select(sampleID, everything())
+})
+names(test_taxa_by_level) <- list_names
+
+
 save(
-  testset_taxa, 
-  testset_path, 
+  test_taxa_by_level, 
+  test_path, 
   file = here("data/processed/testdataset.RDS"))
   

@@ -125,9 +125,12 @@ row_n <- dim(model$evaluation_log)[1]
 log_ <- model$evaluation_log$val_logloss[row_n]
 
 pred <- predict(model, test_xgb)
+pred %>% length()
+pred
 pred <- ifelse(pred >= 0.5, 1, 0)
 pred <- as.factor(pred)
 test_cf <- caret::confusionMatrix(pred, as.factor(labels_test), positive = "1")
 test_cf$table %>% as.data.frame()
 test_cf
-
+                                                                                                                                    
+                                                                                                             
