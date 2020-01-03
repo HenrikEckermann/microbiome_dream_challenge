@@ -98,3 +98,23 @@ save(
   taxa_by_level, 
   taxa_id_info, 
   file = here("data/processed/tax_abundances.RDS"))
+
+
+###  test set import 
+
+testset_taxa <- read.delim(
+  file = here("data/testset_subchallenge2_files/TestingDataset_TaxonomyAbundance_matrix.txt")) %>% 
+    gather(sampleID, abundance, -TaxID) %>%
+    spread(TaxID, abundance)
+    
+testset_path <- read.delim(
+  file = here("data/testset_subchallenge2_files/TestingDataset_PathwayAbundance_matrix.txt")) %>% 
+    gather(sampleID, abundance, -PathID) %>%
+    spread(PathID, abundance)
+    
+    
+save(
+  testset_taxa, 
+  testset_path, 
+  file = here("data/processed/testdataset.RDS"))
+  

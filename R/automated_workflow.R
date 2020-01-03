@@ -58,20 +58,20 @@ fit_and_evaluate <- function(
   
   ###### Select data accordings to task
   
-  if (task == "IBD_nonIBD") {
+  if (task == "IBD_vs_nonIBD") {
     df <- df %>%
         mutate(group = ifelse(group %in% c(1,2), 1, 0))
     df$group <- as.factor(df$group)
-   } else if (task == "UC_nonIBD") {
+   } else if (task == "UC_vs_nonIBD") {
        df <- df %>%
            filter(group %in% c(0, 2)) %>%
            mutate(group = ifelse(group == 2, 1, 0))
        df$group <- as.factor(df$group)
-   } else if (task == "CD_nonIBD") {
+   } else if (task == "CD_vs_nonIBD") {
        df <- df %>%
            filter(group %in% c(0, 1))
        df$group <- droplevels(df$group)
-   } else if (task == "UC_CD") {
+   } else if (task == "CD_vs_UC") {
        df <- df %>%
            filter(group %in% c(1, 2)) %>%
            mutate(group = ifelse(group == 1, 0, 1))
@@ -206,10 +206,29 @@ fit_and_evaluate <- function(
   })
     
   list(
+    "models" = models,
     "logloss" = log_l,
     "logloss_plot" = log_l_plot,
     "confusion_matrix" = cfm
   )  
+  
+}
+
+test <- fit_and_evaluate(
+  task = "IBD_vs_nonIBD", 
+  feature_name = "species", 
+  classifier = "randomForest")
+  
+test$confusion_matrix
+
+###### create final predictions and importance scores
+load(file = here("data/processed/testdataset.RDS"))
+
+create_pred_files <- function(best_model, task) {
+  # filename format: SC2-Processed_Pathways_CD_vs_nonIBD_Features.txt
+  # filename format: SC2-Processed_Taxonomy_CD_vs_nonIBD_Features.txt 
+  glue("SC2-Processed_Pathways_{task}_Features.txt")
+  glue("SC2-Processed_Pathways_{task}_Prediction.txt")
   
 }
 
@@ -236,12 +255,9 @@ fit_and_evaluate <- function(
 # genus:   mean: 0.6985, sd: 0.1262
 # pathway: mean; 0.5382, sd: 0.1440
 
-# test <- fit_and_evaluate(
-#   task = "IBD_nonIBD", 
-#   feature_name = "species", 
-#   classifier = "randomForest")
-# 
-# test$logloss
+
+
+
 # 
 # 
 # #########################
@@ -261,3 +277,12 @@ fit_and_evaluate <- function(
 # genus:   mean: 0.4592, sd: 0.0945
 # pathway: mean: 0.3093, sd: 0.0865
 # all:     mean: 0.3498, sd: 0.0634
+
+tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
+feature_list <- list("species", "genus", "pathway", "all")
+map(tasks, function(task) {
+  map(feature_list, function(feature_name) {
+    fit_and_evaluate(task, feature_name, "randomForest")
+  })
+})
+
