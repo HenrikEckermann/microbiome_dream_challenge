@@ -213,14 +213,6 @@ fit_and_evaluate <- function(
   
 }
 
-tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
-feature_list <- list("species", "genus", "pathway", "all")
-map(tasks, function(task) {
-  map(feature_list, function(feature_name) {
-    fit_and_evaluate(task, feature_name, "XGBoost")
-  })
-})
-
 
 
 
@@ -244,15 +236,15 @@ map(tasks, function(task) {
 # genus:   mean: 0.6985, sd: 0.1262
 # pathway: mean; 0.5382, sd: 0.1440
 
-test <- fit_and_evaluate(
-  task = "IBD_nonIBD", 
-  feature_name = "species", 
-  classifier = "randomForest")
-
-test$logloss
-
-
-#########################
+# test <- fit_and_evaluate(
+#   task = "IBD_nonIBD", 
+#   feature_name = "species", 
+#   classifier = "randomForest")
+# 
+# test$logloss
+# 
+# 
+# #########################
 ####### Binary ##########
 #########################
 
