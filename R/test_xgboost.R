@@ -9,6 +9,8 @@ library(xgboost)
 load(here("data/processed/tax_abundances.RDS"))
 # use "pathway" for pathway abundances
 features <- "species"
+# select classification task 
+task = "IBD_nonIBD"
 
 if (features %in% names(taxa_by_level)) {
   df <- taxa_by_level[[features]] %>%
@@ -22,6 +24,29 @@ if (features %in% names(taxa_by_level)) {
 # pathway df cannot be printed (too many cols)
 if (features != "pathway") {
   head(df)
+}
+
+
+###### Select data accordings to task
+
+if (task == "IBD_nonIBD") {
+  df <- df %>%
+      mutate(group = ifelse(group %in% c(1,2), 1, 0))
+  df$group <- as.factor(df$group)
+ } else if (task == "UC_nonIBD") {
+     df <- df %>%
+         filter(group %in% c(0, 2)) %>%
+         mutate(group = ifelse(group == 2, 1, 0))
+     df$group <- as.factor(df$group)
+ } else if (task == "CD_nonIBD") {
+     df <- df %>%
+         filter(group %in% c(0, 1))
+     df$group <- droplevels(df$group)
+ } else if (task == "UC_CD") {
+     df <- df %>%
+         filter(group %in% c(1, 2)) %>%
+         mutate(group = ifelse(group == 1, 0, 1))
+     df$group <- as.factor(df$group)
 }
 
 
@@ -50,8 +75,7 @@ complete_xgb <- xgb.DMatrix(data = d_complete, label = labels_complete)
 # default parameters
 params <- list(
   booster = "gbtree",
-  num_class = 3, 
-  objective = "multi:softprob",
+  objective = "binary:logistic",
   eta = 0.3,
   gamma = 0,
   max_depth = 6,
@@ -65,7 +89,7 @@ params <- list(
 xgbcv <- xgb.cv(
   params = params, 
   data = complete_xgb,
-  metrics = "mlogloss",
+  metrics = "logloss",
   nrounds = 100, 
   nfold = 10, 
   showsd = TRUE, 
@@ -75,7 +99,7 @@ xgbcv <- xgb.cv(
   maximize = F)
 nrounds <- filter(
   xgbcv$evaluation_log, 
-  test_mlogloss_mean == min(xgbcv$evaluation_log$test_mlogloss_mean))$iter
+  test_logloss_mean == min(xgbcv$evaluation_log$test_logloss_mean))$iter
 print(glue('Parameter "nrounds" is set to {nrounds}'))
 
 xgbcv$evaluation_log
@@ -93,22 +117,17 @@ model <- xgb.train(
   print_every_n = 10, 
   early_stop_round = 10,
   maximize = FALSE,
-  eval_metric = "mlogloss"
+  eval_metric = "logloss"
 )
 
-# get multilogloss
+# get logloss
 row_n <- dim(model$evaluation_log)[1]
-mll <- model$evaluation_log$val_mlogloss[row_n]
+log_ <- model$evaluation_log$val_logloss[row_n]
 
 pred <- predict(model, test_xgb)
-pred <- matrix(pred, ncol = 3) %>% as_tibble()
-colnames(pred) <- c(0, 1, 2)
+pred <- ifelse(pred >= 0.5, 1, 0)
+pred <- as.factor(pred)
+test_cf <- caret::confusionMatrix(pred, as.factor(labels_test), positive = "1")
+test_cf$table %>% as.data.frame()
+test_cf
 
-pred
-labels_test
-pred_prob <- predict(model, test, type = "prob")
-mlm <- MLmetrics::MultiLogLoss(pred, labels_test)
-
-labels_test
-mlm
-model$evaluation_log

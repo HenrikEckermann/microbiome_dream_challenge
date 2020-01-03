@@ -5,7 +5,6 @@
 # or path_id_info after loading tax_abundances.RDS or pathway_abundances.RDS
 
 
-
 ###### Libraries
 
 library(tidyverse)
@@ -16,26 +15,59 @@ library(xgboost)
 
 
 
-########## Select taxonomic level or pathway 
+########## Set features, classifier and classification task 
 
 load(here("data/processed/tax_abundances.RDS"))
 # choose pathway, species, genus etc...
-features <- "pathway"
+feature_name <- "species"
+classifier <- "randomForest"
+task = "IBD_nonIBD"
 
 
-if (features %in% names(taxa_by_level)) {
-  df <- taxa_by_level[[features]] %>%
+###### Structure data accordings above selection
+
+# features 
+if (feature_name %in% names(taxa_by_level)) {
+  df <- taxa_by_level[[feature_name]] %>%
     select(-sampleID)
-    } else {
-  load("data/processed/pathway_abundances.RDS")
+  } else if (feature_name == "pathway") {
   df <- path_abu %>%
     select(-sampleID)
+ } else if (feature_name == "all") {
+  df <- left_join(
+    taxa_by_level[["species"]],
+    taxa_by_level[["genus"]] %>% select(-group),
+    by = "sampleID"
+  ) %>%
+  left_join(
+    path_abu %>% select(-group),
+    by = "sampleID"
+   ) %>%
+  select(-sampleID)
 }
 
-# pathway df cannot be printed (too many cols)
-if (features != "pathway") {
-  head(df)
+
+# task
+if (task == "IBD_nonIBD") {
+  df <- df %>%
+      mutate(group = ifelse(group %in% c(1,2), 1, 0))
+  df$group <- as.factor(df$group)
+ } else if (task == "UC_nonIBD") {
+     df <- df %>%
+         filter(group %in% c(0, 2)) %>%
+         mutate(group = ifelse(group == 2, 1, 0))
+     df$group <- as.factor(df$group)
+ } else if (task == "CD_nonIBD") {
+     df <- df %>%
+         filter(group %in% c(0, 1))
+     df$group <- droplevels(df$group)
+ } else if (task == "UC_CD") {
+     df <- df %>%
+         filter(group %in% c(1, 2)) %>%
+         mutate(group = ifelse(group == 1, 0, 1))
+     df$group <- as.factor(df$group)
 }
+
 
 
 
@@ -50,19 +82,16 @@ train_index <- caret::createDataPartition(df$group, times = k, p = p)
 
 ########## Model fitting 
 
-# select classifier
-classifier <- "XGBoost"
 
-# fit models
 if (classifier == "randomForest") {
   # fit RF model for k folds. store in list unless models was fit already
-  if (!file.exists(here(glue("data/models/{features}_{classifier}.Rds")))) {
+  if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))) {
     models <- map(train_index, function(ti) {
       train <- df[ti, ]
       test <- df[-ti, ]
       model <- randomForest(
-        formula = group ~ .,
-        data = train,
+        x = select(train, -group),
+        y = train$group,
         ntree = 5000,
         importance = TRUE
       )
@@ -70,7 +99,7 @@ if (classifier == "randomForest") {
   }
  } else if (classifier == "XGBoost") {
   # fit XGBoost model for k folds. store in list unless models was fit already
-  if (!file.exists(here(glue("data/models/{features}_{classifier}.Rds")))) {
+  if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))) {
     models <- map(train_index, function(ti) { # xgboost uses multicore
       train <- df[ti, ]
       test <- df[-ti, ]
@@ -85,8 +114,7 @@ if (classifier == "randomForest") {
       # set model parameters (this should be default parameters)
       params <- list(
         booster = "gbtree",
-        num_class = 3, 
-        objective = "multi:softprob",
+        objective = "binary:logistic",
         eta = 0.3,
         gamma = 0,
         max_depth = 6,
@@ -96,7 +124,7 @@ if (classifier == "randomForest") {
       )
       # nrounds parameter has been tuned using whole dataset
       nrounds <- ifelse(
-        features == "pathway", 10, 8)
+        feature_name == "pathway", 10, 8)
 
       model <- xgb.train(
         params = params,
@@ -106,7 +134,7 @@ if (classifier == "randomForest") {
         print_every_n = 10, 
         early_stop_round = 10,
         maximize = FALSE,
-        eval_metric = "mlogloss"
+        eval_metric = "logloss"
       )
     })
   }
@@ -116,38 +144,65 @@ if (classifier == "randomForest") {
 
 
 # save models incl the used train/test ids
-if (!file.exists(here(glue("data/models/{features}_{classifier}.Rds")))) {
+if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))) {
   save(
     models, 
     train_index, 
-    file = here(glue("data/models/{features}_{classifier}.Rds")))
+    file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
   }
 
 
 
 ########## Model evaluation
 
-load(file = here(glue("data/models/{features}_{classifier}.Rds")))
-multi_ll <- map2_df(models, train_index, function(model, ti) {
+load(file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
+log_l <- map2_df(models, train_index, function(model, ti) {
   test <- df[-ti, ]
   if (classifier == "XGBoost") { # XGBoost requires different data structure
     row_n <- dim(model$evaluation_log)[1]
-    mll <- model$evaluation_log$val_mlogloss[row_n]
+    log_l <- model$evaluation_log$val_logloss[row_n]
   } else {
     pred_prob <- predict(model, test, type = "prob")
-    mll <- MLmetrics::MultiLogLoss(pred_prob, test$group)
+    log_l <- MLmetrics::LogLoss(pred_prob, as.numeric(test$group) -1)
   }
-  
 })
 
-
 # summarise multilogloss over k fold
-multi_ll %>% 
+log_l %>% 
   as_tibble() %>% 
   gather() %>% 
   summarise(mean = mean(value), sd = sd(value))
+  
+  # confusion matrix
+cfm <- map2(models, train_index, function(model, ti) {
+  test <- df[-ti, ]
+  if (classifier == "XGBoost") { # XGBoost requires different data structure
+    labels_test <- test$group %>% as.numeric() -1
+    test_xgb <- select(test, -group) %>% as.matrix()
+    test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
+    pred_prob <- predict(model, test_xgb)
+    pred <- ifelse(pred_prob >= 0.5, 1, 0)
+  } else {
+    pred_prob <- predict(model, test, type = "prob")
+    pred <- ifelse(pred_prob[, 2] >= 0.5, 1, 0)
+  }
+    pred <- as.factor(pred)
+    caret::confusionMatrix(pred, as.factor(test$group), positive = "1")$table %>%
+    as.data.frame()
+})
+
+cfm
+
+log_l %>% 
+  as_tibble() %>% 
+  gather() %>%
+  ggplot(aes(x = "10 fold CV logloss", y = value)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.05, color = "red", size = 3) 
 
 
+
+log_l
 ###### The following stats/findings are based on basic RF models
 ###### (no feature selection)
 # species: mean: 0.6990, sd: 0.0906
@@ -160,3 +215,7 @@ multi_ll %>%
 # species: mean: 0.6945, sd: 0.1284
 # genus:   mean: 0.6985, sd: 0.1262
 # pathway: mean; 0.5382, sd: 0.1440
+
+# all: mean: 0.5921, sd: 0.1266
+
+classifier
