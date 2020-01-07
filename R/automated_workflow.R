@@ -290,30 +290,30 @@ create_pred_files <- function(
 }
 
 
-###### test functions 
-
-test <- fit_and_evaluate(
-  task = "CD_vs_UC", 
-  feature_name = "species", 
-  classifier = "XGBoost")
+# ###### test functions 
+# 
+# test <- fit_and_evaluate(
+#   task = "CD_vs_UC", 
+#   feature_name = "species", 
+#   classifier = "XGBoost")
   
 
-tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
-feature_list <- list("species", "genus", "pathway", "all")
-map(tasks, function(task) {
-  map(feature_list, function(feature_name) {
-    fit_and_evaluate(task, feature_name, "randomForest")
-  })
-})
 
 
-source(here("R/create_report.R"))
-create_report("CD_vs_UC", "species", "XGBoost")
-  
+# # create documents for all tasks, features and classifiers considered so far
+# source(here("R/create_report.R"))
+# tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
+# feature_list <- list("species", "genus", "pathway")
+# classifier_list <- list("randomForest", "XGBoost")
+# map(tasks, function(task) {
+#   map(feature_list, function(feature_name) {
+#     map(classifier_list, function(classifier) {
+#       create_report(task, feature_name, classifier)
+#     })
+#   })
+# })
 
-  
-  
-test$confusion_matrix
+
 
 
 # create_pred_files(test$models$Resample01, "CD_vs_UC", "species")
