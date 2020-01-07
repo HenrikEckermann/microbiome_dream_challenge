@@ -27,7 +27,7 @@ if (features != "pathway") {
 }
 
 
-###### Select data accordings to task
+###### Select data according to task
 
 if (task == "IBD_nonIBD") {
   df <- df %>%

@@ -74,7 +74,7 @@ fit_and_evaluate <- function(
    } else if (task == "CD_vs_UC") {
        df <- df %>%
            filter(group %in% c(1, 2)) %>%
-           mutate(group = ifelse(group == 1, 0, 1))
+           mutate(group = ifelse(group == 1, 1, 0))
        df$group <- as.factor(df$group)
   }
 
@@ -217,62 +217,73 @@ fit_and_evaluate <- function(
 
   
 
-###### create final predictions/feature tab file according to template
+#########################
+# Output for submission #
+#########################
+
+# once we found the best model, we need to create a specific output file that 
+# includes the prediction for both class labels for each classification task 
+# optionally, we need to include feature importance scores from e.g. RF models 
 
 load(file = here("data/processed/testdataset.RDS"))
 
-create_pred_files <- function(best_model, task, feature_name) {
-  # select testdata according to feature_name 
-  if (feature_name %in% names(test_taxa_by_level)) {
-    testdata <- test_taxa_by_level[[feature_name]]
-  } else {
-    testdata <- testpath
-  }
-  
-  # make predictions 
-  if (classifier == "XGBoost") { # XGBoost requires different data structure
-    testdata_xgb <- as.matrix(select(testdata, -sampleID))
-    testdata_xgb <- xgb.DMatrix(data = testdata_xgb)
-    pred_prob <- predict(model, testdata_xgb) %>%
-      as.data.frame() %>%
-      select("1" = ".") %>%
-      mutate("0" = 1 - `1`)
-   } else {
-    pred_prob <- predict(model, testdata, type = "prob")
-   }
-  prediction <- pred_prob %>%
-    bind_cols(select(testdata, sampleID)) %>%
-    select(sampleID, "1", "0")
-
-  # adapt colnames according to tasks
-  if (task == "IBD_vs_nonIBD") {
-    c_names <- c("IBD", "nonIBD")
-   } else if (task == "CD_vs_nonIBD") {
-    c_names <- c("CD", "nonIBD")
-   } else if (task == "UC_vs_nonIBD") {
-    c_names <- c("UC", "nonIBD")
-   } else {
-    c_names <- c("CD", "UC")
-  }
-  
-  colnames(prediction) <- c(
-    "sampleID", 
-    glue("Confidence_Value_{c_names[1]}"), 
-    glue("Confidence_Value_{c_names[2]}")
-  )
-  
-    # filenames according to features
-    feature_name_file <- ifelse(
-      feature_name %in% names(taxa_by_level), "Taxonomy", "Pathways")
+create_pred_files <- function(
+  best_model, 
+  task, 
+  feature_name, 
+  classifier = "XGBoost") {
       
-  write.table(
-    prediction, 
-    file = here(glue("data/output/SC2-Processed_{feature_name_file}_{task}_Prediction.txt")),
-    sep = "\t",
-    col.names = TRUE,
-    row.names = FALSE,
-    quote = FALSE
-  )
+    # select testdata according to feature_name 
+    if (feature_name %in% names(test_taxa_by_level)) {
+      testdata <- test_taxa_by_level[[feature_name]]
+    } else {
+      testdata <- testpath
+    }
+    
+    # make predictions 
+    if (classifier == "XGBoost") { # XGBoost requires different data structure
+      testdata_xgb <- as.matrix(select(testdata, -sampleID))
+      testdata_xgb <- xgb.DMatrix(data = testdata_xgb)
+      pred_prob <- predict(best_model, testdata_xgb) %>%
+        as.data.frame() %>%
+        select("1" = ".") %>%
+        mutate("0" = 1 - `1`)
+     } else {
+      pred_prob <- predict(best_model, testdata, type = "prob")
+     }
+    prediction <- pred_prob %>%
+      bind_cols(select(testdata, sampleID)) %>%
+      select(sampleID, "1", "0")
+
+    # adapt colnames according to tasks
+    if (task == "IBD_vs_nonIBD") {
+      c_names <- c("IBD", "nonIBD")
+     } else if (task == "CD_vs_nonIBD") {
+      c_names <- c("CD", "nonIBD")
+     } else if (task == "UC_vs_nonIBD") {
+      c_names <- c("UC", "nonIBD")
+     } else {
+      c_names <- c("CD", "UC")
+    }
+    
+    colnames(prediction) <- c(
+      "sampleID", 
+      glue("Confidence_Value_{c_names[1]}"), 
+      glue("Confidence_Value_{c_names[2]}")
+    )
+    
+      # filenames according to features
+      feature_name_file <- ifelse(
+        feature_name %in% names(taxa_by_level), "Taxonomy", "Pathways")
+        
+    write.table(
+      prediction, 
+      file = here(glue("data/output/SC2-Processed_{feature_name_file}_{task}_Prediction.txt")),
+      sep = "\t",
+      col.names = TRUE,
+      row.names = FALSE,
+      quote = FALSE
+    )
 
 
   
@@ -282,46 +293,33 @@ create_pred_files <- function(best_model, task, feature_name) {
 ###### test functions 
 
 test <- fit_and_evaluate(
-  task = "IBD_vs_nonIBD", 
+  task = "CD_vs_UC", 
   feature_name = "species", 
   classifier = "XGBoost")
+  
 
-create_pred_files(test$models$Resample01, "IBD_vs_nonIBD", "species")
-
-
-
-
-
-
-
-
-
-
-
-#########################
-####### multiclass ######
-#########################
-
-# only the binary problem is relevant for the challenge (I overlooked that)
-
-###### The following stats/findings are based on basic RF models
-###### (no feature selection)
-# species: mean: 0.6990, sd: 0.0906
-# genus:   mean: 0.7106, sd: 0.0943
-# path:    mean: 0.4883, sd: 0.0635
-
-
-###### The following stats/findings are based on basic XGB models 
-###### (no feature selection)
-# species: mean: 0.6945, sd: 0.1284
-# genus:   mean: 0.6985, sd: 0.1262
-# pathway: mean; 0.5382, sd: 0.1440
+tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
+feature_list <- list("species", "genus", "pathway", "all")
+map(tasks, function(task) {
+  map(feature_list, function(feature_name) {
+    fit_and_evaluate(task, feature_name, "randomForest")
+  })
+})
 
 
 
+create_report("CD_vs_UC", "species", "XGBoost")
+  
 
-# 
-# 
+  
+  
+test$confusion_matrix
+
+
+# create_pred_files(test$models$Resample01, "CD_vs_UC", "species")
+
+
+
 # #########################
 ####### Binary ##########
 #########################
@@ -339,13 +337,4 @@ create_pred_files(test$models$Resample01, "IBD_vs_nonIBD", "species")
 # genus:   mean: 0.4592, sd: 0.0945
 # pathway: mean: 0.3093, sd: 0.0865
 # all:     mean: 0.3498, sd: 0.0634
-
-
-tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
-feature_list <- list("species", "genus", "pathway", "all")
-map(tasks, function(task) {
-  map(feature_list, function(feature_name) {
-    fit_and_evaluate(task, feature_name, "randomForest")
-  })
-})
 
