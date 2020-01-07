@@ -168,7 +168,7 @@ fit_and_evaluate <- function(
       log_l <- model$evaluation_log$val_logloss[row_n]
     } else {
       pred_prob <- predict(model, test, type = "prob")
-      log_l <- MLmetrics::LogLoss(pred_prob, as.numeric(test$group) - 1)
+      log_l <- MLmetrics::LogLoss(pred_prob[, 2], as.numeric(test$group) - 1)
     }
   
   })
@@ -201,8 +201,30 @@ fit_and_evaluate <- function(
       pred <- ifelse(pred_prob[, 2] >= 0.5, 1, 0)
     }
       pred <- as.factor(pred)
-      caret::confusionMatrix(pred, as.factor(test$group), positive = "1")$table %>%
+      cfm_df <- caret::confusionMatrix(pred, as.factor(test$group), positive = "1")$table %>%
       as.data.frame()
+      # manipulate df according to task
+      if (task == "IBD_vs_nonIBD") {
+        cfm_df <- cfm_df %>%
+            mutate(Prediction = ifelse(Prediction == 1, "IBD", "nonIBD"),
+                   Reference = ifelse(Reference == 1, "IBD", "nonIBD")
+          )
+       } else if (task == "UC_vs_nonIBD") {
+           cfm_df <- cfm_df %>%
+               mutate(Prediction = ifelse(Prediction == 1, "UC", "nonIBD"),
+                      Reference = ifelse(Reference == 1, "UC", "nonIBD")
+             )
+       } else if (task == "CD_vs_nonIBD") {
+           cfm_df <- cfm_df %>%
+               mutate(Prediction = ifelse(Prediction == 1, "CD", "nonIBD"),
+                      Reference = ifelse(Reference == 1, "CD", "nonIBD")
+             )
+       } else if (task == "CD_vs_UC") {
+           cfm_df <- cfm_df %>%
+               mutate(Prediction = ifelse(Prediction == 1, "CD", "UC"),
+                      Reference = ifelse(Reference == 1, "CD", "UC")
+             )
+      }
   })
     
   list(
@@ -216,6 +238,69 @@ fit_and_evaluate <- function(
 
 
   
+
+###### test function 
+
+rf_model <- fit_and_evaluate(
+  task = "IBD_vs_nonIBD", 
+  feature_name = "species", 
+  classifier = "randomForest",
+  k = 10,
+  p = 0.8, 
+  seed = 4
+)
+
+xgb_model <- fit_and_evaluate(
+  task = "IBD_vs_nonIBD", 
+  feature_name = "species", 
+  classifier = "XGBoost",
+  k = 10,
+  p = 0.8, 
+  seed = 4
+)
+  
+  
+rf_model$logloss
+xgb_model$logloss
+
+
+# # create documents for all tasks, features and classifiers considered so far
+# 
+# tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
+# feature_list <- list("species", "genus", "pathway")
+# classifier_list <- list("randomForest", "XGBoost")
+# map(tasks, function(task) {
+#   map(feature_list, function(feature_name) {
+#     map(classifier_list, function(classifier) {
+#       fit_and_evaluate(task, feature_name, classifier)
+#     })
+#   })
+# })
+
+
+
+# source(here("R/create_report.R"))
+# create_pred_files(test$models$Resample01, "CD_vs_UC", "species")
+
+
+
+# #########################
+####### Binary ##########
+#########################
+
+###### The following stats/findings are based on basic RF models 
+###### (no feature selection)
+# species: mean: 0.9183, sd: 0.0507
+# genus:   mean: 0.4592, sd: 0.0945
+# pathway: mean: 1.0880, sd: 0.0668
+# all:     mean: 0.3498, sd: 0.0634
+
+###### The following stats/findings are based on basic RF models 
+###### (no feature selection)
+# species: mean: 0.4537, sd: 0.1254
+# genus:   mean: 0.4592, sd: 0.0945
+# pathway: mean: 0.3093, sd: 0.0865
+# all:     mean: 0.3498, sd: 0.0634
 
 #########################
 # Output for submission #
@@ -289,52 +374,15 @@ create_pred_files <- function(
   
 }
 
+df <- path_abu %>%
+  select(-sampleID) %>%
+  mutate(group = ifelse(group %in% c(1,2), 1, 0))
+df$group <- as.factor(df$group)
+set.seed(4)
+train_index <- caret::createDataPartition(df$group, times = 10, p = 0.8)
+test <- df[-train_index$Resample01, ]
+pred_prob <- predict(rf_model$models$Resample01, test, type = "prob") 
+log_l <- MLmetrics::LogLoss(pred_prob[, 2], as.numeric(test$group) - 1)
+log_l
 
-# ###### test functions 
-# 
-# test <- fit_and_evaluate(
-#   task = "CD_vs_UC", 
-#   feature_name = "species", 
-#   classifier = "XGBoost")
-  
-
-
-
-# # create documents for all tasks, features and classifiers considered so far
-# source(here("R/create_report.R"))
-# tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
-# feature_list <- list("species", "genus", "pathway")
-# classifier_list <- list("randomForest", "XGBoost")
-# map(tasks, function(task) {
-#   map(feature_list, function(feature_name) {
-#     map(classifier_list, function(classifier) {
-#       create_report(task, feature_name, classifier)
-#     })
-#   })
-# })
-
-
-
-
-# create_pred_files(test$models$Resample01, "CD_vs_UC", "species")
-
-
-
-# #########################
-####### Binary ##########
-#########################
-
-###### The following stats/findings are based on basic RF models 
-###### (no feature selection)
-# species: mean: 0.9183, sd: 0.0507
-# genus:   mean: 0.4592, sd: 0.0945
-# pathway: mean: 1.0880, sd: 0.0668
-# all:     mean: 0.3498, sd: 0.0634
-
-###### The following stats/findings are based on basic RF models 
-###### (no feature selection)
-# species: mean: 0.4537, sd: 0.1254
-# genus:   mean: 0.4592, sd: 0.0945
-# pathway: mean: 0.3093, sd: 0.0865
-# all:     mean: 0.3498, sd: 0.0634
 
