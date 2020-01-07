@@ -1,16 +1,6 @@
 ### Model: CD\_vs\_UC-species-XGBoost-k=10-p=0.8
 
-    list_object <- fit_and_evaluate(
-        "IBD_vs_nonIBD",
-        "species",
-        "XGBoost",
-        k = 10,
-        p = 0.8,
-        seed = 4)
-
 ### Logloss
-
-    kable(list_object$logloss)
 
 <table>
 <thead>
@@ -27,13 +17,9 @@
 </tbody>
 </table>
 
-    list_object$logloss_plot
-
 ![](CD_vs_UC_XGBoost_species_10_0.8_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 ### Confusion matrices per k-fold
-
-    map(list_object$confusion_matrix, ~kable(.x))
 
     ## $Resample01
     ## 
