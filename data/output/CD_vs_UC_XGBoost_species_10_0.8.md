@@ -21,102 +21,342 @@
 
 ### Confusion matrices per k-fold
 
-    ## $Resample01
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0               8
-    ## 1            0               5
-    ## 0            1               1
-    ## 1            1              19
-    ## 
-    ## $Resample02
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0              10
-    ## 1            0               3
-    ## 0            1               2
-    ## 1            1              18
-    ## 
-    ## $Resample03
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0               8
-    ## 1            0               5
-    ## 0            1               4
-    ## 1            1              16
-    ## 
-    ## $Resample04
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0              12
-    ## 1            0               1
-    ## 0            1               1
-    ## 1            1              19
-    ## 
-    ## $Resample05
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0               8
-    ## 1            0               5
-    ## 0            1               1
-    ## 1            1              19
-    ## 
-    ## $Resample06
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0               6
-    ## 1            0               7
-    ## 0            1               6
-    ## 1            1              14
-    ## 
-    ## $Resample07
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0              10
-    ## 1            0               3
-    ## 0            1               1
-    ## 1            1              19
-    ## 
-    ## $Resample08
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0               9
-    ## 1            0               4
-    ## 0            1               5
-    ## 1            1              15
-    ## 
-    ## $Resample09
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0               8
-    ## 1            0               5
-    ## 0            1               3
-    ## 1            1              17
-    ## 
-    ## $Resample10
-    ## 
-    ## 
-    ## Prediction   Reference    Freq
-    ## -----------  ----------  -----
-    ## 0            0              10
-    ## 1            0               3
-    ## 0            1               3
-    ## 1            1              17
+$Resample01
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">19</td>
+</tr>
+</tbody>
+</table>
+
+$Resample02
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">18</td>
+</tr>
+</tbody>
+</table>
+
+$Resample03
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">16</td>
+</tr>
+</tbody>
+</table>
+
+$Resample04
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">19</td>
+</tr>
+</tbody>
+</table>
+
+$Resample05
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">19</td>
+</tr>
+</tbody>
+</table>
+
+$Resample06
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">14</td>
+</tr>
+</tbody>
+</table>
+
+$Resample07
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">19</td>
+</tr>
+</tbody>
+</table>
+
+$Resample08
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+
+$Resample09
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">17</td>
+</tr>
+</tbody>
+</table>
+
+$Resample10
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">17</td>
+</tr>
+</tbody>
+</table>
