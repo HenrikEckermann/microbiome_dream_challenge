@@ -1,70 +1,12 @@
 ### Model: UC\_vs\_CD-species-XGBoost-k=10-p=0.8
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
 
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
@@ -81,8 +23,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.389979</td>
-<td style="text-align: right;">0.0675075</td>
+<td style="text-align: right;">0.3679771</td>
+<td style="text-align: right;">0.0722224</td>
 </tr>
 </tbody>
 </table>

@@ -1,70 +1,40 @@
 ### Model: UC\_vs\_CD-genus-randomForest-k=10-p=0.8
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
+    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
+    ## Levels are not in the same order for reference and data. Refactoring data to
+    ## match.
 
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
+    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
+    ## Levels are not in the same order for reference and data. Refactoring data to
+    ## match.
 
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
+    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
+    ## Levels are not in the same order for reference and data. Refactoring data to
+    ## match.
 
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
+    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
+    ## Levels are not in the same order for reference and data. Refactoring data to
+    ## match.
 
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
 
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
     ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
-
-    ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
-    ## Levels are not in the same order for reference and data. Refactoring data to
-    ## match.
-
-    ## Warning in levels(reference) != levels(data): longer object length is not a
-    ## multiple of shorter object length
 
     ## Warning in confusionMatrix.default(pred, as.factor(test$group), positive = "1"):
     ## Levels are not in the same order for reference and data. Refactoring data to
@@ -81,8 +51,8 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.9172825</td>
-<td style="text-align: right;">0.0634589</td>
+<td style="text-align: right;">0.3828792</td>
+<td style="text-align: right;">0.0325814</td>
 </tr>
 </tbody>
 </table>
