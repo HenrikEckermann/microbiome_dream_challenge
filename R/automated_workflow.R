@@ -250,32 +250,32 @@ fit_and_evaluate <- function(
 #   seed = 4
 # )
 # 
-# xgb_model <- fit_and_evaluate(
-#   task = "IBD_vs_nonIBD", 
-#   feature_name = "species", 
-#   classifier = "XGBoost",
-#   k = 10,
-#   p = 0.8, 
-#   seed = 4
-# )
+xgb_model <- fit_and_evaluate(
+  task = "UC_nonIBD", 
+  feature_name = "species", 
+  classifier = "XGBoost",
+  k = 10,
+  p = 0.8, 
+  seed = 4
+)
 # 
 # 
 # rf_model$logloss
 # xgb_model$logloss
 
 
-# # create documents for all tasks, features and classifiers considered so far
-# 
-# tasks <- list("UC_nonIBD", "CD_nonIBD", "UC_CD")
-# feature_list <- list("species", "genus", "pathway")
-# classifier_list <- list("randomForest", "XGBoost")
-# map(tasks, function(task) {
-#   map(feature_list, function(feature_name) {
-#     map(classifier_list, function(classifier) {
-#       fit_and_evaluate(task, feature_name, classifier)
-#     })
-#   })
-# })
+# create documents for all tasks, features and classifiers considered so far
+
+tasks <- list("IBD_vs_nonIBD", "UC_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_CD")
+feature_list <- list("species", "genus", "pathway")
+classifier_list <- list("randomForest", "XGBoost")
+map(tasks, function(task) {
+  map(feature_list, function(feature_name) {
+    map(classifier_list, function(classifier) {
+      fit_and_evaluate(task, feature_name, classifier)
+    })
+  })
+})
 
 
 
@@ -382,5 +382,3 @@ create_pred_files <- function(
 
   
 }
-
-
