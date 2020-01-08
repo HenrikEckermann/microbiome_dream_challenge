@@ -9,7 +9,7 @@ create_report <- function(
   p = 0.8, 
   seed = 4) {
     
-    plain_text <- glue("---\noutput: md_document\n---\n\n```{r setup, include=FALSE}\nlibrary(knitr)\nopts_chunk$set(echo = FALSE, message = FALSE)\n```\n\n### Model: {{task}-{{feature_name}-{{classifier}-k={{k}-p={{p}\n\n```{r}\nlist_object <- fit_and_evaluate(\n\t\{{task},\n\t\{{feature_name},\n\t\{{classifier},\n\tk = {{k},\n\tp = {{p},\n\tseed = {{seed})\n```\n### Logloss\n\n```{r}\nkable(list_object$logloss)\nlist_object$logloss_plot\n```\n\n### Confusion matrices per k-fold\n```{r results = 'asis'}\nmap(list_object$confusion_matrix, ~kable(.x))\n```\n\n", .open = "{{")
+    plain_text <- glue("---\noutput: md_document\n---\n\n```{r setup, include=FALSE}\nlibrary(knitr)\nopts_chunk$set(echo = FALSE, message = FALSE)\n```\n\n### Model: {{task}-{{feature_name}-{{classifier}-k={{k}-p={{p}\n\n```{r}\nlist_object <- fit_and_evaluate(\n\t\"{{task}\",\n\t\"{{feature_name}\",\n\t\"{{classifier}\",\n\tk = {{k},\n\tp = {{p},\n\tseed = {{seed})\n```\n### Logloss\n\n```{r}\nkable(list_object$logloss)\nlist_object$logloss_plot\n```\n\n### Confusion matrices per k-fold\n```{r results = 'asis'}\nmap(list_object$confusion_matrix, ~kable(.x))\n```\n\n", .open = "{{")
     path <- glue(here("data/output/{task}_{classifier}_{feature_name}_{k}_{p}.Rmd"))
     output <- file(path)
     writeLines(plain_text, output)
