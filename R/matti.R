@@ -1,5 +1,7 @@
 # this is the code I got from Matti 
 
+library(mlrMBO)
+
 
 #Find the optimal predictors by random forest permutation importance in mlr and hyperparameters through Bayesian optimization (adapted from https://www.simoncoulombe.com/2019/01/bayesian/)
 obj.fun <- smoof::makeSingleObjectiveFunction(
@@ -30,7 +32,7 @@ obj.fun <- smoof::makeSingleObjectiveFunction(
   par.set = makeParamSet(
     makeNumericParam("eta",              lower = 0.001,  upper = 0.3),
     makeNumericParam("gamma",            lower = 0.1,   upper = 5),
-    makeIntegerParam("max_depth",        lower = 2,     upper = 8
+    makeIntegerParam("max_depth",        lower = 2,     upper = 8),
     makeIntegerParam("min_child_weight", lower = 1,     upper = 10),
     makeNumericParam("subsample",        lower = 0.2,   upper = 0.8), #set maximum to 80%
     makeNumericParam("colsample_bytree", lower = 0.2,   upper = 0.9),  #set maximum to 90%
@@ -39,6 +41,7 @@ obj.fun <- smoof::makeSingleObjectiveFunction(
   ),
   minimize = TRUE
 )
+
 
 
 obj.fun_class <- smoof::makeSingleObjectiveFunction(
@@ -69,6 +72,9 @@ obj.fun_class <- smoof::makeSingleObjectiveFunction(
   par.set = getParamSet(obj.fun),
   minimize = FALSE
 )
+
+
+
 #Generate random sets of the parameter space
 set.seed(42)
 des <- generateDesign(n=30, par.set = getParamSet(obj.fun), fun = lhs::randomLHS)
