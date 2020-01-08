@@ -236,32 +236,32 @@ fit_and_evaluate <- function(
   
 }
 
-
-  
-
-###### test function 
-
-rf_model <- fit_and_evaluate(
-  task = "IBD_vs_nonIBD", 
-  feature_name = "species", 
-  classifier = "randomForest",
-  k = 10,
-  p = 0.8, 
-  seed = 4
-)
-
-xgb_model <- fit_and_evaluate(
-  task = "IBD_vs_nonIBD", 
-  feature_name = "species", 
-  classifier = "XGBoost",
-  k = 10,
-  p = 0.8, 
-  seed = 4
-)
-  
-  
-rf_model$logloss
-xgb_model$logloss
+# 
+# 
+# 
+# ###### test function 
+# 
+# rf_model <- fit_and_evaluate(
+#   task = "IBD_vs_nonIBD", 
+#   feature_name = "species", 
+#   classifier = "randomForest",
+#   k = 10,
+#   p = 0.8, 
+#   seed = 4
+# )
+# 
+# xgb_model <- fit_and_evaluate(
+#   task = "IBD_vs_nonIBD", 
+#   feature_name = "species", 
+#   classifier = "XGBoost",
+#   k = 10,
+#   p = 0.8, 
+#   seed = 4
+# )
+# 
+# 
+# rf_model$logloss
+# xgb_model$logloss
 
 
 # # create documents for all tasks, features and classifiers considered so far
@@ -279,14 +279,14 @@ xgb_model$logloss
 
 
 
-source(here("R/create_report.R"))
-create_report(  
-  "IBD_vs_nonIBD", 
-  "species", 
-  "XGBoost",
-  k = 10,
-  p = 0.8, 
-  seed = 4)
+# source(here("R/create_report.R"))
+# create_report(  
+#   "IBD_vs_nonIBD", 
+#   "species", 
+#   "XGBoost",
+#   k = 10,
+#   p = 0.8, 
+#   seed = 4)
 
 
 # create_pred_files(test$models$Resample01, "CD_vs_UC", "species")
