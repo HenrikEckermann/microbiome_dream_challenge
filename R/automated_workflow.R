@@ -383,15 +383,4 @@ create_pred_files <- function(
   
 }
 
-df <- path_abu %>%
-  select(-sampleID) %>%
-  mutate(group = ifelse(group %in% c(1,2), 1, 0))
-df$group <- as.factor(df$group)
-set.seed(4)
-train_index <- caret::createDataPartition(df$group, times = 10, p = 0.8)
-test <- df[-train_index$Resample01, ]
-pred_prob <- predict(rf_model$models$Resample01, test, type = "prob") 
-log_l <- MLmetrics::LogLoss(pred_prob[, 2], as.numeric(test$group) - 1)
-log_l
-
 
