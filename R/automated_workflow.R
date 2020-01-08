@@ -71,7 +71,7 @@ fit_and_evaluate <- function(
        df <- df %>%
            filter(group %in% c(0, 1))
        df$group <- droplevels(df$group)
-   } else if (task == "CD_vs_UC") {
+   } else if (task == "UC_vs_CD") {
        df <- df %>%
            filter(group %in% c(1, 2)) %>%
            mutate(group = ifelse(group == 1, 1, 0))
@@ -269,13 +269,26 @@ xgb_model <- fit_and_evaluate(
 tasks <- list("IBD_vs_nonIBD", "UC_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_CD")
 feature_list <- list("species", "genus", "pathway")
 classifier_list <- list("randomForest", "XGBoost")
-map(tasks, function(task) {
-  map(feature_list, function(feature_name) {
-    map(classifier_list, function(classifier) {
-      fit_and_evaluate(task, feature_name, classifier)
+# store all models to compare 
+logloss_all <- map_df(tasks, function(task) {
+  map_df(feature_list, function(feature_name) {
+    map_df(classifier_list, function(classifier) {
+      list_object <- fit_and_evaluate(task, feature_name, classifier)
+      df <- list_object$logloss %>%
+        mutate(
+          "task" = task, 
+          "feature_name" = feature_name,
+          "classifier" = classifier,
+        )
+        df
     })
   })
 })
+
+
+logloss_all %>% 
+  select(task, classifier, feature_name, mean, sd) %>% 
+  arrange(task, mean)
 
 
 
@@ -382,3 +395,29 @@ create_pred_files <- function(
 
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
