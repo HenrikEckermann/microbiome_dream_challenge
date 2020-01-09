@@ -201,7 +201,10 @@ fit_and_evaluate <- function(
       pred <- ifelse(pred_prob[, 2] >= 0.5, 1, 0)
     }
       pred <- as.factor(pred)
-      cfm_df <- caret::confusionMatrix(pred, as.factor(test$group), positive = "1")$table %>%
+      cfm_df <- caret::confusionMatrix(
+        factor(pred, levels = c("0", "1")), 
+        as.factor(test$group), 
+        positive = "1")$table %>%
       as.data.frame()
       # manipulate df according to task
       if (task == "IBD_vs_nonIBD") {
@@ -295,6 +298,21 @@ map(tasks, function(task) {
     })
   })
 })
+
+tasks <- list("UC_vs_CD")
+feature_list <- list("species", "genus", "pathway")
+classifier_list <- list("randomForest", "XGBoost")
+# to create reports viewable on github
+test <- map(tasks, function(task) {
+  map(feature_list, function(feature_name) {
+    map(classifier_list, function(classifier) {
+      fit_and_evaluate(task, feature_name, classifier)
+    })
+  })
+})
+
+test[[1]][[1]][[1]]$confusion_matrix
+
 
 logloss_all %>% 
   select(task, classifier, feature_name, mean, sd) %>% 
@@ -450,6 +468,238 @@ create_pred_files <- function(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+task <- "UC_vs_CD"
+feature_name <- "species"
+classifier <- "XGBoost"
+k = 10 
+p = 0.8 
+seed = 4
+
+
+
+
+########## Select taxonomic level or pathway 
+
+if (feature_name %in% names(taxa_by_level)) {
+  df <- taxa_by_level[[feature_name]] %>%
+    select(-sampleID)
+  } else if (feature_name == "pathway") {
+  df <- path_abu %>%
+    select(-sampleID)
+ } else if (feature_name == "all") {
+  df <- left_join(
+      taxa_by_level[["species"]],
+      select(taxa_by_level[["genus"]], - group),
+      by = "sampleID") %>%
+      left_join(
+      select(path_abu, -group),
+      by = "sampleID"
+     ) %>%
+    select(-sampleID)
+}
+
+
+###### Select data accordings to task
+
+if (task == "IBD_vs_nonIBD") {
+  df <- df %>%
+      mutate(group = ifelse(group %in% c(1,2), 1, 0))
+  df$group <- as.factor(df$group)
+ } else if (task == "UC_vs_nonIBD") {
+     df <- df %>%
+         filter(group %in% c(0, 2)) %>%
+         mutate(group = ifelse(group == 2, 1, 0))
+     df$group <- as.factor(df$group)
+ } else if (task == "CD_vs_nonIBD") {
+     df <- df %>%
+         filter(group %in% c(0, 1))
+     df$group <- droplevels(df$group)
+ } else if (task == "UC_vs_CD") {
+     df <- df %>%
+         filter(group %in% c(1, 2)) %>%
+         mutate(group = ifelse(group == 1, 1, 0))
+     df$group <- as.factor(df$group)
+}
+df$group
+
+########## k-fold Cross validation with p% of data as train
+
+set.seed(seed)
+train_index <- caret::createDataPartition(df$group, times = k, p = p)
+
+
+######### Model fitting 
+
+
+# fit models
+if (classifier == "randomForest") {
+  # fit RF model for k folds. store in list unless models was fit already
+  if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))) {
+    models <- map(train_index, function(ti) {
+      train <- df[ti, ]
+      test <- df[-ti, ]
+      model <- randomForest(
+        x = select(train, -group),
+        y = train$group,
+        ntree = 5000,
+        importance = TRUE
+      )
+    })
+  }
+ } else if (classifier == "XGBoost") {
+  # fit XGBoost model for k folds. store in list unless models was fit already
+  if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))) {
+    models <- map(train_index, function(ti) { # xgboost uses multicore
+      train <- df[ti, ]
+      test <- df[-ti, ]
+      # prepare xgb data matrix object
+      labels_train <- train$group %>% as.numeric() -1 # one-hot-coding
+      labels_test <- test$group %>% as.numeric() -1
+      train_xgb <- select(train, -group) %>% as.matrix()
+      test_xgb <- select(test, -group) %>% as.matrix()
+      train_xgb <- xgb.DMatrix(data = train_xgb, label = labels_train)
+      test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
+
+      # set model parameters (this should be default parameters)
+      params <- list(
+        booster = "gbtree",
+        objective = "binary:logistic",
+        eta = 0.3,
+        gamma = 0,
+        max_depth = 6,
+        min_child_weight = 1,
+        subsample = 1,
+        colsample_bytree = 1
+      )
+      # nrounds parameter has been tuned using whole dataset
+      nrounds <- ifelse(
+        feature_name == "pathway", 10, 8)
+
+      model <- xgb.train(
+        params = params,
+        data = train_xgb, 
+        nrounds = nrounds,
+        watchlist = list(val = test_xgb, train = train_xgb),
+        print_every_n = 10, 
+        early_stop_round = 10,
+        maximize = FALSE,
+        eval_metric = "logloss"
+      )
+    })
+  }
+}
+
+
+# save models incl the used train/test ids
+if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))) {
+  save(
+    models, 
+    train_index, 
+    file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
+  }
+
+
+########## Model evaluation
+
+load(file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
+
+# logloss
+log_l <- map2_df(models, train_index, function(model, ti) {
+  test <- df[-ti, ]
+  if (classifier == "XGBoost") { # XGBoost requires different data structure
+    row_n <- dim(model$evaluation_log)[1]
+    log_l <- model$evaluation_log$val_logloss[row_n]
+  } else {
+    pred_prob <- predict(model, test, type = "prob")
+    log_l <- MLmetrics::LogLoss(pred_prob[, 2], as.numeric(test$group) - 1)
+  }
+
+})
+
+# log_l plot
+log_l_plot <- log_l %>% 
+  as_tibble() %>% 
+  gather() %>%
+  ggplot(aes(x = "10 fold CV logloss", y = value)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.05, color = "red", size = 3)
+
+# summarise multilogloss over k fold
+log_l <- log_l %>% 
+  as_tibble() %>% 
+  gather() %>% 
+  summarise(mean = mean(value), sd = sd(value))
+
+# confusion matrix
+
+test <- df[-train_index$Resample01, ]
+test$group
+
+
+labels_test <- test$group %>% as.numeric() -1
+test_xgb <- select(test, -group) %>% as.matrix()
+test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
+pred_prob <- predict(models$Resample01, test_xgb)
+pred <- ifelse(pred_prob >= 0.5, 1, 0)
+cfm_df <- caret::confusionMatrix(factor(pred, levels = c("0", "1")), as.factor(test$group), positive = "1")$table 
+cfm_df %>%
+  as.data.frame()
+  # manipulate df according to task
+  if (task == "IBD_vs_nonIBD") {
+    cfm_df <- cfm_df %>%
+        mutate(Prediction = ifelse(Prediction == 1, "IBD", "nonIBD"),
+               Reference = ifelse(Reference == 1, "IBD", "nonIBD")
+      )
+   } else if (task == "UC_vs_nonIBD") {
+       cfm_df <- cfm_df %>%
+           mutate(Prediction = ifelse(Prediction == 1, "UC", "nonIBD"),
+                  Reference = ifelse(Reference == 1, "UC", "nonIBD")
+         )
+   } else if (task == "CD_vs_nonIBD") {
+       cfm_df <- cfm_df %>%
+           mutate(Prediction = ifelse(Prediction == 1, "CD", "nonIBD"),
+                  Reference = ifelse(Reference == 1, "CD", "nonIBD")
+         )
+   } else if (task == "CD_vs_UC") {
+       cfm_df <- cfm_df %>%
+           mutate(Prediction = ifelse(Prediction == 1, "CD", "UC"),
+                  Reference = ifelse(Reference == 1, "CD", "UC")
+         )
+  }
+
+
+  
+list(
+  "models" = models,
+  "logloss" = log_l,
+  "logloss_plot" = log_l_plot,
+  "confusion_matrix" = cfm_df
+)  
 
 
 
