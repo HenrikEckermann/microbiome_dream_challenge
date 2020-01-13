@@ -1,1 +1,3 @@
 .DS_Store
+data/models/*.Rds
+data/top_predictors/*.Rds
