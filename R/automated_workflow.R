@@ -23,6 +23,39 @@ load("data/processed/pathway_abundances.RDS")
 ###### automated workflow
 
 
+names(taxa_by_level)
+df <- left_join(
+    taxa_by_level[["species"]],
+    select(taxa_by_level[["genus"]], - group),
+    by = "sampleID") %>%
+    left_join(
+    select(taxa_by_level[["family"]], - group),
+    by = "sampleID") %>%
+    left_join(
+    select(taxa_by_level[["order"]], - group),
+    by = "sampleID") %>%
+    left_join(
+    select(taxa_by_level[["class"]], - group),
+    by = "sampleID") %>%
+    left_join(
+    select(taxa_by_level[["phylum"]], - group),
+    by = "sampleID") %>%
+    left_join(
+    select(taxa_by_level[["superkingdom"]], - group),
+    by = "sampleID") %>%
+  select(-sampleID)
+ 
+
+
+# task: classification task (IBD_vs_nonIBD, UC_vs_CD etc.)
+# feature_name: which feature to use (species, genus, etc,  all_taxa, pathway)
+# classifier: currently randomForest or XGBoost 
+# k: number of CV folds 
+# p: percentage training set 
+# seed: to standardize CV 
+# n_features: top_n features to keep for each model before using intersection
+# if n_features = NA, no feature selection will be applied
+
 
 fit_and_evaluate <- function(
   task, 
@@ -33,7 +66,7 @@ fit_and_evaluate <- function(
   seed = 4,
   n_features = 50) {
   
-  
+
 
   ########## Select taxonomic level or pathway 
 
@@ -43,15 +76,26 @@ fit_and_evaluate <- function(
     } else if (feature_name == "pathway") {
     df <- path_abu %>%
       select(-sampleID)
-  } else if (feature_name == "all") {
+  } else if (feature_name == "all_taxa") {
     df <- left_join(
         taxa_by_level[["species"]],
         select(taxa_by_level[["genus"]], - group),
         by = "sampleID") %>%
         left_join(
-        select(path_abu, -group),
-        by = "sampleID"
-       ) %>%
+        select(taxa_by_level[["family"]], - group),
+        by = "sampleID") %>%
+        left_join(
+        select(taxa_by_level[["order"]], - group),
+        by = "sampleID") %>%
+        left_join(
+        select(taxa_by_level[["class"]], - group),
+        by = "sampleID") %>%
+        left_join(
+        select(taxa_by_level[["phylum"]], - group),
+        by = "sampleID") %>%
+        left_join(
+        select(taxa_by_level[["superkingdom"]], - group),
+        by = "sampleID") %>%
       select(-sampleID)
   }
   
@@ -155,117 +199,123 @@ fit_and_evaluate <- function(
       file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
     }
   
-  
-  ########## Extract top n_features features from models based on RF perm imp
+  if (!is.na(n_features)) {
+    ########## Extract top n_features features from models based on RF perm imp
 
-  if (file.exists(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))) {
-    top_predictors <- load(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
-   } else {
-   load(file = here(glue("data/models/{task}_{feature_name}_randomForest.Rds")))
-   id_name <- ifelse(
-     feature_name %in% names(taxa_by_level), 
-     "TaxID", "PathID")
-     
-   top_predictors <- map(models, function(model) {
-     top_predictors <- importance(
-       model, 
-       type = 1, 
-       scale = F) %>%
-      as.data.frame() %>%
-      rownames_to_column(id_name) %>%
-      arrange(desc(MeanDecreaseAccuracy)) %>%
-      select(id_name) %>%
-      head(n_features)
-      })
-  selected_features <- Reduce(intersect, top_predictors)
-  save(
-    selected_features, 
-    file = glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
-  }
-  
-  
-  
-  ###### fit model with selected features 
-  n_features_final <- dim(selected_features)[1]
-  print(glue("For {task}, {feature_name}, {classifier} found {n_features_final} features"))
-  id_name <- ifelse(
-    feature_name %in% names(taxa_by_level), 
-    "TaxID", "PathID")
-  df <- select(df, group, selected_features[, id_name])
-    
-  # fit models
-  if (classifier == "randomForest") {
-    # fit RF model for k folds. store in list unless models was fit already
-    if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
-      models <- map(train_index, function(ti) {
-        train <- df[ti, ]
-        test <- df[-ti, ]
-        model <- randomForest(
-          x = select(train, -group),
-          y = train$group,
-          ntree = 5000,
-          importance = TRUE
-        )
-      })
-    }
-   } else if (classifier == "XGBoost") {
-    # fit XGBoost model for k folds. store in list unless models was fit already
-    if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
-      models <- map(train_index, function(ti) { # xgboost uses multicore
-        train <- df[ti, ]
-        test <- df[-ti, ]
-        # prepare xgb data matrix object
-        labels_train <- train$group %>% as.numeric() -1 # one-hot-coding
-        labels_test <- test$group %>% as.numeric() -1
-        train_xgb <- select(train, -group) %>% as.matrix()
-        test_xgb <- select(test, -group) %>% as.matrix()
-        train_xgb <- xgb.DMatrix(data = train_xgb, label = labels_train)
-        test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
-  
-        # set model parameters (this should be default parameters)
-        params <- list(
-          booster = "gbtree",
-          objective = "binary:logistic",
-          eta = 0.3,
-          gamma = 0,
-          max_depth = 6,
-          min_child_weight = 1,
-          subsample = 1,
-          colsample_bytree = 1
-        )
-        # nrounds parameter has been tuned using whole dataset
-        nrounds <- ifelse(
-          feature_name == "pathway", 10, 8)
-  
-        model <- xgb.train(
-          params = params,
-          data = train_xgb, 
-          nrounds = nrounds,
-          watchlist = list(val = test_xgb, train = train_xgb),
-          print_every_n = 10, 
-          early_stop_round = 10,
-          maximize = FALSE,
-          eval_metric = "logloss"
-        )
-      })
-    }
-  }
-  
-  
-  
-  # save models incl the used train/test ids
-  if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+    if (file.exists(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))) {
+      top_predictors <- load(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
+     } else {
+     load(file = here(glue("data/models/{task}_{feature_name}_randomForest.Rds")))
+     id_name <- ifelse(
+       feature_name %in% names(taxa_by_level), 
+       "TaxID", "PathID")
+       
+     top_predictors <- map(models, function(model) {
+       top_predictors <- importance(
+         model, 
+         type = 1, 
+         scale = F) %>%
+        as.data.frame() %>%
+        rownames_to_column(id_name) %>%
+        arrange(desc(MeanDecreaseAccuracy)) %>%
+        select(id_name) %>%
+        head(n_features)
+        })
+    selected_features <- Reduce(intersect, top_predictors)
     save(
-      models, 
-      train_index, 
-      file = here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))
+      selected_features, 
+      file = glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
     }
+    
+    
+    
+    ###### fit model with selected features 
+    n_features_final <- dim(selected_features)[1]
+    print(glue("For {task}, {feature_name}, {classifier} found {n_features_final} features"))
+    id_name <- ifelse(
+      feature_name %in% names(taxa_by_level), 
+      "TaxID", "PathID")
+    df <- select(df, group, selected_features[, id_name])
+      
+    # fit models
+    if (classifier == "randomForest") {
+      # fit RF model for k folds. store in list unless models was fit already
+      if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+        models <- map(train_index, function(ti) {
+          train <- df[ti, ]
+          test <- df[-ti, ]
+          model <- randomForest(
+            x = select(train, -group),
+            y = train$group,
+            ntree = 5000,
+            importance = TRUE
+          )
+        })
+      }
+     } else if (classifier == "XGBoost") {
+      # fit XGBoost model for k folds. store in list unless models was fit already
+      if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+        models <- map(train_index, function(ti) { # xgboost uses multicore
+          train <- df[ti, ]
+          test <- df[-ti, ]
+          # prepare xgb data matrix object
+          labels_train <- train$group %>% as.numeric() -1 # one-hot-coding
+          labels_test <- test$group %>% as.numeric() -1
+          train_xgb <- select(train, -group) %>% as.matrix()
+          test_xgb <- select(test, -group) %>% as.matrix()
+          train_xgb <- xgb.DMatrix(data = train_xgb, label = labels_train)
+          test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
+    
+          # set model parameters (this should be default parameters)
+          params <- list(
+            booster = "gbtree",
+            objective = "binary:logistic",
+            eta = 0.3,
+            gamma = 0,
+            max_depth = 6,
+            min_child_weight = 1,
+            subsample = 1,
+            colsample_bytree = 1
+          )
+          # nrounds parameter has been tuned using whole dataset
+          nrounds <- ifelse(
+            feature_name == "pathway", 10, 8)
+    
+          model <- xgb.train(
+            params = params,
+            data = train_xgb, 
+            nrounds = nrounds,
+            watchlist = list(val = test_xgb, train = train_xgb),
+            print_every_n = 10, 
+            early_stop_round = 10,
+            maximize = FALSE,
+            eval_metric = "logloss"
+          )
+        })
+      }
+    }
+    
+    
+    
+    # save models incl the used train/test ids
+    if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+      save(
+        models, 
+        train_index, 
+        file = here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))
+      }
+  }
+  
     
   
   
   ########## Model evaluation
   
-  load(file = here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))
+  if (!is.na(n_features)) {
+    load(file = here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))
+  } else {
+    load(file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
+  }
   
   # logloss
   log_l <- map2_df(models, train_index, function(model, ti) {
@@ -408,10 +458,10 @@ logloss_all %>%
 # find the optimal n_features per task/feature 
 n_features_list <- as.list(seq(50, 1000, 25))
 tasks <- list("IBD_vs_nonIBD", "UC_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_CD")
-feature_list <- list("species", "genus", "pathway")
+feature_list <- list("all_taxa")
 classifier_list <- list("randomForest", "XGBoost")
 # store all models to compare 
-logloss_all_n_features <- map_df(n_features_list, function(n_features) {
+logloss_all_n_features_taxa <- map_df(n_features_list, function(n_features) {
     map_df(tasks, function(task) {
       map_df(feature_list, function(feature_name) {
         map_df(classifier_list, function(classifier) {
@@ -433,8 +483,17 @@ logloss_all_n_features <- map_df(n_features_list, function(n_features) {
     })
 })
 
+logloss_all_n_features_taxa %>% 
+  arrange(task, feature_name, mean)
+testnest <- logloss_all_n_features %>% 
+  arrange(task, feature_name, mean) %>%
+  group_by(task, feature_name) %>%
+  nest()
+testnest$data <- map(testnest$data, ~filter(.x, mean == min(mean)))
+
 logloss_all_n_features %>% 
   arrange(task, feature_name, mean)
+  
 testnest <- logloss_all_n_features %>% 
   arrange(task, feature_name, mean) %>%
   group_by(task, feature_name) %>%
