@@ -78,7 +78,33 @@ logistic_glmnet_ensemble_predictions <- function(data, target, tr_inds, model_na
 	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
 }
 
+# note, this version does not take original data (e.g. taxa or pathways) as input
+# it fits glmnet to data only via lower level models.
+logistic_glmnet_ensemble_only_model_predictions <- function(target, tr_inds, model_names, model_tr_preds,
+                                                 model_tst_preds, s=c("lambda.min", "lambda.1se")) {
+	# data_tr
+	data_tr_combd <- do.call(cbind, c(model_tr_preds))
+	colnames(data_tr_combd) <- model_names
 
+
+	# scale predictors, and impute any NAs in input as rowmeans
+	data_tr_combd <- row_impute(scale(data_tr_combd))
+	
+
+
+	# fit
+	ensemble_fit <- cv.glmnet(as.matrix(data_tr_combd), target[tr_inds], family="binomial", type.measure="class")
+
+	# data_tst
+	data_tst_combd <- do.call(cbind, c(model_tst_preds))
+	colnames(data_tst_combd) <- model_names
+	data_tst_combd <- row_impute(scale(data_tst_combd))
+
+
+	ensemble_preds <- predict(ensemble_fit, newx=as.matrix(data_tst_combd), s=s, type="response")
+
+	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
+}
 
 
 
