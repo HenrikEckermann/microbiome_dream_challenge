@@ -30,8 +30,8 @@ fit_and_evaluate <- function(
   classifier, 
   k = 10, 
   p = 0.8, 
-  seed = 4) {
-  
+  seed = 4,
+  n_features = 50) {
   
   
 
@@ -85,7 +85,7 @@ fit_and_evaluate <- function(
   train_index <- caret::createDataPartition(df$group, times = k, p = p)
   
   
-  ######### Model fitting 
+  ######### Model fitting for feature selection
   
   
   # fit models
@@ -156,9 +156,116 @@ fit_and_evaluate <- function(
     }
   
   
+  ########## Extract top n_features features from models based on RF perm imp
+
+  if (file.exists(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))) {
+    top_predictors <- load(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
+   } else {
+   load(file = here(glue("data/models/{task}_{feature_name}_randomForest.Rds")))
+   id_name <- ifelse(
+     feature_name %in% names(taxa_by_level), 
+     "TaxID", "PathID")
+     
+   top_predictors <- map(models, function(model) {
+     top_predictors <- importance(
+       model, 
+       type = 1, 
+       scale = F) %>%
+      as.data.frame() %>%
+      rownames_to_column(id_name) %>%
+      arrange(desc(MeanDecreaseAccuracy)) %>%
+      select(id_name) %>%
+      head(n_features)
+      })
+  selected_features <- Reduce(intersect, top_predictors)
+  save(
+    selected_features, 
+    file = glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
+  }
+  
+  
+  
+  ###### fit model with selected features 
+  n_features_final <- dim(selected_features)[1]
+  print(glue("For {task}, {feature_name}, {classifier} found {n_features_final} features"))
+  id_name <- ifelse(
+    feature_name %in% names(taxa_by_level), 
+    "TaxID", "PathID")
+  df <- select(df, group, selected_features[, id_name])
+    
+  # fit models
+  if (classifier == "randomForest") {
+    # fit RF model for k folds. store in list unless models was fit already
+    if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+      models <- map(train_index, function(ti) {
+        train <- df[ti, ]
+        test <- df[-ti, ]
+        model <- randomForest(
+          x = select(train, -group),
+          y = train$group,
+          ntree = 5000,
+          importance = TRUE
+        )
+      })
+    }
+   } else if (classifier == "XGBoost") {
+    # fit XGBoost model for k folds. store in list unless models was fit already
+    if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+      models <- map(train_index, function(ti) { # xgboost uses multicore
+        train <- df[ti, ]
+        test <- df[-ti, ]
+        # prepare xgb data matrix object
+        labels_train <- train$group %>% as.numeric() -1 # one-hot-coding
+        labels_test <- test$group %>% as.numeric() -1
+        train_xgb <- select(train, -group) %>% as.matrix()
+        test_xgb <- select(test, -group) %>% as.matrix()
+        train_xgb <- xgb.DMatrix(data = train_xgb, label = labels_train)
+        test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
+  
+        # set model parameters (this should be default parameters)
+        params <- list(
+          booster = "gbtree",
+          objective = "binary:logistic",
+          eta = 0.3,
+          gamma = 0,
+          max_depth = 6,
+          min_child_weight = 1,
+          subsample = 1,
+          colsample_bytree = 1
+        )
+        # nrounds parameter has been tuned using whole dataset
+        nrounds <- ifelse(
+          feature_name == "pathway", 10, 8)
+  
+        model <- xgb.train(
+          params = params,
+          data = train_xgb, 
+          nrounds = nrounds,
+          watchlist = list(val = test_xgb, train = train_xgb),
+          print_every_n = 10, 
+          early_stop_round = 10,
+          maximize = FALSE,
+          eval_metric = "logloss"
+        )
+      })
+    }
+  }
+  
+  
+  
+  # save models incl the used train/test ids
+  if (!file.exists(here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))) {
+    save(
+      models, 
+      train_index, 
+      file = here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))
+    }
+    
+  
+  
   ########## Model evaluation
   
-  load(file = here(glue("data/models/{task}_{feature_name}_{classifier}.Rds")))
+  load(file = here(glue("data/models/{task}_{feature_name}_{classifier}_top_{n_features}_features.Rds")))
   
   # logloss
   log_l <- map2_df(models, train_index, function(model, ti) {
@@ -205,7 +312,7 @@ fit_and_evaluate <- function(
         factor(pred, levels = c("0", "1")), 
         as.factor(test$group), 
         positive = "1")$table %>%
-      as.data.frame()
+        as.data.frame()
       # manipulate df according to task
       if (task == "IBD_vs_nonIBD") {
         cfm_df <- cfm_df %>%
@@ -222,7 +329,7 @@ fit_and_evaluate <- function(
                mutate(Prediction = ifelse(Prediction == 1, "CD", "nonIBD"),
                       Reference = ifelse(Reference == 1, "CD", "nonIBD")
              )
-       } else if (task == "CD_vs_UC") {
+       } else if (task == "UC_vs_CD") {
            cfm_df <- cfm_df %>%
                mutate(Prediction = ifelse(Prediction == 1, "CD", "UC"),
                       Reference = ifelse(Reference == 1, "CD", "UC")
@@ -246,12 +353,18 @@ fit_and_evaluate <- function(
 # 
 # rf_model <- fit_and_evaluate(
 #   task = "IBD_vs_nonIBD", 
-#   feature_name = "species", 
+#   feature_name = "pathway", 
 #   classifier = "randomForest",
 #   k = 10,
 #   p = 0.8, 
 #   seed = 4
 # )
+# 
+# rf_model$logloss
+
+
+
+
 # 
 # xgb_model <- fit_and_evaluate(
 #   task = "UC_vs_nonIBD", 
@@ -267,7 +380,7 @@ fit_and_evaluate <- function(
 # xgb_model$logloss
 
 
-# create documents for all tasks, features and classifiers considered so far
+# create a table of logloss per task/feature/classifier/n_features
 
 tasks <- list("IBD_vs_nonIBD", "UC_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_CD")
 feature_list <- list("species", "genus", "pathway")
@@ -276,7 +389,7 @@ classifier_list <- list("randomForest", "XGBoost")
 logloss_all <- map_df(tasks, function(task) {
   map_df(feature_list, function(feature_name) {
     map_df(classifier_list, function(classifier) {
-      list_object <- fit_and_evaluate(task, feature_name, classifier)
+      list_object <- fit_and_evaluate(task, feature_name, classifier, n_features = 50000)
       df <- list_object$logloss %>%
         mutate(
           "task" = task, 
@@ -287,37 +400,90 @@ logloss_all <- map_df(tasks, function(task) {
     })
   })
 })
-
-
-
-# to create reports viewable on github
-map(tasks, function(task) {
-  map(feature_list, function(feature_name) {
-    map(classifier_list, function(classifier) {
-      create_report(task, feature_name, classifier)
-    })
-  })
-})
-
-tasks <- list("UC_vs_CD")
-feature_list <- list("species", "genus", "pathway")
-classifier_list <- list("randomForest", "XGBoost")
-# to create reports viewable on github
-test <- map(tasks, function(task) {
-  map(feature_list, function(feature_name) {
-    map(classifier_list, function(classifier) {
-      fit_and_evaluate(task, feature_name, classifier)
-    })
-  })
-})
-
-test[[1]][[1]][[1]]$confusion_matrix
-
-
-logloss_all %>% 
-  select(task, classifier, feature_name, mean, sd) %>% 
+logloss_all %>%
   arrange(task, mean)
 
+
+# there are 12650, 5061 and 1450 features for path, spec and gen respectively
+# find the optimal n_features per task/feature 
+n_features_list <- as.list(seq(50, 1000, 25))
+tasks <- list("IBD_vs_nonIBD", "UC_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_CD")
+feature_list <- list("species", "genus", "pathway")
+classifier_list <- list("randomForest", "XGBoost")
+# store all models to compare 
+logloss_all_n_features <- map_df(n_features_list, function(n_features) {
+    map_df(tasks, function(task) {
+      map_df(feature_list, function(feature_name) {
+        map_df(classifier_list, function(classifier) {
+          list_object <- fit_and_evaluate(
+            task, 
+            feature_name, 
+            classifier, 
+            n_features = n_features)
+          df <- list_object$logloss %>%
+            mutate(
+              "task" = task, 
+              "feature_name" = feature_name,
+              "classifier" = classifier,
+              "n_features" = n_features
+            )
+          df
+        })
+      })
+    })
+})
+
+logloss_all_n_features %>% 
+  arrange(task, feature_name, mean)
+testnest <- logloss_all_n_features %>% 
+  arrange(task, feature_name, mean) %>%
+  group_by(task, feature_name) %>%
+  nest()
+testnest$data <- map(testnest$data, ~filter(.x, mean == min(mean)))
+
+unnest(testnest) %>%
+  arrange(task, mean)
+
+ll_all_nest <- logloss_all_n_features %>%
+  group_by(task, classifier) %>%
+  nest() 
+
+
+
+
+ll_all_nest$data <- map(ll_all_nest[[3]], function(df) {
+  df %>% 
+    filter(mean == min(mean))
+})
+
+unnest(ll_all_nest)
+
+
+
+
+
+
+# # to create reports viewable on github
+# map(tasks, function(task) {
+#   map(feature_list, function(feature_name) {
+#     map(classifier_list, function(classifier) {
+#       create_report(task, feature_name, classifier)
+#     })
+#   })
+# })
+# 
+# tasks <- list("UC_vs_CD")
+# feature_list <- list("species", "genus", "pathway")
+# classifier_list <- list("randomForest", "XGBoost")
+# # to create reports viewable on github
+# test <- map(tasks, function(task) {
+#   map(feature_list, function(feature_name) {
+#     map(classifier_list, function(classifier) {
+#       fit_and_evaluate(task, feature_name, classifier)
+#     })
+#   })
+# })
+# 
 
 
 # source(here("R/create_report.R"))
@@ -667,38 +833,39 @@ test_xgb <- xgb.DMatrix(data = test_xgb, label = labels_test)
 pred_prob <- predict(models$Resample01, test_xgb)
 pred <- ifelse(pred_prob >= 0.5, 1, 0)
 cfm_df <- caret::confusionMatrix(factor(pred, levels = c("0", "1")), as.factor(test$group), positive = "1")$table 
-cfm_df %>%
-  as.data.frame()
-  # manipulate df according to task
-  if (task == "IBD_vs_nonIBD") {
-    cfm_df <- cfm_df %>%
-        mutate(Prediction = ifelse(Prediction == 1, "IBD", "nonIBD"),
-               Reference = ifelse(Reference == 1, "IBD", "nonIBD")
-      )
-   } else if (task == "UC_vs_nonIBD") {
-       cfm_df <- cfm_df %>%
-           mutate(Prediction = ifelse(Prediction == 1, "UC", "nonIBD"),
-                  Reference = ifelse(Reference == 1, "UC", "nonIBD")
-         )
-   } else if (task == "CD_vs_nonIBD") {
-       cfm_df <- cfm_df %>%
-           mutate(Prediction = ifelse(Prediction == 1, "CD", "nonIBD"),
-                  Reference = ifelse(Reference == 1, "CD", "nonIBD")
-         )
-   } else if (task == "CD_vs_UC") {
-       cfm_df <- cfm_df %>%
-           mutate(Prediction = ifelse(Prediction == 1, "CD", "UC"),
-                  Reference = ifelse(Reference == 1, "CD", "UC")
-         )
-  }
+cmf_df <- cfm_df %>% as.data.frame()
+# manipulate df according to task
+if (task == "IBD_vs_nonIBD") {
+  cfm_df <- cfm_df %>%
+      mutate(Prediction = ifelse(Prediction == 1, "IBD", "nonIBD"),
+             Reference = ifelse(Reference == 1, "IBD", "nonIBD")
+    )
+ } else if (task == "UC_vs_nonIBD") {
+     cfm_df <- cfm_df %>%
+         mutate(Prediction = ifelse(Prediction == 1, "UC", "nonIBD"),
+                Reference = ifelse(Reference == 1, "UC", "nonIBD")
+       )
+ } else if (task == "CD_vs_nonIBD") {
+     cfm_df <- cfm_df %>%
+         mutate(Prediction = ifelse(Prediction == 1, "CD", "nonIBD"),
+                Reference = ifelse(Reference == 1, "CD", "nonIBD")
+       )
+ } else if (task == "UC_vs_CD") {
+     cfm_df <- cfm_df %>%
+         mutate(Prediction = ifelse(Prediction == 1, "CD", "UC"),
+                Reference = ifelse(Reference == 1, "CD", "UC")
+       )
+}
 
+cmf_df %>% class()
 
+cfm_df
   
 list(
   "models" = models,
   "logloss" = log_l,
   "logloss_plot" = log_l_plot,
-  "confusion_matrix" = cfm_df
+  "confusion_matrix" = cfm
 )  
 
 
@@ -710,3 +877,8 @@ list(
 
 
 
+l1 <- c(1,2,3,4,5)
+l2 <- c(1, 2, 3, 4,6)
+l3 <- c(6, 4, 8, 9 ,10)
+l4 <- c(8)
+Reduce(intersect, list(l1, l2, l3, ))

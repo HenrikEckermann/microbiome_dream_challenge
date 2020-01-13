@@ -3,52 +3,61 @@ library(glue)
 library(here)
 library(mlr)
 library(xgboost)
+library(mlrMBO)
+
+# set settings for xgboost example model
+feature_name <- "species"
+task <- "IBD_vs_nonIBD"
+classifier <- "XGBoost"
+k <- 10
+p <- 0.8
+seed <- 4
 
 ########## Select taxonomic level or pathway 
 
 load(here("data/processed/tax_abundances.RDS"))
-# use "pathway" for pathway abundances
-features <- "species"
-# select classification task 
-task = "IBD_nonIBD"
+ 
 
-if (features %in% names(taxa_by_level)) {
-  df <- taxa_by_level[[features]] %>%
+if (feature_name %in% names(taxa_by_level)) {
+  df <- taxa_by_level[[feature_name]] %>%
     select(-sampleID)
-    } else {
-  load("data/processed/pathway_abundances.RDS")
+  } else if (feature_name == "pathway") {
   df <- path_abu %>%
     select(-sampleID)
+ } else if (feature_name == "all") {
+  df <- left_join(
+      taxa_by_level[["species"]],
+      select(taxa_by_level[["genus"]], - group),
+      by = "sampleID") %>%
+      left_join(
+      select(path_abu, -group),
+      by = "sampleID"
+     ) %>%
+    select(-sampleID)
 }
 
-# pathway df cannot be printed (too many cols)
-if (features != "pathway") {
-  head(df)
-}
 
+###### Select data accordings to task
 
-###### Select data according to task
-
-if (task == "IBD_nonIBD") {
+if (task == "IBD_vs_nonIBD") {
   df <- df %>%
       mutate(group = ifelse(group %in% c(1,2), 1, 0))
   df$group <- as.factor(df$group)
- } else if (task == "UC_nonIBD") {
+ } else if (task == "UC_vs_nonIBD") {
      df <- df %>%
          filter(group %in% c(0, 2)) %>%
          mutate(group = ifelse(group == 2, 1, 0))
      df$group <- as.factor(df$group)
- } else if (task == "CD_nonIBD") {
+ } else if (task == "CD_vs_nonIBD") {
      df <- df %>%
          filter(group %in% c(0, 1))
      df$group <- droplevels(df$group)
- } else if (task == "UC_CD") {
+ } else if (task == "UC_vs_CD") {
      df <- df %>%
          filter(group %in% c(1, 2)) %>%
-         mutate(group = ifelse(group == 1, 0, 1))
+         mutate(group = ifelse(group == 1, 1, 0))
      df$group <- as.factor(df$group)
 }
-
 
 ########## k-fold Cross validation with p% of data as train
 
@@ -56,6 +65,83 @@ k = 10
 p <- 0.8
 set.seed(4)
 train_index <- caret::createDataPartition(df$group, times = k, p = p)
+
+
+
+
+
+
+obj.fun <- smoof::makeSingleObjectiveFunction(
+  name = "xgb_cv_bayes",
+  fn = function(x) {
+    train_mbo <- dtrain_class[cv_folds[[as.numeric(x["fold"])]],]
+    test_idx <- setdiff(c(1:dim(dtrain_class)[1]), cv_folds[[as.numeric(x["fold"])]])
+    test_mbo <- dtrain_class[test_idx,]
+    watchlist <- list(train=train_mbo, test=test_mbo)
+    set.seed(42)
+    cv <- xgb.train(data = train_mbo,
+      watchlist = watchlist,
+      params = list(
+      booster          = "gbtree",
+      eta              = x["eta"],
+      max_depth        = x["max_depth"],
+      min_child_weight = x["min_child_weight"],
+      gamma            = x["gamma"],
+      subsample        = x["subsample"],
+      colsample_bytree = x["colsample_bytree"],
+      objective        = "binary:logistic", 
+      eval_metric      = "logloss"),
+      nrounds          = x["nrounds"],
+      showsd = TRUE,
+      verbose = FALSE)
+    as.numeric(cv$evaluation_log[max(iter),3])
+  },
+    par.set = makeParamSet(
+      makeNumericParam("eta",              lower = 0.001,  upper = 0.3),
+      makeNumericParam("gamma",            lower = 0.1,   upper = 5),
+      makeIntegerParam("max_depth",        lower = 2,     upper = 8),
+      makeIntegerParam("min_child_weight", lower = 1,     upper = 10),
+      makeNumericParam("subsample",        lower = 0.2,   upper = 0.8), #set maximum to 80%
+      makeNumericParam("colsample_bytree", lower = 0.2,   upper = 0.9),  #set maximum to 90%
+      makeIntegerParam("nrounds",          lower = 50,    upper = 5000),
+      makeIntegerParam("fold",             lower = 1,     upper = 6, tunable = FALSE)
+    ),
+  minimize = TRUE
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # prepare xgb data matrix object
