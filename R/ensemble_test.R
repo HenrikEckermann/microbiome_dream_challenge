@@ -59,11 +59,20 @@ if (task == "IBD_vs_nonIBD") {
      df$group <- as.factor(df$group)
 }
 
+df$group <- factor(make.names(df$group))
 
-control <- trainControl(method="repeatedcv", number=5, repeats=3, savePredictions=TRUE, classProbs=TRUE)
+
+
+
+
+
+
+control <- trainControl(method="cv", number=5, savePredictions=TRUE, classProbs=TRUE)
 algorithmList <- c("rf", "svmRadial", "elm")
 set.seed(seed)
 models <- caretList(group~., data=df, trControl=control, methodList=algorithmList)
+
+print("hi")
 results <- resamples(models)
 summary(results)
 dotplot(results)

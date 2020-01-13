@@ -23,27 +23,6 @@ load("data/processed/pathway_abundances.RDS")
 ###### automated workflow
 
 
-names(taxa_by_level)
-df <- left_join(
-    taxa_by_level[["species"]],
-    select(taxa_by_level[["genus"]], - group),
-    by = "sampleID") %>%
-    left_join(
-    select(taxa_by_level[["family"]], - group),
-    by = "sampleID") %>%
-    left_join(
-    select(taxa_by_level[["order"]], - group),
-    by = "sampleID") %>%
-    left_join(
-    select(taxa_by_level[["class"]], - group),
-    by = "sampleID") %>%
-    left_join(
-    select(taxa_by_level[["phylum"]], - group),
-    by = "sampleID") %>%
-    left_join(
-    select(taxa_by_level[["superkingdom"]], - group),
-    by = "sampleID") %>%
-  select(-sampleID)
  
 
 
@@ -456,12 +435,13 @@ logloss_all %>%
 
 # there are 12650, 5061 and 1450 features for path, spec and gen respectively
 # find the optimal n_features per task/feature 
-n_features_list <- as.list(seq(50, 1000, 25))
+n_features_list <- as.list(c(NA, seq(50, 1000, 25)))
+n_features_list
 tasks <- list("IBD_vs_nonIBD", "UC_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_CD")
-feature_list <- list("all_taxa")
+feature_list <- list("species", "genus", "pathway", "all_taxa")
 classifier_list <- list("randomForest", "XGBoost")
 # store all models to compare 
-logloss_all_n_features_taxa <- map_df(n_features_list, function(n_features) {
+logloss_all_n_features <- map_df(n_features_list, function(n_features) {
     map_df(tasks, function(task) {
       map_df(feature_list, function(feature_name) {
         map_df(classifier_list, function(classifier) {
@@ -483,7 +463,7 @@ logloss_all_n_features_taxa <- map_df(n_features_list, function(n_features) {
     })
 })
 
-logloss_all_n_features_taxa %>% 
+logloss_all_n_features %>% 
   arrange(task, feature_name, mean)
 testnest <- logloss_all_n_features %>% 
   arrange(task, feature_name, mean) %>%
@@ -491,14 +471,6 @@ testnest <- logloss_all_n_features %>%
   nest()
 testnest$data <- map(testnest$data, ~filter(.x, mean == min(mean)))
 
-logloss_all_n_features %>% 
-  arrange(task, feature_name, mean)
-  
-testnest <- logloss_all_n_features %>% 
-  arrange(task, feature_name, mean) %>%
-  group_by(task, feature_name) %>%
-  nest()
-testnest$data <- map(testnest$data, ~filter(.x, mean == min(mean)))
 
 unnest(testnest) %>%
   arrange(task, mean)
