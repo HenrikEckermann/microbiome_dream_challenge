@@ -76,3 +76,14 @@ ens_glmnet2 <- logistic_glmnet_ensemble_predictions(rnd_data, rnd_target, tr_ind
 sum(as.numeric(ens_glmnet2$ensemble_preds > 0.5) != data_tmp_tst$target)/nrow(data_tmp_tst)
 # MSE error
 sum((ens_glmnet2$ensemble_preds - factor_as_binary(data_tmp_tst$target))^2)/nrow(data_tmp_tst)
+
+
+# example with interaction glmnet.
+
+ens_glmnet3 <- logistic_glmnet_ensemble_only_model_predictions_with_ia(rnd_target, tr_inds, c("rf1", "rf2"),
+                                                   list(rf1_trpreds_prob, rf2_trpreds_prob),
+                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.min")
+# misclassification
+sum(as.numeric(ens_glmnet3$ensemble_preds > 0.5) != data_tmp_tst$target)/nrow(data_tmp_tst)
+# MSE error
+sum((ens_glmnet3$ensemble_preds - factor_as_binary(data_tmp_tst$target))^2)/nrow(data_tmp_tst)
