@@ -60,7 +60,8 @@ sum((ens_res$ensemble_preds - factor_as_binary(data_tmp_tst$target))^2)/nrow(dat
 # similar ensemble with GLMnet. notice that target is factor but predictions are numeric probabilities!
 ens_glmnet <- logistic_glmnet_ensemble_predictions(rnd_data, rnd_target, tr_inds, c("rf1", "rf2"),
                                                    list(rf1_trpreds_prob, rf2_trpreds_prob),
-                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.1se")
+                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.1se",
+                                                   lambda=2^seq(1, -15, -0.4))
 
 # misclassification
 sum(as.numeric(ens_glmnet$ensemble_preds > 0.5) != data_tmp_tst$target)/nrow(data_tmp_tst)
@@ -70,7 +71,8 @@ sum((ens_glmnet$ensemble_preds - factor_as_binary(data_tmp_tst$target))^2)/nrow(
 # similar ensemble with GLMnet. notice that target is factor but predictions are numeric probabilities!
 ens_glmnet2 <- logistic_glmnet_ensemble_predictions(rnd_data, rnd_target, tr_inds, c("rf1", "rf2"),
                                                    list(rf1_trpreds_prob, rf2_trpreds_prob),
-                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.min")
+                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.min",
+                                                   lambda=2^seq(1, -15, -0.4))
 
 # misclassification
 sum(as.numeric(ens_glmnet2$ensemble_preds > 0.5) != data_tmp_tst$target)/nrow(data_tmp_tst)
@@ -82,7 +84,8 @@ sum((ens_glmnet2$ensemble_preds - factor_as_binary(data_tmp_tst$target))^2)/nrow
 
 ens_glmnet3 <- logistic_glmnet_ensemble_only_model_predictions_with_ia(rnd_target, tr_inds, c("rf1", "rf2"),
                                                    list(rf1_trpreds_prob, rf2_trpreds_prob),
-                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.min")
+                                                   list(rf1_preds_prob, rf2_preds_prob), s="lambda.min",
+                                                   lambda=2^seq(1, -15, -0.4))
 # misclassification
 sum(as.numeric(ens_glmnet3$ensemble_preds > 0.5) != data_tmp_tst$target)/nrow(data_tmp_tst)
 # MSE error
