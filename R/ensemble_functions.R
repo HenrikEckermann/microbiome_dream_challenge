@@ -174,7 +174,7 @@ randomforest_ensemble_predictions <- function(data, target, tr_inds, model_names
 	}
 
 	# fit
-	ensemble_fit <- randomForest(x=data, y=target, ntree=ntree, importance=importance)
+	ensemble_fit <- randomForest(x=data_tr_combd, y=target, ntree=ntree, importance=importance)
 
 	# data_tst
 	data_tst_combd <- my_data_combined(data[-tr_inds,], model_tst_preds, model_names)
