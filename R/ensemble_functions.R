@@ -181,7 +181,7 @@ randomforest_ensemble_predictions <- function(data, target, tr_inds, model_names
 	data_tst_combd <- row_impute(scale(data_tst_combd))
 
 
-	ensemble_preds <- predict(ensemble_fit, type=type)
+	ensemble_preds <- predict(ensemble_fit, newdata=data_tst_combd, type=type)
 
 	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
 }
