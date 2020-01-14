@@ -418,24 +418,30 @@ log_l
 
 
 ###### specify models that we selected for the ensemble
-task <- "CD_vs_nonIBD"
+task <- "IBD_vs_nonIBD"
 model_specs <- list(
   "model1" = list(
     task = task,
     feature_name = "genus",
     classifier = "randomForest",
-    n_features = 50
+    n_features = 100
   ),
   "model2" = list(
     task = task,
-    feature_name = "species",
-    classifier = "XGBoost",
-    n_features = 875
+    feature_name = "genus",
+    classifier = "randomForest",
+    n_features = 1448
   ),
   "model3" = list(
     task = task,
     feature_name = "species",
     classifier = "randomForest",
+    n_features = 125
+  ),
+  "model4" = list(
+    task = task,
+    feature_name = "species",
+    classifier = "XGBoost",
     n_features = 575
   )
 )
@@ -519,25 +525,52 @@ train_index <- caret::createDataPartition(df$group, times = k, p = p)
 
 
 model_names <- map(ensemble_models, ~.x$Resample01$model_name)
+model_names
 # fit ensembles
 fold_names <- names(train_index)
-
+target <- df$group
+data_ens <- select(df, -group)
 ensemble_predictions <- map2(fold_names, train_index, function(fold_name, tr_inds) { 
-  ens_fit <- logistic_glmnet_ensemble_only_model_predictions_with_ia(
+  ens_fit <- logistic_glmnet_ensemble_predictions(
+    data = data_ens,
     target = df$group,
     tr_inds = tr_inds,
     model_names = model_names,
     model_tr_preds = list(
       ensemble_models[[1]][[fold_name]]$model_pred_prob_tr,
       ensemble_models[[2]][[fold_name]]$model_pred_prob_tr,
-      ensemble_models[[3]][[fold_name]]$model_pred_prob_tr
+      ensemble_models[[3]][[fold_name]]$model_pred_prob_tr,
+      ensemble_models[[4]][[fold_name]]$model_pred_prob_tr
     ),
     model_tst_preds = list(
       ensemble_models[[1]][[fold_name]]$model_pred_prob_ts,
       ensemble_models[[2]][[fold_name]]$model_pred_prob_ts,
-      ensemble_models[[3]][[fold_name]]$model_pred_prob_ts
+      ensemble_models[[3]][[fold_name]]$model_pred_prob_ts,
+      ensemble_models[[4]][[fold_name]]$model_pred_prob_ts
     ),
-    s = "lambda.min"
+    s = "lambda.min",
+    lambda=2^seq(1, -15, -0.05)
+  )
+})
+
+ensemble_predictions_rf <- map2(fold_names, train_index, function(fold_name, tr_inds) { 
+  ens_fit <- randomforest_ensemble_predictions(
+    data = data_ens,
+    target = df$group,
+    tr_inds = tr_inds,
+    model_names = model_names,
+    model_tr_preds = list(
+      ensemble_models[[1]][[fold_name]]$model_pred_prob_tr,
+      ensemble_models[[2]][[fold_name]]$model_pred_prob_tr,
+      ensemble_models[[3]][[fold_name]]$model_pred_prob_tr,
+      ensemble_models[[4]][[fold_name]]$model_pred_prob_tr
+    ),
+    model_tst_preds = list(
+      ensemble_models[[1]][[fold_name]]$model_pred_prob_ts,
+      ensemble_models[[2]][[fold_name]]$model_pred_prob_ts,
+      ensemble_models[[3]][[fold_name]]$model_pred_prob_ts,
+      ensemble_models[[4]][[fold_name]]$model_pred_prob_ts
+    )
   )
 })
 
@@ -549,11 +582,12 @@ logl_ens <- map2_dbl(ensemble_predictions, train_index, function(predictions, tr
     predictions$ensemble_preds, 
     as.numeric(test$group) - 1)
 })
+
 logl_ens
 mean(logl_ens)
 sd(logl_ens)
 
-###### summarise logloss 
 
 
+git pull origin master
 
