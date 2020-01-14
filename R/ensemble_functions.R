@@ -58,15 +58,21 @@ row_impute <- function (data_m) {
   as.data.frame(t(data_m_tmp))
 }
 
+
+
 logistic_glmnet_ensemble_predictions <- function(data, target, tr_inds, model_names, model_tr_preds,
-                                                 model_tst_preds, s=c("lambda.min", "lambda.1se")) {
+                                                 model_tst_preds, s=c("lambda.min", "lambda.1se"),
+                                                 lambda=NULL) {
 	# data_tr
 	data_tr_combd <- my_data_combined(data[tr_inds,], model_tr_preds, model_names)
 	# scale predictors, and impute any NAs in input as rowmeans
 	data_tr_combd <- row_impute(scale(data_tr_combd))
+	# set any remaining NAs to 0
+	data_tr_combd[is.na(data_tr_combd)] <- 0
 	
 	# fit
-	ensemble_fit <- cv.glmnet(as.matrix(data_tr_combd), target[tr_inds], family="binomial", type.measure="class")
+	ensemble_fit <- cv.glmnet(as.matrix(data_tr_combd), target[tr_inds], family="binomial", type.measure="class",
+							  lambda=lambda)
 
 	# data_tst
 	data_tst_combd <- my_data_combined(data[-tr_inds,], model_tst_preds, model_names)
@@ -81,7 +87,8 @@ logistic_glmnet_ensemble_predictions <- function(data, target, tr_inds, model_na
 # note, this version does not take original data (e.g. taxa or pathways) as input
 # it fits glmnet to data only via lower level models (if glmnet is one of them)
 logistic_glmnet_ensemble_only_model_predictions <- function(target, tr_inds, model_names, model_tr_preds,
-                                                 model_tst_preds, s=c("lambda.min", "lambda.1se")) {
+                                                 model_tst_preds, s=c("lambda.min", "lambda.1se"),
+                                                 lambda=NULL) {
 	# data_tr
 	data_tr_combd <- do.call(cbind, c(model_tr_preds))
 	colnames(data_tr_combd) <- model_names
@@ -89,11 +96,14 @@ logistic_glmnet_ensemble_only_model_predictions <- function(target, tr_inds, mod
 
 	# scale predictors, and impute any NAs in input as rowmeans
 	data_tr_combd <- row_impute(scale(data_tr_combd))
+		# set any remaining NAs to 0
+	data_tr_combd[is.na(data_tr_combd)] <- 0
 	
 
 
 	# fit
-	ensemble_fit <- cv.glmnet(as.matrix(data_tr_combd), target[tr_inds], family="binomial", type.measure="class")
+	ensemble_fit <- cv.glmnet(as.matrix(data_tr_combd), target[tr_inds], family="binomial", type.measure="class",
+							  lambda=lambda)
 
 	# data_tst
 	data_tst_combd <- do.call(cbind, c(model_tst_preds))
@@ -111,7 +121,8 @@ logistic_glmnet_ensemble_only_model_predictions <- function(target, tr_inds, mod
 # note, this version does not take original data (e.g. taxa or pathways) as input
 # AND also add between-models-interactions
 logistic_glmnet_ensemble_only_model_predictions_with_ia <- function(target, tr_inds, model_names, model_tr_preds,
-                                                 model_tst_preds, s=c("lambda.min", "lambda.1se")) {
+                                                 model_tst_preds, s=c("lambda.min", "lambda.1se"),
+                                                 lambda=NULL) {
 	# data_tr
 	data_tr_combd <- do.call(cbind, c(model_tr_preds))
 	colnames(data_tr_combd) <- model_names
@@ -119,6 +130,8 @@ logistic_glmnet_ensemble_only_model_predictions_with_ia <- function(target, tr_i
 
 	# scale predictors, and impute any NAs in input as rowmeans
 	data_tr_combd <- row_impute(scale(data_tr_combd))
+	# set any remaining NAs to 0
+	data_tr_combd[is.na(data_tr_combd)] <- 0
 	
 	# add interactions to model matrix
 	# (https://stackoverflow.com/questions/27580267/how-to-make-all-interactions-before-using-glmnet)
