@@ -476,79 +476,74 @@ testnest$data <- map(testnest$data, ~filter(.x, mean == min(mean)))
 unnest(testnest) %>%
   arrange(task, mean)
 
-ll_all_nest <- logloss_all_n_features %>%
-  group_by(task, classifier) %>%
-  nest() 
-
-
-
-
-ll_all_nest$data <- map(ll_all_nest[[3]], function(df) {
-  df %>% 
-    filter(mean == min(mean))
-})
-
-unnest(ll_all_nest)
 
 
 
 
 
 
-# # to create reports viewable on github
-# map(tasks, function(task) {
-#   map(feature_list, function(feature_name) {
-#     map(classifier_list, function(classifier) {
-#       create_report(task, feature_name, classifier)
-#     })
-#   })
-# })
-# 
-# tasks <- list("UC_vs_CD")
-# feature_list <- list("species", "genus", "pathway")
-# classifier_list <- list("randomForest", "XGBoost")
-# # to create reports viewable on github
-# test <- map(tasks, function(task) {
-#   map(feature_list, function(feature_name) {
-#     map(classifier_list, function(classifier) {
-#       fit_and_evaluate(task, feature_name, classifier)
-#     })
-#   })
-# })
-# 
-
-
-# source(here("R/create_report.R"))
-# create_report(  
-#   "IBD_vs_nonIBD", 
-#   "species", 
-#   "XGBoost",
-#   k = 10,
-#   p = 0.8, 
-#   seed = 4)
-
-
-# create_pred_files(test$models$Resample01, "CD_vs_UC", "species")
 
 
 
-# #########################
-####### Binary ##########
-#########################
 
-###### The following stats/findings are based on basic RF models 
-###### (no feature selection)
-# species: mean: 0.9183, sd: 0.0507
-# genus:   mean: 0.4592, sd: 0.0945
-# pathway: mean: 1.0880, sd: 0.0668
-# all:     mean: 0.3498, sd: 0.0634
 
-###### The following stats/findings are based on basic RF models 
-###### (no feature selection)
-# species: mean: 0.4537, sd: 0.1254
-# genus:   mean: 0.4592, sd: 0.0945
-# pathway: mean: 0.3093, sd: 0.0865
-# all:     mean: 0.3498, sd: 0.0634
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #########################
 # Output for submission #
