@@ -256,10 +256,78 @@ randomforest_ensemble_meta_shannon_predictions <- function(data, target, tr_inds
 	# data_tst
 	data_tst_combd <- my_data_combined(data[-tr_inds,], model_tst_preds, model_names)
 	data_tst_combd <- row_impute(scale(data_tst_combd))
-	data_tst_combd <- cbind(data_tst_combd, shannon=shannon[-tr_inds])
 
 	alpha_div_tst <- cbind(shannon=alpha_diversity$shannon[-tr_inds], simpeven=alpha_diversity$simpeven[-tr_inds])
 	data_tst_combd <- cbind(data_tst_combd, alpha_div_tst)
+
+	ensemble_preds <- predict(ensemble_fit, newdata=data_tst_combd, type=type)
+
+	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
+}
+
+## helper function for computing global metafeatures
+## note, here it is better include the whole predictor data (both train and test) in the metafeature computations
+## this does not break cross-validation logic 
+## I assume data is  a n x d dimensional data.frame, e.g. taxonomic abundances, and contains a single taxonomic level
+library(compositions)
+
+ilr_prcomp <- function(data) {
+	# compute relative abundances of data
+	# impute zeros with a pseudocount prior
+	datan <- as.numeric(data)
+	d <- min(datan[datan > 0], na.rm=TRUE) / 2
+	data_plusd <- data + d
+	data_plusd_samplesums <- rowSums(data_plusd)
+	data_rel <- data_plusd/data_plusd_samplesums
+
+	data_ilr <- ilr(data.frame(data_rel))
+
+	list(prcomp=prcomp(scale(data_ilr)), ilr=data_ilr)
+}
+
+# slightly more advanced metefeatures: add prcomp of ILR coordinates
+randomforest_ensemble_meta2_predictions <- function(data, target, tr_inds, model_names, model_tr_preds,
+                                                 model_tst_preds, alpha_diversity=NULL, prcompx=NULL,
+                                                 ntree=5000, importance=TRUE, type="response", ...) {
+
+	# compute shannon index if null
+	if (is.null(alpha_diversity)) {
+		shannon <- compute_shannon(data)
+		simpeven <- compute_simpson_even(data)
+		alpha_diversity <- list(shannon=shannon, simpeven=simpeven)
+	}
+
+	if (is.null(prcompx)) {
+		prcomp_res <- ilr_prcomp(data.matrix(data))
+		prcompx <- prcomp_res$x
+	}
+
+	# data_tr
+	data_tr_combd <- my_data_combined(data[tr_inds,], model_tr_preds, model_names)
+	# scale predictors, and impute any NAs in input as rowmeans
+	data_tr_combd <- row_impute(scale(data_tr_combd))
+	# set any remaining NAs to 0
+	data_tr_combd[is.na(data_tr_combd)] <- 0
+
+	# add shannon etc
+	alpha_div_tr <- cbind(shannon=alpha_diversity$shannon[tr_inds], simpeven=alpha_diversity$simpeven[tr_inds])
+	data_tr_combd <- cbind(data_tr_combd, alpha_div_tr)
+	data_tr_combd <- cbind(data_tr_combd, prcompx[tr_inds,])
+	
+	if(!is.factor(target)) {
+		cat("\n NB target is not a factor! \n")
+	}
+
+	# fit
+	ensemble_fit <- randomForest(x=data_tr_combd, y=target[tr_inds], ntree=ntree, importance=importance)
+
+	# data_tst
+	data_tst_combd <- my_data_combined(data[-tr_inds,], model_tst_preds, model_names)
+	data_tst_combd <- row_impute(scale(data_tst_combd))
+
+	alpha_div_tst <- cbind(shannon=alpha_diversity$shannon[-tr_inds], simpeven=alpha_diversity$simpeven[-tr_inds])
+	data_tst_combd <- cbind(data_tst_combd, alpha_div_tst)
+	data_tst_combd <- cbind(data_tst_combd, prcompx[-tr_inds,])
 
 	ensemble_preds <- predict(ensemble_fit, newdata=data_tst_combd, type=type)
 
@@ -315,4 +383,3 @@ logistic_glmnet_ensemble_metafeat_model_predictions_with_ia <- function(target, 
 
 	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
 }
-
