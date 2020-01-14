@@ -186,6 +186,86 @@ randomforest_ensemble_predictions <- function(data, target, tr_inds, model_names
 	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
 }
 
+# reimplemented from https://github.com/microbiome/microbiome/blob/master/R/diversities.R
+## naive Shannon index computation
+## data should be n x d df/matrix like
+## note that if using taxonomic information, only single taxlevel should be used
+
+compute_shannon <- function(data) {
+
+	shannon <- sapply(1:nrow(data), function(ri) {
+		x <- as.numeric(data[ri,])
+		x <- x[x>0]
+		S <- sum(x, na.rm=TRUE)
+		p <- x / S
+		(-sum(p * log(p)))
+	})
+
+	shannon
+}
+
+# simpson evenness
+compute_simpson_even <- function(data) {
+
+	simpeven <- sapply(1:nrow(data), function(ri) {
+		x <- as.numeric(data[ri,])
+		x <- x[x>0]
+	  	# Species richness (number of species)
+  		S <- sum(x > 0, na.rm = TRUE)
+		p <- x / S
+    	# Simpson index
+    	lambda <-  sum(p^2)
+
+    	# Simpson evenness (Simpson diversity per richness)
+    	(1/lambda)/S
+    })
+    simpeven
+}
+
+
+# simple meta feature: alpha_diversity signatures shannon index and simpson evenness
+randomforest_ensemble_meta_shannon_predictions <- function(data, target, tr_inds, model_names, model_tr_preds,
+                                                 model_tst_preds, alpha_diversity=NULL,
+                                                 ntree=5000, importance=TRUE, type="response", ...) {
+
+	# compute shannon index if null
+	if (is.null(alpha_diversity)) {
+		shannon <- compute_shannon(data)
+		simpeven <- compute_simpson_even(data)
+		alpha_diversity <- list(shannon=shannon, simpeven=simpeven)
+	}
+
+	# data_tr
+	data_tr_combd <- my_data_combined(data[tr_inds,], model_tr_preds, model_names)
+	# scale predictors, and impute any NAs in input as rowmeans
+	data_tr_combd <- row_impute(scale(data_tr_combd))
+	# set any remaining NAs to 0
+	data_tr_combd[is.na(data_tr_combd)] <- 0
+
+	# add shannon etc
+	alpha_div_tr <- cbind(shannon=alpha_diversity$shannon[tr_inds], simpeven=alpha_diversity$simpeven[tr_inds])
+	data_tr_combd <- cbind(data_tr_combd, alpha_div_tr)
+	
+	if(!is.factor(target)) {
+		cat("\n NB target is not a factor! \n")
+	}
+
+	# fit
+	ensemble_fit <- randomForest(x=data_tr_combd, y=target[tr_inds], ntree=ntree, importance=importance)
+
+	# data_tst
+	data_tst_combd <- my_data_combined(data[-tr_inds,], model_tst_preds, model_names)
+	data_tst_combd <- row_impute(scale(data_tst_combd))
+	data_tst_combd <- cbind(data_tst_combd, shannon=shannon[-tr_inds])
+
+	alpha_div_tst <- cbind(shannon=alpha_diversity$shannon[-tr_inds], simpeven=alpha_diversity$simpeven[-tr_inds])
+	data_tst_combd <- cbind(data_tst_combd, alpha_div_tst)
+
+	ensemble_preds <- predict(ensemble_fit, newdata=data_tst_combd, type=type)
+
+	return(list(ensemble_preds=ensemble_preds, ensemble_fit=ensemble_fit))
+}
+
 
 
 
