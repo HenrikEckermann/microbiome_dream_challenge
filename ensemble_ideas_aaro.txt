@@ -1,0 +1,22 @@
+# ensemble ideas
+
+## literature (for Aaro)
+
+http://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning
+
+https://www.crcpress.com/Ensemble-Methods-Foundations-and-Algorithms/Zhou/p/book/9781439830031
+
+https://www.crcpress.com/Ensemble-Methods-Foundations-and-Algorithms/Zhou/p/book/9781439830031
+
+gradient boosting for strong learners?
+
+
+## potentially good (meta)-features
+
+* dimension reductions (PCA, others...)
+* proper 16S compositional statistical analysis results
+* maybe: diversity patterns and their dimension reductions
+* data "subviews": some algorithms look at different tax levels
+* kNN
+* Willis' theory
+* ranks
