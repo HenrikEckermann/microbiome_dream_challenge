@@ -198,8 +198,8 @@ compare_groups <- function(
             rownames_to_column("top_features") 
         colnames(coef_top) <- c("top_features", "coef_top")
         
-        coef_top <- coef_top %>% arrange(desc(coef_top)) %>%
-                    mutate(top_taxa = factor(top_features, levels = top_features))
+    coef_top <- coef_top %>% arrange(desc(coef_top)) %>%
+                mutate(top_features = factor(top_features, levels = top_features))
         
         if (feature_name == "pathway") {
           
@@ -260,5 +260,6 @@ compare_groups <- function(
 
 
 }
+
 
 

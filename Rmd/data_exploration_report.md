@@ -964,7 +964,7 @@ IBD\_vs\_nonIBD
 <td style="text-align: right;">0.0007876</td>
 <td style="text-align: right;">0.2964472</td>
 <td style="text-align: right;">0.0017615</td>
-<td style="text-align: right;">0.594</td>
+<td style="text-align: right;">0.609</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1258,7 +1258,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.7793996</td>
 <td style="text-align: right;">3.045408</td>
 <td style="text-align: right;">0.02927</td>
-<td style="text-align: right;">0.004</td>
+<td style="text-align: right;">0.007</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1402,7 +1402,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.6634627</td>
 <td style="text-align: right;">3.566518</td>
 <td style="text-align: right;">0.0341076</td>
-<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.008</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1546,7 +1546,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.6118270</td>
 <td style="text-align: right;">3.710184</td>
 <td style="text-align: right;">0.0354329</td>
-<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.019</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1690,7 +1690,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.5298730</td>
 <td style="text-align: right;">3.85127</td>
 <td style="text-align: right;">0.0367308</td>
-<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">0.027</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1834,7 +1834,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.5362505</td>
 <td style="text-align: right;">4.076544</td>
 <td style="text-align: right;">0.0387959</td>
-<td style="text-align: right;">0.012</td>
+<td style="text-align: right;">0.019</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1978,7 +1978,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.3936488</td>
 <td style="text-align: right;">3.374994</td>
 <td style="text-align: right;">0.0323353</td>
-<td style="text-align: right;">0.051</td>
+<td style="text-align: right;">0.04</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2122,7 +2122,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.0004578</td>
 <td style="text-align: right;">0.2674747</td>
 <td style="text-align: right;">0.0026413</td>
-<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">0.695</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2416,7 +2416,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.4363360</td>
 <td style="text-align: right;">2.742821</td>
 <td style="text-align: right;">0.0323664</td>
-<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.006</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2560,7 +2560,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.4187907</td>
 <td style="text-align: right;">3.688728</td>
 <td style="text-align: right;">0.043048</td>
-<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">0.012</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2704,7 +2704,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.3806364</td>
 <td style="text-align: right;">3.853292</td>
 <td style="text-align: right;">0.0448823</td>
-<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.013</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2848,7 +2848,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.2322927</td>
 <td style="text-align: right;">3.096629</td>
 <td style="text-align: right;">0.0363896</td>
-<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.048</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2992,7 +2992,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.2397244</td>
 <td style="text-align: right;">3.228211</td>
 <td style="text-align: right;">0.0378773</td>
-<td style="text-align: right;">0.049</td>
+<td style="text-align: right;">0.045</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -3136,7 +3136,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.2224174</td>
 <td style="text-align: right;">3.287131</td>
 <td style="text-align: right;">0.0385419</td>
-<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.069</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -3280,7 +3280,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.0008269</td>
 <td style="text-align: right;">0.2393747</td>
 <td style="text-align: right;">0.0029107</td>
-<td style="text-align: right;">0.646</td>
+<td style="text-align: right;">0.645</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -4438,7 +4438,7 @@ CD\_vs\_nonIBD
 <td style="text-align: right;">0.0006216</td>
 <td style="text-align: right;">0.2154728</td>
 <td style="text-align: right;">0.0014249</td>
-<td style="text-align: right;">0.714</td>
+<td style="text-align: right;">0.682</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
