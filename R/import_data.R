@@ -69,7 +69,21 @@ taxa_by_level <- map(taxa_by_level$data, function(x) {
 names(taxa_by_level) <- list_names
 
 
-  
+
+# metadata 
+meta <- read.csv(here("data/hmp2_metadata.csv")) %>%
+  filter(data_type == "metagenomics", consent_age >= 18)
+
+library(glue)
+sample_ids <- labels_sch %>% mutate_at("sampleID", function(sampleID) {
+  part1 <- substr(sampleID, 2, 3)
+  part2 <- substr(sampleID, 4, length(sampleID))
+  return(glue("{part1}-{part2}"))
+}) %>% .$sampleID
+
+filter(meta, Stool.Sample.ID...Tube.A...EtOH. %in% sample_ids) 
+labels_sch %>% dim()
+
 
 ### pathway data 
 

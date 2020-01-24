@@ -416,7 +416,7 @@ log_l
 
 
 
-
+source(here("R/ensemble_functions.R"))
 ###### specify models that we selected for the ensemble
 task <- "IBD_vs_nonIBD"
 model_specs <- list(
@@ -553,8 +553,10 @@ ensemble_predictions <- map2(fold_names, train_index, function(fold_name, tr_ind
   )
 })
 
+
+source(here("R/ensemble_functions.R"))
 ensemble_predictions_rf <- map2(fold_names, train_index, function(fold_name, tr_inds) { 
-  ens_fit <- randomforest_ensemble_predictions(
+  ens_fit <- randomforest_ensemble_meta2_predictions(
     data = data_ens,
     target = df$group,
     tr_inds = tr_inds,
@@ -570,16 +572,19 @@ ensemble_predictions_rf <- map2(fold_names, train_index, function(fold_name, tr_
       ensemble_models[[2]][[fold_name]]$model_pred_prob_ts,
       ensemble_models[[3]][[fold_name]]$model_pred_prob_ts,
       ensemble_models[[4]][[fold_name]]$model_pred_prob_ts
-    )
+    ),
+    type = "prob"
   )
 })
 
 
+37ensemble_predictions_rf[[1]]$ensemble_preds[, 2]
+
 ###### evaluate ensemble 
-logl_ens <- map2_dbl(ensemble_predictions, train_index, function(predictions, tr_inds) {
+logl_ens <- map2_dbl(ensemble_predictions_rf, train_index, function(predictions, tr_inds) {
   test <- df[-tr_inds, ]
   log_l <- MLmetrics::LogLoss(
-    predictions$ensemble_preds, 
+    predictions$ensemble_preds[, 2], 
     as.numeric(test$group) - 1)
 })
 

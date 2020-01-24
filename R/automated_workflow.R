@@ -465,7 +465,12 @@ logloss_all_n_features <- map_df(n_features_list, function(n_features) {
 })
 
 logloss_all_n_features %>% 
-  arrange(task, feature_name, mean)
+  arrange(task, mean) %>%
+  filter(
+    task == "IBD_vs_nonIBD", 
+    feature_name != "pathway", feature_name == "all_taxa",
+    classifier == "randomForest"
+  )
 testnest <- logloss_all_n_features %>% 
   arrange(task, feature_name, mean) %>%
   group_by(task, feature_name) %>%
