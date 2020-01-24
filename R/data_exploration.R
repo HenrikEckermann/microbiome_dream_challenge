@@ -198,6 +198,9 @@ compare_groups <- function(
             rownames_to_column("top_features") 
         colnames(coef_top) <- c("top_features", "coef_top")
         
+        coef_top <- coef_top %>% arrange(desc(coef_top)) %>%
+                    mutate(top_taxa = factor(top_features, levels = top_features))
+        
         if (feature_name == "pathway") {
           
            p <- ggplot(coef_top, aes(top_features, coef_top)) +
@@ -215,8 +218,7 @@ compare_groups <- function(
                   coord_flip() +
                   theme_bw(base_size = 30)
         }
-        coef_top <- coef_top %>% arrange(desc(coef_top)) %>%
-                    mutate(top_taxa = factor(top_features, levels = top_features))
+
 
         top_features <- coef_top$top_features
         list(p, top_features)

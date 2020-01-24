@@ -69,12 +69,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-4-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-4-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -125,7 +125,7 @@ IBD\_vs\_nonIBD
 
     output[[1]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
 #### Differential abundance plots
 
@@ -133,77 +133,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-6-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-6-15.png)
 
 ### Genus
 
@@ -213,12 +213,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-7-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-7-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -269,7 +269,7 @@ IBD\_vs\_nonIBD
 
     output[[2]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 #### Differential abundance plots
 
@@ -277,77 +277,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-9-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-9-15.png)
 
 ### Family
 
@@ -357,12 +357,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-10-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-10-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -413,7 +413,7 @@ IBD\_vs\_nonIBD
 
     output[[3]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 #### Differential abundance plots
 
@@ -421,77 +421,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-12-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-12-15.png)
 
 ### Order
 
@@ -501,12 +501,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-13-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-13-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-13-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-13-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -557,7 +557,7 @@ IBD\_vs\_nonIBD
 
     output[[4]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-14-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-14-1.png)
 
 #### Differential abundance plots
 
@@ -565,77 +565,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-15-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-15-15.png)
 
 ### Class
 
@@ -645,12 +645,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-16-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-16-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-16-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-16-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -701,7 +701,7 @@ IBD\_vs\_nonIBD
 
     output[[5]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-17-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-17-1.png)
 
 #### Differential abundance plots
 
@@ -709,77 +709,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-18-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-18-15.png)
 
 ### Phylum
 
@@ -789,12 +789,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-19-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-19-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-19-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-19-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -845,7 +845,7 @@ IBD\_vs\_nonIBD
 
     output[[6]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-20-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-20-1.png)
 
 #### Differential abundance plots
 
@@ -853,77 +853,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-21-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-21-15.png)
 
 ### Superkingdom
 
@@ -933,12 +933,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-22-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-22-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-22-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-22-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -964,7 +964,7 @@ IBD\_vs\_nonIBD
 <td style="text-align: right;">0.0007876</td>
 <td style="text-align: right;">0.2964472</td>
 <td style="text-align: right;">0.0017615</td>
-<td style="text-align: right;">0.63</td>
+<td style="text-align: right;">0.594</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -989,7 +989,7 @@ IBD\_vs\_nonIBD
 
     output[[7]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-23-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-23-1.png)
 
 #### Differential abundance plots
 
@@ -997,77 +997,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-24-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-24-15.png)
 
 ### Pathway
 
@@ -1077,12 +1077,12 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-25-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-25-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-25-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-25-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1133,7 +1133,7 @@ IBD\_vs\_nonIBD
 
     output[[8]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-26-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-26-1.png)
 
 #### Differential abundance plots
 
@@ -1141,77 +1141,77 @@ IBD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-27-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-27-15.png)
 
 UC\_vs\_CD
 ----------
@@ -1227,12 +1227,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-29-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-29-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-29-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-29-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1258,7 +1258,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.7793996</td>
 <td style="text-align: right;">3.045408</td>
 <td style="text-align: right;">0.02927</td>
-<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">0.004</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1283,7 +1283,7 @@ UC\_vs\_CD
 
     output[[1]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-30-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-30-1.png)
 
 #### Differential abundance plots
 
@@ -1291,77 +1291,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-31-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-31-15.png)
 
 ### Genus
 
@@ -1371,12 +1371,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-32-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-32-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-32-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-32-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1402,7 +1402,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.6634627</td>
 <td style="text-align: right;">3.566518</td>
 <td style="text-align: right;">0.0341076</td>
-<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">0.013</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1427,7 +1427,7 @@ UC\_vs\_CD
 
     output[[2]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-33-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-33-1.png)
 
 #### Differential abundance plots
 
@@ -1435,77 +1435,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-34-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-34-15.png)
 
 ### Family
 
@@ -1515,12 +1515,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-35-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-35-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-35-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-35-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1546,7 +1546,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.6118270</td>
 <td style="text-align: right;">3.710184</td>
 <td style="text-align: right;">0.0354329</td>
-<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.013</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1571,7 +1571,7 @@ UC\_vs\_CD
 
     output[[3]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-36-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-36-1.png)
 
 #### Differential abundance plots
 
@@ -1579,77 +1579,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-37-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-37-15.png)
 
 ### Order
 
@@ -1659,12 +1659,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-38-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-38-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-38-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-38-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1690,7 +1690,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.5298730</td>
 <td style="text-align: right;">3.85127</td>
 <td style="text-align: right;">0.0367308</td>
-<td style="text-align: right;">0.017</td>
+<td style="text-align: right;">0.023</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -1715,7 +1715,7 @@ UC\_vs\_CD
 
     output[[4]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-39-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-39-1.png)
 
 #### Differential abundance plots
 
@@ -1723,77 +1723,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-40-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-40-15.png)
 
 ### Class
 
@@ -1803,12 +1803,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-41-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-41-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-41-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-41-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1859,7 +1859,7 @@ UC\_vs\_CD
 
     output[[5]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-42-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-42-1.png)
 
 #### Differential abundance plots
 
@@ -1867,77 +1867,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-43-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-43-15.png)
 
 ### Phylum
 
@@ -1947,12 +1947,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-44-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-44-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-44-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-44-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -1978,7 +1978,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.3936488</td>
 <td style="text-align: right;">3.374994</td>
 <td style="text-align: right;">0.0323353</td>
-<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.051</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2003,7 +2003,7 @@ UC\_vs\_CD
 
     output[[6]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-45-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-45-1.png)
 
 #### Differential abundance plots
 
@@ -2011,77 +2011,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-46-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-46-15.png)
 
 ### Superkingdom
 
@@ -2091,12 +2091,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-47-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-47-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-47-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-47-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2122,7 +2122,7 @@ UC\_vs\_CD
 <td style="text-align: right;">0.0004578</td>
 <td style="text-align: right;">0.2674747</td>
 <td style="text-align: right;">0.0026413</td>
-<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.68</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2147,7 +2147,7 @@ UC\_vs\_CD
 
     output[[7]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-48-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-48-1.png)
 
 #### Differential abundance plots
 
@@ -2155,77 +2155,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-49-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-49-15.png)
 
 ### Pathway
 
@@ -2235,12 +2235,12 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-50-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-50-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-50-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-50-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2291,7 +2291,7 @@ UC\_vs\_CD
 
     output[[8]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-51-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-51-1.png)
 
 #### Differential abundance plots
 
@@ -2299,77 +2299,77 @@ UC\_vs\_CD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-52-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-52-15.png)
 
 UC\_vs\_nonIBD
 --------------
@@ -2385,12 +2385,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-54-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-54-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-54-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-54-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2416,7 +2416,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.4363360</td>
 <td style="text-align: right;">2.742821</td>
 <td style="text-align: right;">0.0323664</td>
-<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">0.011</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2441,7 +2441,7 @@ UC\_vs\_nonIBD
 
     output[[1]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-55-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-55-1.png)
 
 #### Differential abundance plots
 
@@ -2449,77 +2449,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-56-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-56-15.png)
 
 ### Genus
 
@@ -2529,12 +2529,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-57-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-57-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-57-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-57-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2560,7 +2560,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.4187907</td>
 <td style="text-align: right;">3.688728</td>
 <td style="text-align: right;">0.043048</td>
-<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.007</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2585,7 +2585,7 @@ UC\_vs\_nonIBD
 
     output[[2]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-58-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-58-1.png)
 
 #### Differential abundance plots
 
@@ -2593,77 +2593,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-59-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-59-15.png)
 
 ### Family
 
@@ -2673,12 +2673,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-60-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-60-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-60-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-60-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2704,7 +2704,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.3806364</td>
 <td style="text-align: right;">3.853292</td>
 <td style="text-align: right;">0.0448823</td>
-<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">0.011</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2729,7 +2729,7 @@ UC\_vs\_nonIBD
 
     output[[3]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-61-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-61-1.png)
 
 #### Differential abundance plots
 
@@ -2737,77 +2737,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-62-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-62-15.png)
 
 ### Order
 
@@ -2817,12 +2817,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-63-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-63-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-63-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-63-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2848,7 +2848,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.2322927</td>
 <td style="text-align: right;">3.096629</td>
 <td style="text-align: right;">0.0363896</td>
-<td style="text-align: right;">0.046</td>
+<td style="text-align: right;">0.055</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -2873,7 +2873,7 @@ UC\_vs\_nonIBD
 
     output[[4]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-64-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-64-1.png)
 
 #### Differential abundance plots
 
@@ -2881,77 +2881,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-65-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-65-15.png)
 
 ### Class
 
@@ -2961,12 +2961,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-66-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-66-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-66-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-66-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -2992,7 +2992,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.2397244</td>
 <td style="text-align: right;">3.228211</td>
 <td style="text-align: right;">0.0378773</td>
-<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">0.049</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -3017,7 +3017,7 @@ UC\_vs\_nonIBD
 
     output[[5]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-67-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-67-1.png)
 
 #### Differential abundance plots
 
@@ -3025,77 +3025,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-68-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-68-15.png)
 
 ### Phylum
 
@@ -3105,12 +3105,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-69-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-69-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-69-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-69-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -3136,7 +3136,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.2224174</td>
 <td style="text-align: right;">3.287131</td>
 <td style="text-align: right;">0.0385419</td>
-<td style="text-align: right;">0.056</td>
+<td style="text-align: right;">0.063</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -3161,7 +3161,7 @@ UC\_vs\_nonIBD
 
     output[[6]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-70-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-70-1.png)
 
 #### Differential abundance plots
 
@@ -3169,77 +3169,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-71-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-71-15.png)
 
 ### Superkingdom
 
@@ -3249,12 +3249,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-72-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-72-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-72-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-72-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -3280,7 +3280,7 @@ UC\_vs\_nonIBD
 <td style="text-align: right;">0.0008269</td>
 <td style="text-align: right;">0.2393747</td>
 <td style="text-align: right;">0.0029107</td>
-<td style="text-align: right;">0.627</td>
+<td style="text-align: right;">0.646</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -3305,7 +3305,7 @@ UC\_vs\_nonIBD
 
     output[[7]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-73-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-73-1.png)
 
 #### Differential abundance plots
 
@@ -3313,77 +3313,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-74-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-74-15.png)
 
 ### Pathway
 
@@ -3393,12 +3393,12 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-75-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-75-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-75-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-75-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -3449,7 +3449,7 @@ UC\_vs\_nonIBD
 
     output[[8]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-76-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-76-1.png)
 
 #### Differential abundance plots
 
@@ -3457,77 +3457,77 @@ UC\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-77-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-77-15.png)
 
 CD\_vs\_nonIBD
 --------------
@@ -3543,12 +3543,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-79-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-79-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-79-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-79-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -3599,7 +3599,7 @@ CD\_vs\_nonIBD
 
     output[[1]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-80-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-80-1.png)
 
 #### Differential abundance plots
 
@@ -3607,77 +3607,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-81-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-81-15.png)
 
 ### Genus
 
@@ -3687,12 +3687,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-82-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-82-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-82-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-82-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -3743,7 +3743,7 @@ CD\_vs\_nonIBD
 
     output[[2]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-83-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-83-1.png)
 
 #### Differential abundance plots
 
@@ -3751,77 +3751,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-84-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-84-15.png)
 
 ### Family
 
@@ -3831,12 +3831,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-85-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-85-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-85-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-85-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -3887,7 +3887,7 @@ CD\_vs\_nonIBD
 
     output[[3]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-86-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-86-1.png)
 
 #### Differential abundance plots
 
@@ -3895,77 +3895,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-87-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-87-15.png)
 
 ### Order
 
@@ -3975,12 +3975,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-88-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-88-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-88-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-88-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -4031,7 +4031,7 @@ CD\_vs\_nonIBD
 
     output[[4]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-89-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-89-1.png)
 
 #### Differential abundance plots
 
@@ -4039,77 +4039,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-90-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-90-15.png)
 
 ### Class
 
@@ -4119,12 +4119,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-91-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-91-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-91-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-91-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -4175,7 +4175,7 @@ CD\_vs\_nonIBD
 
     output[[5]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-92-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-92-1.png)
 
 #### Differential abundance plots
 
@@ -4183,77 +4183,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-93-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-93-15.png)
 
 ### Phylum
 
@@ -4263,12 +4263,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-94-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-94-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-94-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-94-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -4319,7 +4319,7 @@ CD\_vs\_nonIBD
 
     output[[6]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-95-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-95-1.png)
 
 #### Differential abundance plots
 
@@ -4327,77 +4327,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-96-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-96-15.png)
 
 ### Superkingdom
 
@@ -4407,12 +4407,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-97-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-97-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-97-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-97-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -4438,7 +4438,7 @@ CD\_vs\_nonIBD
 <td style="text-align: right;">0.0006216</td>
 <td style="text-align: right;">0.2154728</td>
 <td style="text-align: right;">0.0014249</td>
-<td style="text-align: right;">0.667</td>
+<td style="text-align: right;">0.714</td>
 </tr>
 <tr class="even">
 <td>Residuals</td>
@@ -4463,7 +4463,7 @@ CD\_vs\_nonIBD
 
     output[[7]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-98-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-98-1.png)
 
 #### Differential abundance plots
 
@@ -4471,77 +4471,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-99-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-99-15.png)
 
 ### Pathway
 
@@ -4551,12 +4551,12 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-100-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-100-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-100-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-100-2.png)
 
 #### PERMANOVA (Bray Curtis)
 
@@ -4607,7 +4607,7 @@ CD\_vs\_nonIBD
 
     output[[8]][[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-101-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-101-1.png)
 
 #### Differential abundance plots
 
@@ -4615,77 +4615,77 @@ CD\_vs\_nonIBD
 
     ## [[1]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-1.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-1.png)
 
     ## 
     ## [[2]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-2.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-2.png)
 
     ## 
     ## [[3]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-3.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-3.png)
 
     ## 
     ## [[4]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-4.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-4.png)
 
     ## 
     ## [[5]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-5.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-5.png)
 
     ## 
     ## [[6]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-6.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-6.png)
 
     ## 
     ## [[7]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-7.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-7.png)
 
     ## 
     ## [[8]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-8.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-8.png)
 
     ## 
     ## [[9]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-9.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-9.png)
 
     ## 
     ## [[10]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-10.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-10.png)
 
     ## 
     ## [[11]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-11.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-11.png)
 
     ## 
     ## [[12]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-12.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-12.png)
 
     ## 
     ## [[13]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-13.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-13.png)
 
     ## 
     ## [[14]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-14.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-14.png)
 
     ## 
     ## [[15]]
 
-![](CD_vs_nonIBD_files/figure-markdown_strict/unnamed-chunk-102-15.png)
+![](data_exploration_report_files/figure-markdown_strict/unnamed-chunk-102-15.png)
 
 Pittayanon, Rapat, Jennifer T. Lau, Grigorios I. Leontiadis, Frances
 Tse, Yuhong Yuan, Michael Surette, and Paul Moayyedi. 2019. “Differences
