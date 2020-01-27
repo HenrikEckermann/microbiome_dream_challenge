@@ -55,9 +55,9 @@ compare_groups <- function(
     ###### Select data accordings to task
 
     if (task == "IBD_vs_nonIBD") {
-      df <- df %>%
-          mutate(group = ifelse(group %in% c(1,2), 1, 0))
-      df$group <- as.factor(df$group)
+        df <- df %>%
+            mutate(group = ifelse(group %in% c(1,2), 1, 0))
+        df$group <- as.factor(df$group)
      } else if (task == "UC_vs_nonIBD") {
          df <- df %>%
              filter(group %in% c(0, 2)) %>%
@@ -161,8 +161,8 @@ compare_groups <- function(
 
     
     otu <- column_to_rownames(df, "sampleID")
-    labels <- labels$group
-    pm <- adonis(otu ~ labels)
+    group <- labels$group
+    pm <- adonis(otu ~ group)
     pm_aov <- pm$aov.tab
 
     coefs <- pm$coefficient %>% as.data.frame() %>%
@@ -175,16 +175,16 @@ compare_groups <- function(
 
 
     if (task == "IBD_vs_nonIBD") {
-      coef_v <- "labels1"
+      coef_v <- "group1"
       coef_title <- "IBD"
      } else if (task == "UC_vs_nonIBD") {
-         coef_v <- "labels1"
+         coef_v <- "group1"
          coef_title <- "UC"
      } else if (task == "CD_vs_nonIBD") {
-         coef_v <- "labels1"
+         coef_v <- "group1"
          coef_title <- "CD"
      } else if (task == "UC_vs_CD") {
-         coef_v <- "labels1"
+         coef_v <- "group1"
          coef_title <- "UC"
     }
 
@@ -226,7 +226,7 @@ compare_groups <- function(
 
     # add labels back
     plot_df <- df %>% left_join(
-      select(taxa_by_level[["species"]], sampleID, group), 
+      labels, 
       by = "sampleID")
 
     # plot difference in abundance
@@ -260,6 +260,7 @@ compare_groups <- function(
 
 
 }
+
 
 
 
