@@ -3,178 +3,194 @@ library(glue)
 library(here)
 library(randomForest)
 
+source("https://raw.githubusercontent.com/HenrikEckermann/in_use/master/mb_helper.R")
+source("https://raw.githubusercontent.com/HenrikEckermann/in_use/master/ml_helper.R")
 
 
-########## Select taxonomic level or pathway 
-
+# import data 
 load(here("data/processed/tax_abundances.RDS"))
-# use "pathway" for pathway abundances
-features <- "species"
+load(here("data/processed/pathway_abundances.RDS"))
 
-if (features %in% names(taxa_by_level)) {
-  df <- taxa_by_level[[features]] %>%
-    select(-sampleID)
-    } else {
-  load("data/processed/pathway_abundances.RDS")
-  df <- path_abu %>%
-    select(-sampleID)
-}
+task <- "CD_vs_nonIBD"
+# for shannon_df and pcx object we need to select feature
+feature_name <- "species"
 
-# pathway df cannot be printed (too many cols)
-if (features != "pathway") {
-  head(df)
-}
+# create a complete df of all features
+df_all <- map_dfc(c(names(taxa_by_level), "pathway"), function(feature_name) {
+  load(here(glue("data/processed/{task}_{feature_name}_data.rds")))
+  df
+})
 
+# get PCs from species PCA
+load(here(glue("data/processed/{task}_{feature_name}_data.rds")))
+pcs_sp <- pcx$x %>% 
+ as.data.frame() %>% 
+ rownames_to_column("sampleID") 
+colnames(pcs_sp) <- glue("{colnames(pcs_sp)}_sp")
+pcs_sp <- select(pcs_sp, sampleID = sampleID_sp, everything())
 
+# get PCs from genus PCA
+feature_name <- "genus"
+load(here(glue("data/processed/{task}_{feature_name}_data.rds")))
+pcs_gn <- pcx$x %>% 
+ as.data.frame() %>% 
+ rownames_to_column("sampleID") 
+colnames(pcs_gn) <- glue("{colnames(pcs_gn)}_gn")
+pcs_gn <- select(pcs_gn, sampleID = sampleID_gn, everything())
+
+# get PCs from pathway PCA
+feature_name <- "pathway"
+load(here(glue("data/processed/{task}_{feature_name}_data.rds")))
+pcs_pw <- pcx$x %>% 
+  as.data.frame() %>% 
+  rownames_to_column("sampleID")
+colnames(pcs_pw) <- glue("{colnames(pcs_pw)}_pw")
+pcs_pw <- select(pcs_pw, sampleID = sampleID_pw, everything())
  
-########## k-fold Cross validation with p% of data as train
-
-k = 10
-p <- 0.8
-set.seed(4)
-train_index <- caret::createDataPartition(df$group, times = k, p = p)
 
 
+df_all <-  df_all %>%
+  left_join(pcs_sp, by = "sampleID") %>%
+  left_join(pcs_gn, by = "sampleID") %>%
+  left_join(pcs_pw, by = "sampleID") %>%
+  left_join(select(shannon_df, -group), by = "sampleID") %>%
+  left_join(labels, by = "sampleID")
 
-########## Model fitting 
-
-# select classifier
-classifier <- "randomForest"
-
-# fit models
-if (classifier == "randomForest") {
-  # fit RF model for k folds and store in list unless model exists already
-  if (!file.exists(here(glue("data/models/{features}_{classifier}.Rds")))) {
-    models <- map(train_index, function(ti) {
-      train <- df[ti, ]
-      test <- df[-ti, ]
-      model <- randomForest(
-        formula = group ~ .,
-        data = train,
-        ntree = 5000,
-        importance = TRUE
-      )
-    })
-  }
- } else if (classifier == "XGBoost") {
-   #### XGBoost ####
-}
+# model_pc <- randomForest(
+#   y = pcs$group,
+#   x = select(pcs, -sampleID, -group, PC1, PC2, PC3, PC4),
+#   ntree = 1e4,
+#   importance = TRUE
+# ) 
+# 
+# model <- randomForest(
+#   y = labels$group,
+#   x = select(df, -sampleID),
+#   ntree = 1e4,
+#   importance = TRUE
+# )
 
 
-# save models incl the used train/test ids
-if (!file.exists(here(glue("data/models/{features}_{classifier}.Rds")))) {
-  save(
-    models, 
-    train_index, 
-    file = here(glue("data/models/{features}_{classifier}.Rds")))
-  }
+feat_spc <- c(
+    "Escherichiacoli",
+    "Klebsiellapneumoniae",
+    "Faecalibacteriumprausnitzii",
+    "Eubacteriumrectale",
+    "Ruminococcusbicirculans",
+    "Anaerostipeshadrus",
+    "LachnospiraceaebacteriumGAM79",
+    "DialisterspMarseilleP5638",
+    "Eubacteriumeligens",
+    "Roseburiahominis",
+    "Veillonellaparvula",
+    "Bacteroidesfragilis",
+    "Clostridiumbolteae",
+    "Bacteroidesthetaiotaomicron",
+    "Bacteroidesovatus",
+    "shannon", 
+    "PC1"
+)
+features <- c(
+  # Species 
+  "Bifidobacteriumbifidum", # lit
+  "Bifidobacteriumlongum",  # lit
+  "Roseburiahominis",
+  "Clostridiumbolteae", 
+  # Genus
+  "Akkermansia", # lit
+  "Shigella", # lit
+  "Enterobacteriaceae", # lit
+  "Escherichia",
+  "Bacteroides",
+  "Klebsiella",
+  "Lachnoclostridium",
+  "Veillonella",
+  "Fusobacterium",
+  "Parabacteroides",
+  "Dialister",
+  "Roseburia",
+  "Anaerostipes",
+  "Ruminococcus",
+  "Eubacterium",
+  "Bifidobacterium",
+  "CandidatusCloacimonas",
+  "Faecalibacterium",
+  # Family
+  "Coriobacteriaceae",
+  "Christensenellaceae",
+  
+  # Phylum 
+  "Tenericutes", # lit
+  "Lentisphaerae", # lit
+  "Actinobacteria", # lit
+  "Firmicutes", # lit
+  "Proteobacteria", # lit 
+  "Eubacteriumrectale", # lit
+  # pathways
+  "UNINTEGRATEDgEscherichiasEscherichiacoli",
+  "UNINTEGRATED",
+  "UNINTEGRATEDgKlebsiellasKlebsiellapneumoniae",
+  "UNINTEGRATEDgBlautiasRuminococcusgnavus",
+  "UNINTEGRATEDgClostridiumsClostridiumsymbiosum",
+  "UNINTEGRATEDgBacteroidessBacteroidescoprocola",
+  "UNINTEGRATEDgBacteroidessBacteroidesstercoris",
+  "UNINTEGRATEDgPrevotellasPrevotellacopri",
+  "UNINTEGRATEDgBacteroidessBacteroidesplebeius",
+  "UNINTEGRATEDgRoseburiasRoseburiainulinivorans",
+  "UNINTEGRATEDgEubacteriumsEubacteriumrectale",
+  "UNINTEGRATEDgBacteroidessBacteroidesuniformis",
+  "UNMAPPED",
+  "UNINTEGRATEDgFaecalibacteriumsFaecalibacteriumprausnitzii",
+  "UNINTEGRATEDunclassified",
+  # other 
+  "shannon",
+  "PC1_sp",
+  "PC2_sp",
+  "PC3_sp",
+  "PC4_sp",
+  # "PC1_gn",
+  # "PC2_gn",
+  # "PC3_gn",
+  # "PC4_gn",
+  "PC1_pw",
+  "PC2_pw",
+  "PC3_pw",
+  "PC4_pw"
+)
+df_all$
+# next: try to add species etc. mentioned by literature...
+
+custom_rf <- rf_summary(
+  df_all, 
+  features,
+  outcome = "group",
+  regression = FALSE
+)
 
 
 
-########## Model evaluation
-
-load(file = here(glue("data/models/{features}_{classifier}.Rds")))
-# calculate multilogloss 
-multi_ll <- map2_df(models, train_index, function(model, ti) {
-  test <- df[-ti, ]
-  pred_prob <- predict(model, test, type = "prob")
-  mlm <- MLmetrics::MultiLogLoss(pred_prob, test$group)
-})
-# summarise multilogloss over k fold
-multi_ll %>% 
-  as_tibble() %>% 
-  gather() %>% 
-  summarise(mean = mean(value), sd = sd(value))
+custom_rf
 
 
-
-
-
-
-
-# calculate evaluation metric from stored models and test data 
-class_error_oob <- map2_df(models, train_index, function(model, ti) {
-  test <- df[-ti, ] 
-  class_error_oob <- model$confusion %>% 
-    as.data.frame() %>%
-    rownames_to_column("group")
-})
-
-# average oob class error over k fold 
-class_error_oob %>% 
-  group_by(group) %>% 
-  summarise(
-    mean = mean(class.error), 
-    sd = sd(class.error))
-
-
-########## The RF model cannot classify UC at all. I will try the extremely  
-########## randomized trees algorithm as described by Geurts in a next step 
-
-
-# fit models for k folds and store in list unless model exists already
-library(ranger)
-if (!file.exists(here(glue("data/models/{features}_ert_models.Rds")))) {
-  ert_models <- map(train_index, function(ti) {
-    train <- df[ti, ]
-    test <- df[-ti, ]
-    model <- ranger(
-      formula = group ~ .,
-      data = train,
-      splitrule = "extratrees",
-      num.trees = 5000,
-      replace = FALSE,
-      sample.fraction = 1,
-      importance = 'impurity',
-      write.forest = TRUE,
-      probability = TRUE
-    )
-  })
-}
-
-save(
-  ert_models, 
-  train_index, 
-  file = here(glue("data/models/{features}_ert_models.Rds")))
-
-# calculate evaluation metric from stored models and test data 
-load(file = here(glue("data/models/{features}_ert_models.Rds")))
-ert_class_error <- map2_df(ert_models, train_index, function(model, ti) {
-  test <- df[-ti, ]
-  tespred <- predict(model, test)
-  # calculate error rate per class 
-  testpred$predictions %>%
-    as_tibble() %>%
-    mutate(id = c(1:length(test$group))) %>% # need index to transpose next
-    gather(group_pred, prob, -id) %>% # gather and spread to transpose 
-    spread(id, prob) %>%
-    mutate_if(is.numeric, function(prob) { # only keep the max prob as pred
-      ifelse(prob == max(prob), 1, 0)
-    }) %>%
-    gather(id, pred, -group_pred) %>%
-    filter(pred == 1) %>%
-    bind_cols(test %>% select(group)) %>% # compare to test set 
-    select(group, group_pred) %>%
-    mutate(correct = group == group_pred) %>%
-    group_by(group) %>%
-    summarise(class_error = 1- mean(correct))
-})
-
-# summarise class error over k fold 
-ert_class_error %>%
-  group_by(group) %>%
-  summarise(mean = mean(class_error), sd = sd(class_error))
-
-
-multi_ll <- map2_df(ert_models, train_index, function(model, ti) {
-  test <- df[-ti, ] 
-  # multilogloss
-  pred_prob <- predict(model, test)$predictions
-  mlm <- MLmetrics::MultiLogLoss(pred_prob, test$group)
-})
-
-# summarise multilogloss over k fold
-multi_ll %>% 
-  as_tibble() %>% 
-  gather() %>% 
-  summarise(mean = mean(value), sd = sd(value))
+# tune rf algorithm
+library(caret)
+fit_control <- trainControl(## 5-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated 5 times
+                           repeats = 1)
+                           
+mtry <- c(143, seq(1, 20364, 200))
+hg_ef <- expand.grid(
+  .mtry = mtry,
+  .splitrule = "extratrees",
+  .min.node.size = c(1, 5, 10, 15)
+)
+fit_ef <- train(
+  y = df_all[["group"]],
+  x = df_all %>% select(features),
+  method = "ranger",
+  tuneGrid = hg_ef,
+  num_trees = 5000,
+  replace =
+)

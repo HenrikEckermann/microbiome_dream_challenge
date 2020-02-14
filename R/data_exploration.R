@@ -368,7 +368,21 @@ compare_groups <- function(
           theme_bw(base_size = 30)
   
   
+<<<<<<< HEAD
+  # save task files for later
+  if(!file.exists(here(glue("data/processed/{task}_{feature_name}_data.rds")))) {
+    save(
+      pcx,
+      pseq_clr,
+      df,
+      labels,
+      shannon_df,
+      file = here(glue("data/processed/{task}_{feature_name}_data.rds"))
+    )
+  }
+=======
   
+>>>>>>> faca951ecf80c7906a558749a6115faeeec69a27
   
   list(
     pca_plot1,
@@ -470,3 +484,8 @@ compare_groups <- function(
 # - main findings of IBD_vs_nonIBD apply 
 # - alpha diversity difference highest 
 # - proteobacteria vs firmicutes at phylum level
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> faca951ecf80c7906a558749a6115faeeec69a27
