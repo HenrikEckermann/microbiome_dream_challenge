@@ -1,7 +1,11 @@
 ---
 title: "Differences in gut microbiota in CD vs nonIBD"
 output:
-  md_document
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    collapsed: false
 
 bibliography: "../bib/my_library.bib"
 ---
@@ -61,7 +65,6 @@ source(here("R/data_exploration.R"))
 
 
 # MEDIC DATA 
-Keep in mind that I do not have the count data but only relative abundances. So I could not use CLR transformed data for statistical testing or DeSeq2.
 
 
 ## IBD_vs_nonIBD
@@ -72,6 +75,12 @@ output <- map(feature_names, ~compare_groups(feature_name = .x, task = "IBD_vs_n
 ```
 
 ### Species
+
+#### PCA (Aitchison)
+
+```{r}
+output[[1]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -96,7 +105,20 @@ output[[1]][[7]]
 ```
 
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[1]][[8]]
+```
+
 ### Genus
+
+
+#### PCA (Aitchison)
+
+```{r}
+output[[2]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -120,8 +142,19 @@ output[[2]][[6]]
 output[[2]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[2]][[8]]
+```
 
 ### Family
+
+#### PCA (Aitchison)
+
+```{r}
+output[[3]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -145,9 +178,19 @@ output[[3]][[6]]
 output[[3]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[3]][[8]]
+```
 
 ### Order
+
+#### PCA (Aitchison)
+
+```{r}
+output[[4]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -171,8 +214,19 @@ output[[4]][[6]]
 output[[4]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[4]][[8]]
+```
 
 ### Class
+
+#### PCA (Aitchison)
+
+```{r}
+output[[5]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -196,7 +250,20 @@ output[[5]][[6]]
 output[[5]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[5]][[8]]
+```
+
+
 ### Phylum
+
+#### PCA (Aitchison)
+
+```{r}
+output[[6]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -220,8 +287,19 @@ output[[6]][[6]]
 output[[6]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[6]][[8]]
+```
 
 ### Superkingdom
+
+#### PCA (Aitchison)
+
+```{r}
+output[[7]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -245,9 +323,19 @@ output[[7]][[6]]
 output[[7]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[7]][[8]]
+```
 
 ### Pathway
+
+#### PCA (Aitchison)
+
+```{r}
+output[[8]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -272,7 +360,11 @@ output[[8]][[7]]
 ```
 
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[8]][[8]]
+```
 
 
 
@@ -289,6 +381,12 @@ output <- map(feature_names, ~compare_groups(feature_name = .x, task = "UC_vs_CD
 
 ### Species
 
+#### PCA (Aitchison)
+
+```{r}
+output[[1]][c(1, 2)]
+```
+
 #### PCoA (Bray Curtis)
 
 ```{r}
@@ -312,7 +410,20 @@ output[[1]][[7]]
 ```
 
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[1]][[8]]
+```
+
 ### Genus
+
+
+#### PCA (Aitchison)
+
+```{r}
+output[[2]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -336,8 +447,19 @@ output[[2]][[6]]
 output[[2]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[2]][[8]]
+```
 
 ### Family
+
+#### PCA (Aitchison)
+
+```{r}
+output[[3]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -361,9 +483,19 @@ output[[3]][[6]]
 output[[3]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[3]][[8]]
+```
 
 ### Order
+
+#### PCA (Aitchison)
+
+```{r}
+output[[4]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -387,8 +519,19 @@ output[[4]][[6]]
 output[[4]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[4]][[8]]
+```
 
 ### Class
+
+#### PCA (Aitchison)
+
+```{r}
+output[[5]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -412,7 +555,20 @@ output[[5]][[6]]
 output[[5]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[5]][[8]]
+```
+
+
 ### Phylum
+
+#### PCA (Aitchison)
+
+```{r}
+output[[6]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -436,8 +592,19 @@ output[[6]][[6]]
 output[[6]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[6]][[8]]
+```
 
 ### Superkingdom
+
+#### PCA (Aitchison)
+
+```{r}
+output[[7]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -461,9 +628,19 @@ output[[7]][[6]]
 output[[7]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[7]][[8]]
+```
 
 ### Pathway
+
+#### PCA (Aitchison)
+
+```{r}
+output[[8]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -488,8 +665,11 @@ output[[8]][[7]]
 ```
 
 
+#### Shannon diversity linear model coefficients
 
-
+```{r}
+output[[8]][[8]]
+```
 
 
 
@@ -507,6 +687,12 @@ output <- map(feature_names, ~compare_groups(feature_name = .x, task = "UC_vs_no
 
 ### Species
 
+#### PCA (Aitchison)
+
+```{r}
+output[[1]][c(1, 2)]
+```
+
 #### PCoA (Bray Curtis)
 
 ```{r}
@@ -530,7 +716,20 @@ output[[1]][[7]]
 ```
 
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[1]][[8]]
+```
+
 ### Genus
+
+
+#### PCA (Aitchison)
+
+```{r}
+output[[2]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -554,8 +753,19 @@ output[[2]][[6]]
 output[[2]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[2]][[8]]
+```
 
 ### Family
+
+#### PCA (Aitchison)
+
+```{r}
+output[[3]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -579,9 +789,19 @@ output[[3]][[6]]
 output[[3]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[3]][[8]]
+```
 
 ### Order
+
+#### PCA (Aitchison)
+
+```{r}
+output[[4]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -605,8 +825,19 @@ output[[4]][[6]]
 output[[4]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[4]][[8]]
+```
 
 ### Class
+
+#### PCA (Aitchison)
+
+```{r}
+output[[5]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -630,7 +861,20 @@ output[[5]][[6]]
 output[[5]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[5]][[8]]
+```
+
+
 ### Phylum
+
+#### PCA (Aitchison)
+
+```{r}
+output[[6]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -654,8 +898,19 @@ output[[6]][[6]]
 output[[6]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[6]][[8]]
+```
 
 ### Superkingdom
+
+#### PCA (Aitchison)
+
+```{r}
+output[[7]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -679,9 +934,19 @@ output[[7]][[6]]
 output[[7]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[7]][[8]]
+```
 
 ### Pathway
+
+#### PCA (Aitchison)
+
+```{r}
+output[[8]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -703,6 +968,13 @@ output[[8]][[6]]
 
 ```{r}
 output[[8]][[7]]
+```
+
+
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[8]][[8]]
 ```
 
 
@@ -727,6 +999,12 @@ output <- map(feature_names, ~compare_groups(feature_name = .x, task = "CD_vs_no
 
 ### Species
 
+#### PCA (Aitchison)
+
+```{r}
+output[[1]][c(1, 2)]
+```
+
 #### PCoA (Bray Curtis)
 
 ```{r}
@@ -750,7 +1028,20 @@ output[[1]][[7]]
 ```
 
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[1]][[8]]
+```
+
 ### Genus
+
+
+#### PCA (Aitchison)
+
+```{r}
+output[[2]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -774,8 +1065,19 @@ output[[2]][[6]]
 output[[2]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[2]][[8]]
+```
 
 ### Family
+
+#### PCA (Aitchison)
+
+```{r}
+output[[3]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -799,9 +1101,19 @@ output[[3]][[6]]
 output[[3]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[3]][[8]]
+```
 
 ### Order
+
+#### PCA (Aitchison)
+
+```{r}
+output[[4]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -825,8 +1137,19 @@ output[[4]][[6]]
 output[[4]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[4]][[8]]
+```
 
 ### Class
+
+#### PCA (Aitchison)
+
+```{r}
+output[[5]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -850,7 +1173,20 @@ output[[5]][[6]]
 output[[5]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[5]][[8]]
+```
+
+
 ### Phylum
+
+#### PCA (Aitchison)
+
+```{r}
+output[[6]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -874,8 +1210,19 @@ output[[6]][[6]]
 output[[6]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[6]][[8]]
+```
 
 ### Superkingdom
+
+#### PCA (Aitchison)
+
+```{r}
+output[[7]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -899,9 +1246,19 @@ output[[7]][[6]]
 output[[7]][[7]]
 ```
 
+#### Shannon diversity linear model coefficients
 
+```{r}
+output[[7]][[8]]
+```
 
 ### Pathway
+
+#### PCA (Aitchison)
+
+```{r}
+output[[8]][c(1, 2)]
+```
 
 #### PCoA (Bray Curtis)
 
@@ -925,3 +1282,9 @@ output[[8]][[6]]
 output[[8]][[7]]
 ```
 
+
+#### Shannon diversity linear model coefficients
+
+```{r}
+output[[8]][[8]]
+```
