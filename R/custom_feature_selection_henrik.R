@@ -2,6 +2,7 @@ library(tidyverse)
 library(glue)
 library(here)
 library(randomForest)
+library(xgboost)
 
 source(here("R/ml_helper.R"))
 #source("https://raw.githubusercontent.com/HenrikEckermann/in_use/master/mb_helper.R")
@@ -12,9 +13,11 @@ source(here("R/ml_helper.R"))
 load(here("data/processed/tax_abundances.RDS"))
 load(here("data/processed/pathway_abundances.RDS"))
 
-task <- "UC_vs_nonIBD"
+task <- "UC_vs_CD"
 # for shannon_df and pcx object we need to select feature
 feature_name <- "species"
+classifier <- "randomForest"
+
 
 # create a complete df of all features
 df_all <- map_dfc(c(names(taxa_by_level), "pathway"), function(feature_name) {
@@ -150,40 +153,65 @@ features <- c(
 # next: try to add species etc. mentioned by literature...
 
 
-set.seed(6)
-custom_rf <- rf_summary(
-  df_all, 
-  features,
-  y = "group",
-  regression = FALSE
-)
 
-
-
-custom_rf
 
 
 
 
 set.seed(6)
-models_and_data2 <- fit_cv(
+models_and_data1 <- fit_cv(
   df_all, 
   features, 
   y = "group", 
   p = 0.8,
   k = 10,
-  model_type = "randomForest", 
+  model_type = classifier, 
   ntree = 5000
 )
 
-class(models_and_data2)
-summarize_metrics(models_and_data2, y = "group")
 
-select_features(models_and_data2)
-  
+
+
+summarize_metrics(models_and_data1, y = "group", model_type = classifier, features = features) %>% 
+  mutate(task = task, feature_name = "custom", classifier = classifier, n_features = length(features)) %>%
+  select(metric, task, feature_name, classifier, n_features, mean, sd)
+
+sel_feat <- select_features(models_and_data1) 
+
 ########## Extract top n_features features from models based on RF perm imp
+set.seed(6)
+models_and_data2 <- fit_cv(
+  df_all, 
+  sel_feat$id, 
+  y = "group", 
+  p = 0.8,
+  k = 10,
+  model_type = classifier, 
+  ntree = 5000
+)
 
-selected_features
+
+summarize_metrics(models_and_data2, y = "group", model_type = classifier, features = features) %>% 
+  mutate(task = task, feature_name = "custom", classifier = classifier, n_features = length(features)) %>%
+  select(metric, task, feature_name, classifier, n_features, mean, sd)
+
+sel_feat <- select_features(models_and_data2) 
+
+########## Extract top n_features features from models based on RF perm imp
+set.seed(6)
+models_and_data3 <- fit_cv(
+  df_all, 
+  sel_feat$id, 
+  y = "group", 
+  p = 0.8,
+  k = 10,
+  model_type = classifier, 
+  ntree = 5000
+)
 
 
+summarize_metrics(models_and_data3, y = "group", model_type = classifier, features = features) %>% 
+  mutate(task = task, feature_name = "custom", classifier = classifier, n_features = length(features)) %>%
+  select(metric, task, feature_name, classifier, n_features, mean, sd)
+  
   

@@ -235,7 +235,7 @@ example2
 # there are 12650, 5061 and 1450 features for path, spec and gen respectively
 # find the optimal n_features per task/feature 
 n_features_list <- as.list(c(NA, seq(50, 1000, 25)))
-tasks <- list("IBD_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_nonIBD", "UC_vs_nonIBD")
+tasks <- list("IBD_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_nonIBD", "UC_vs_CD")
 feature_list <- list("species", "genus", "pathway")
 classifier_list <- list("randomForest", "XGBoost")
 # evaluate all non custom models  
@@ -268,9 +268,57 @@ metrics_all <- map_dfr(n_features_list, function(n_features) {
     })
 })
 
-save(
-  metrics_all, 
-  file = here("data/output/metrics_all.Rds")
-)
-metrics_all %>% arrange(task, metric, mean)
+# save(
+#   metrics_all, 
+#   file = here("data/output/metrics_all.Rds")
+# )
 
+load(here("data/output/metrics_all.Rds"))
+
+metrics_all <- metrics_all %>% mutate(id = c(1:dim(metrics_all)[1])) %>%
+  select(id, everything())
+
+metrics_all_f1 <- metrics_all %>% filter(metric == "F1")
+metrics_all_ll <- metrics_all %>% filter(metric == "logloss")
+
+
+
+
+metrics_f1_nested <- metrics_all_f1 %>% 
+  arrange(task, feature_name, mean) %>% 
+  group_by(task, feature_name) %>%
+  nest()
+  
+metrics_ll_nested <- metrics_all_ll %>% 
+  arrange(task, feature_name, mean) %>% 
+  group_by(task, feature_name) %>%
+  nest()
+
+metrics_f1_nested$data
+
+metrics_f1_nested$data <- map(metrics_f1_nested$data, function(df) {
+  df_new <- filter(df, mean == max(mean)) %>%
+    filter(sd == min(sd)) %>% 
+    mutate(n_features = ifelse(is.na(n_features), 99999, n_features)) %>%
+    filter(n_features == min(n_features))  %>%
+    filter(id == min(id))
+})
+
+metrics_ll_nested$data <- map(metrics_ll_nested$data, function(df) {
+  df_new <- filter(df, mean == min(mean)) %>%
+    filter(sd == min(sd)) %>% 
+    mutate(n_features = ifelse(is.na(n_features), 99999, n_features)) %>%
+    filter(n_features == min(n_features))  %>%
+    filter(id == min(id))
+})
+
+
+metrics_f1_final <- unnest(metrics_f1_nested) %>% arrange(task, desc(mean), sd) %>%
+  select(metric, task, feature_name, classifier, n_features, mean, sd)
+
+metrics_ll_final <- unnest(metrics_ll_nested) %>% arrange(task, mean, sd) %>%
+  select(metric, task, feature_name, classifier, n_features, mean, sd)
+
+
+metrics_f1_final
+metrics_ll_final
