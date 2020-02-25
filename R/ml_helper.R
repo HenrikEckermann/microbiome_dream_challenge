@@ -38,8 +38,12 @@ model_eval <- function(
       }
       # logloss 
       log_l <- MLmetrics::LogLoss(y_pred_prob, y_true)
+      
       # F1 scores
-      f_one <- MLmetrics::F1_Score(y_true, y_pred_resp)
+      f_one <- MLmetrics::F1_Score(
+        factor(y_true, levels = c("0", "1")), 
+        factor(y_pred_resp, levels = c("0", "1"))
+      )
     }
     
     metric <- tibble(logloss = log_l, F1 = f_one)
@@ -112,7 +116,8 @@ fit_cv <- function(
           print_every_n = 10, 
           early_stop_round = 10,
           maximize = FALSE,
-          eval_metric = "logloss"
+          eval_metric = "logloss",
+          verbose = 0
         )
       }
       # return fitted model and corresponding test data set

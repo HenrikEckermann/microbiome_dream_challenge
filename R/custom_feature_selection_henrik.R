@@ -12,7 +12,7 @@ source(here("R/ml_helper.R"))
 load(here("data/processed/tax_abundances.RDS"))
 load(here("data/processed/pathway_abundances.RDS"))
 
-task <- "CD_vs_nonIBD"
+task <- "UC_vs_nonIBD"
 # for shannon_df and pcx object we need to select feature
 feature_name <- "species"
 
@@ -176,6 +176,7 @@ models_and_data2 <- fit_cv(
   ntree = 5000
 )
 
+class(models_and_data2)
 summarize_metrics(models_and_data2, y = "group")
 
 select_features(models_and_data2)

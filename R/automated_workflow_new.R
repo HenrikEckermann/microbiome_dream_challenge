@@ -58,9 +58,9 @@ fit_and_evaluate <- function(
       
   # create df if not provided
   if (!custom_df) {
-    
+  
     ###### SELECT DATA ACCORDING TO TAXONOMIC LEVEL OR PATHWAY 
-
+  
     if (feature_name %in% names(taxa_by_level)) {
       df <- taxa_by_level[[feature_name]] %>%
         select(-sampleID)
@@ -89,10 +89,10 @@ fit_and_evaluate <- function(
           by = "sampleID") %>%
         select(-sampleID)
     }
-    
-    
+  
+  
     ###### SELECT DATA ACCORDING TO TASK
-    
+  
     if (task == "IBD_vs_nonIBD") {
       df <- df %>%
           mutate(group = ifelse(group %in% c(1,2), 1, 0))
@@ -113,12 +113,12 @@ fit_and_evaluate <- function(
          df$group <- as.factor(df$group)
     }
   }
-    
+  
   
   # specify features if not provided (if custom_df = FALSE, features should be
   # provided)
   if (is.na(features)) {
-    
+    features <- colnames(select(df, -group))
   }
 
   
@@ -129,7 +129,7 @@ fit_and_evaluate <- function(
     if (file.exists(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))) {
       top_predictors <- load(glue(here("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
      } else {
-       
+  
        # fit k RF models 
        models_and_data <- fit_cv(
          df, 
@@ -140,14 +140,14 @@ fit_and_evaluate <- function(
          model_type = "randomForest", 
          ntree = ntree
        )
-       
+  
        # colname needed to select features below
        id_name <- ifelse(
          feature_name %in% names(taxa_by_level), "TaxID", "PathID")
-         
+  
        # perform selection
        select_features(models_and_data, id_name, n_features)
-       
+  
        # store selected features in file
        save(
          selected_features, 
@@ -180,16 +180,23 @@ fit_and_evaluate <- function(
       model_type = classifier,
       ntree = ntree
     )
-    
-    
-    
+   
    ###### MODEL EVALUATION 
-
+   
    summarize_metrics(models_and_data, y = y, model_type = classifier, features = features)
+
 }
 
 
-test <- fit_and_evaluate(
+
+###### EXAMPLES
+
+
+
+# random forest for final model
+# feature selection disabled 
+# only select from species 
+example1 <- fit_and_evaluate(
   custom_df = FALSE, 
   task = "CD_vs_nonIBD", 
   feature_name = "species",
@@ -200,7 +207,70 @@ test <- fit_and_evaluate(
   p = 0.8, 
   seed = 4,
   ntree = 5000,
+  n_features = NA) 
+
+example1
+
+# random forest for final model
+# feature selection active 
+# only select from species 
+example2 <- fit_and_evaluate(
+  custom_df = FALSE, 
+  task = "UC_vs_nonIBD", 
+  feature_name = "species",
+  features = NA, 
+  y = "group",
+  classifier = "randomForest", 
+  k = 10, 
+  p = 0.8, 
+  seed = 4,
+  ntree = 5000,
   n_features = 50)
 
+example2
 
-test    
+
+
+###### CREATE TABLE OF ALL TASKS, FEATURES AND SOME N_FEATURES 
+# there are 12650, 5061 and 1450 features for path, spec and gen respectively
+# find the optimal n_features per task/feature 
+n_features_list <- as.list(c(NA, seq(50, 1000, 25)))
+tasks <- list("IBD_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_nonIBD", "UC_vs_nonIBD")
+feature_list <- list("species", "genus", "pathway")
+classifier_list <- list("randomForest", "XGBoost")
+# evaluate all non custom models  
+metrics_all <- map_dfr(n_features_list, function(n_features) {
+    map_dfr(tasks, function(task) {
+      map_dfr(feature_list, function(feature_name) {
+        map_dfr(classifier_list, function(classifier) {
+          df <- fit_and_evaluate(
+            custom_df = FALSE, 
+            task = task, 
+            feature_name = feature_name,
+            features = NA, 
+            y = "group",
+            classifier = classifier, 
+            k = 10, 
+            p = 0.8, 
+            seed = 4,
+            ntree = 5000,
+            n_features = n_features)
+          
+          df <- df %>% mutate(
+              "task" = task, 
+              "feature_name" = feature_name,
+              "classifier" = classifier,
+              "n_features" = n_features
+          )
+          df
+        })
+      })
+    })
+})
+
+save(
+  metrics_all, 
+  file = here("data/output/metrics_all.Rds")
+)
+metrics_all %>% arrange(task, metric, mean)
+
