@@ -13,7 +13,7 @@ source(here("R/ml_helper.R"))
 load(here("data/processed/tax_abundances.RDS"))
 load(here("data/processed/pathway_abundances.RDS"))
 
-task <- "UC_vs_CD"
+task <- "UC_vs_nonIBD"
 # for shannon_df and pcx object we need to select feature
 feature_name <- "species"
 classifier <- "randomForest"

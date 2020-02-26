@@ -272,7 +272,7 @@ metrics_all <- map_dfr(n_features_list, function(n_features) {
 #   metrics_all, 
 #   file = here("data/output/metrics_all.Rds")
 # )
-
+metrics_all
 load(here("data/output/metrics_all.Rds"))
 
 metrics_all <- metrics_all %>% mutate(id = c(1:dim(metrics_all)[1])) %>%
