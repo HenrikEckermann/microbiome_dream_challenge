@@ -1,0 +1,23 @@
+TaxID	Importance_Optional	Description
+TaxID_39485	0.0252229096389205	[Eubacterium] eligens
+TaxID_1509	0.022849487787998	Clostridium sporogenes
+TaxID_39491	0.0223108140763402	[Eubacterium] rectale
+TaxID_649756	0.0219628682823643	Anaerostipes hadrus
+TaxID_2109691	0.0205606518617793	Lachnospiraceae bacterium GAM79
+TaxID_853	0.0189707721438105	Faecalibacterium prausnitzii
+TaxID_1160721	0.0150888928882549	Ruminococcus bicirculans
+TaxID_1816219	0.0126931938254372	Colwellia sp. PAMC 21821
+TaxID_45972	0.0125958056847854	Staphylococcus pasteuri
+TaxID_1680	0.0119930704169103	Bifidobacterium adolescentis
+TaxID_1623	0.0119650051053942	Lactobacillus ruminis
+TaxID_1784714	0.0105643363306627	Arcticibacterium luteifluviistationis
+TaxID_301301	0.0102072597058132	Roseburia hominis
+TaxID_1767	0.0101201019863021	Mycobacterium intracellulare
+TaxID_1785995	0.0098858023847374	Gemella sp. oral taxon 928
+TaxID_446660	0.00879586334681181	Adlercreutzia equolifaciens
+TaxID_39488	0.00838863155120909	[Eubacterium] hallii
+TaxID_1264	0.00566176251781091	Ruminococcus albus
+TaxID_43305	0.00553626708922591	Butyrivibrio proteoclasticus
+TaxID_2173034	0.00509158668543985	Clostridiales bacterium 70B-A
+TaxID_2497860	0.00383877352564407	Cellulosilyticum sp. WCF-2
+TaxID_185008	0.00364802795863205	Butyrivibrio hungatei

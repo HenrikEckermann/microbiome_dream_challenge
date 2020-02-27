@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.7)  14 JAN 2020 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.7)  27 FEB 2020 10:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -445,6 +445,32 @@ Package: geometry 2018/03/24 v5.7 Page Geometry
 \Gm@layouthoffset=\dimen123
 \Gm@layoutvoffset=\dimen124
 \Gm@dimlist=\toks24
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count115
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count116
+\FV@StepNumber=\count117
+\FV@OutFile=\write3
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip48
+\fb@frw=\dimen125
+\fb@frh=\dimen126
+\FrameRule=\dimen127
+\FrameSep=\dimen128
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
@@ -455,11 +481,9 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen125
-\Gin@req@width=\dimen126
+)
+\Gin@req@height=\dimen129
+\Gin@req@width=\dimen130
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grffile.sty
 Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
 Package grffile Info: Option `multidot' is set to `true'.
@@ -468,42 +492,43 @@ Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count115
+\etb@tempcnta=\count118
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip48
-\thanksmargin=\skip49
-\droptitle=\skip50
+\thanksmarkwidth=\skip49
+\thanksmargin=\skip50
+\droptitle=\skip51
 ) (./writeup_MEDIC.aux)
 \openout1 = `writeup_MEDIC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 131.
+
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 91.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 131.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 131.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -517,21 +542,21 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 91.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 131.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count116
+\c@section@level=\count119
 )
-LaTeX Info: Redefining \ref on input line 91.
-LaTeX Info: Redefining \pageref on input line 91.
-LaTeX Info: Redefining \nameref on input line 91.
+LaTeX Info: Redefining \ref on input line 131.
+LaTeX Info: Redefining \pageref on input line 131.
+LaTeX Info: Redefining \nameref on input line 131.
 (./writeup_MEDIC.out) (./writeup_MEDIC.out)
-\@outlinefile=\write3
-\openout3 = `writeup_MEDIC.out'.
+\@outlinefile=\write4
+\openout4 = `writeup_MEDIC.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -569,16 +594,16 @@ LaTeX Info: Redefining \nameref on input line 91.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen127
-\scratchbox=\box29
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\scratchcounter=\count120
+\scratchdimen=\dimen131
+\scratchbox=\box30
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen128
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen132
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -633,39 +658,193 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ))
-\tf@toc=\write4
-\openout4 = `writeup_MEDIC.toc'.
+\tf@toc=\write5
+\openout5 = `writeup_MEDIC.toc'.
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 180.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 185--190
+
+ []
+
+
+Overfull \hbox (19.02748pt too wide) in paragraph at lines 216--224
+\T1/lmr/m/n/10 (-20) chal-lenge data must be stored in a folder like this: \T1/
+lmtt/m/n/10 data/testset_subchallenge2_files/Class_labels_He.txt"\T1/lmr/m/n/10
+ (-20) .
+ []
+
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 226.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 230.
+[3]
+Underfull \vbox (badness 10000) detected at line 388
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 388
+ []
+
+[4]
+Underfull \vbox (badness 10000) detected at line 388
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 388
+ []
+
+[5]
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 548
+.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [6]
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+[7]
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+[8]
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+[9]
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+[10]
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 741
+ []
+
+[11] [12]
+Underfull \vbox (badness 10000) detected at line 933
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 933
+ []
+
+[13]
+Underfull \vbox (badness 10000) detected at line 933
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 933
+ []
+
+[14]
+Underfull \vbox (badness 10000) detected at line 933
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 933
+ []
+
+[15] [16]
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+[17]
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+[18]
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+[19]
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+[20]
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1284
+ []
+
+[21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1295.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1295.
 (./writeup_MEDIC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1295.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1295.
+
 Package rerunfilecheck Info: File `writeup_MEDIC.out' has not changed.
-(rerunfilecheck)             Checksum: 9C978325EE69C608E88812B51803E285;1335.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+(rerunfilecheck)             Checksum: C757A501DEEB55682F1FF66CBE23CABE;1949.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1295.
  ) 
 Here is how much of TeX's memory you used:
- 12237 strings out of 492649
- 178566 string characters out of 6129623
- 286497 words of memory out of 5000000
- 15936 multiletter control sequences out of 15000+600000
- 42686 words of font info for 47 fonts, out of 8000000 for 9000
+ 12888 strings out of 492649
+ 188304 string characters out of 6129623
+ 351454 words of memory out of 5000000
+ 16507 multiletter control sequences out of 15000+600000
+ 49488 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,4n,38p,907b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
-ype1/public/lm/lmr17.pfb>
-Output written on writeup_MEDIC.pdf (2 pages, 113383 bytes).
+ 32i,5n,38p,907b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
+/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
+m/lmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri10.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on writeup_MEDIC.pdf (22 pages, 245462 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 8257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 10337 words of extra memory for PDF output out of 12000 (max. 10000000)
 

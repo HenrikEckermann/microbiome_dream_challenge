@@ -74,7 +74,7 @@ names(taxa_by_level) <- list_names
 meta <- read.csv(here("data/hmp2_metadata.csv")) %>%
   filter(data_type == "metagenomics", consent_age >= 18)
 
-library(glue)
+
 sample_ids <- labels_sch %>% mutate_at("sampleID", function(sampleID) {
   part1 <- substr(sampleID, 2, 3)
   part2 <- substr(sampleID, 4, length(sampleID))
@@ -150,7 +150,9 @@ names(test_taxa_by_level) <- list_names
 
 
 save(
+  test_path,
+  test_taxa,
+  testset_taxa,
   test_taxa_by_level, 
-  test_path, 
   file = here("data/processed/testdataset.RDS"))
   

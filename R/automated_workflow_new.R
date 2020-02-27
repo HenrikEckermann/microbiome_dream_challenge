@@ -58,60 +58,10 @@ fit_and_evaluate <- function(
       
   # create df if not provided
   if (!custom_df) {
+    
+    ###### SELECT DATA ACCORDING TO TAXONOMIC LEVEL (OR PATHWAY) and TASK
+    df <- prepare_data(task, feature_name)
   
-    ###### SELECT DATA ACCORDING TO TAXONOMIC LEVEL OR PATHWAY 
-  
-    if (feature_name %in% names(taxa_by_level)) {
-      df <- taxa_by_level[[feature_name]] %>%
-        select(-sampleID)
-      } else if (feature_name == "pathway") {
-      df <- path_abu %>%
-        select(-sampleID)
-    } else if (feature_name == "all_taxa") {
-      df <- left_join(
-          taxa_by_level[["species"]],
-          select(taxa_by_level[["genus"]], -group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["family"]], -group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["order"]], -group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["class"]], -group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["phylum"]], -group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["superkingdom"]], -group),
-          by = "sampleID") %>%
-        select(-sampleID)
-    }
-  
-  
-    ###### SELECT DATA ACCORDING TO TASK
-  
-    if (task == "IBD_vs_nonIBD") {
-      df <- df %>%
-          mutate(group = ifelse(group %in% c(1,2), 1, 0))
-      df$group <- as.factor(df$group)
-     } else if (task == "UC_vs_nonIBD") {
-         df <- df %>%
-             filter(group %in% c(0, 2)) %>%
-             mutate(group = ifelse(group == 2, 1, 0))
-         df$group <- as.factor(df$group)
-     } else if (task == "CD_vs_nonIBD") {
-         df <- df %>%
-             filter(group %in% c(0, 1))
-         df$group <- droplevels(df$group)
-     } else if (task == "UC_vs_CD") {
-         df <- df %>%
-             filter(group %in% c(1, 2)) %>%
-             mutate(group = ifelse(group == 1, 1, 0))
-         df$group <- as.factor(df$group)
-    }
   }
   
   
@@ -207,7 +157,7 @@ example1 <- fit_and_evaluate(
   p = 0.8, 
   seed = 4,
   ntree = 5000,
-  n_features = NA) 
+  n_features = 50) 
 
 example1
 

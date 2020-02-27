@@ -1,0 +1,6 @@
+TaxID	Importance_Optional	Description
+TaxID_2494234	0.0698451992433884	Sutterella megalosphaeroides
+TaxID_631220	0.036109959476326	Desulfovibrio sp. G11
+TaxID_1747	0.0356580627050024	Cutibacterium acnes
+TaxID_28026	0.0291646872304622	Bifidobacterium pseudocatenulatum
+TaxID_114527	0.00775555324644622	Mogibacterium diversum

@@ -13,10 +13,10 @@ source(here("R/ml_helper.R"))
 load(here("data/processed/tax_abundances.RDS"))
 load(here("data/processed/pathway_abundances.RDS"))
 
-task <- "UC_vs_nonIBD"
+task <- "IBD_vs_nonIBD"
 # for shannon_df and pcx object we need to select feature
 feature_name <- "species"
-classifier <- "randomForest"
+classifier <- "XGBoost"
 
 
 # create a complete df of all features
@@ -186,12 +186,12 @@ models_and_data2 <- fit_cv(
   y = "group", 
   p = 0.8,
   k = 10,
-  model_type = classifier, 
+  model_type = "randomForest", 
   ntree = 5000
 )
 
 
-summarize_metrics(models_and_data2, y = "group", model_type = classifier, features = features) %>% 
+summarize_metrics(models_and_data2, y = "group") %>% 
   mutate(task = task, feature_name = "custom", classifier = classifier, n_features = length(features)) %>%
   select(metric, task, feature_name, classifier, n_features, mean, sd)
 
@@ -205,13 +205,16 @@ models_and_data3 <- fit_cv(
   y = "group", 
   p = 0.8,
   k = 10,
-  model_type = classifier, 
+  model_type = "randomForest", 
   ntree = 5000
 )
 
 
-summarize_metrics(models_and_data3, y = "group", model_type = classifier, features = features) %>% 
+summarize_metrics(models_and_data3, y = "group") %>% 
   mutate(task = task, feature_name = "custom", classifier = classifier, n_features = length(features)) %>%
   select(metric, task, feature_name, classifier, n_features, mean, sd)
   
   
+  
+  
+models_and_data1[[1]]

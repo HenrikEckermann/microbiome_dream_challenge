@@ -1,0 +1,6 @@
+PathID	Importance_Optional	Description
+PathID_9357	0.0256029189852452	GLYCOLYSIS: glycolysis I (from glucose 6-phosphate)
+PathID_11937	0.0193149221859472	PWY66-400: glycolysis VI (metazoan)
+PathID_171	0.0108011473685753	PWY0-1297: superpathway of purine deoxyribonucleosides degradation
+PathID_997	0.00941504317330557	PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)
+PathID_1840	0.00729066628148693	PWY-5188: tetrapyrrole biosynthesis I (from glutamate)

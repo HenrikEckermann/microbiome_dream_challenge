@@ -1,0 +1,42 @@
+PathID	Importance_Optional	Description
+PathID_12044	0.0238361941830284	UNINTEGRATED|g__Roseburia.s__Roseburia_intestinalis
+PathID_9215	0.0199798933323765	PWY-6588: pyruvate fermentation to acetone|g__Lachnospiraceae_noname.s__Lachnospiraceae_bacterium_5_1_63FAA
+PathID_805	0.0187794547086639	PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Eubacterium.s__Eubacterium_hallii
+PathID_8928	0.0170918666039211	NONOXIPENT-PWY: pentose phosphate pathway (non-oxidative branch)|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_7899	0.0165540464762594	SER-GLYSYN-PWY: superpathway of L-serine and glycine biosynthesis I|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_10244	0.0153833236633225	PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_5763	0.0153150733034208	HSERMETANA-PWY: L-methionine biosynthesis III|unclassified
+PathID_2948	0.0150243476393618	ASPASN-PWY: superpathway of L-aspartate and L-asparagine biosynthesis|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_4035	0.0148311571071442	PWY-6124: inosine-5'-phosphate biosynthesis II|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_4322	0.0147445496722831	PWY-621: sucrose degradation III (sucrose invertase)|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_2681	0.0136803542025071	PWY-5659: GDP-mannose biosynthesis|g__Roseburia.s__Roseburia_intestinalis
+PathID_7625	0.0136718143303396	PWY-5104: L-isoleucine biosynthesis IV|g__Lachnospiraceae_noname.s__Lachnospiraceae_bacterium_5_1_63FAA
+PathID_4807	0.0123895441765461	GLUCUROCAT-PWY: superpathway of &beta;-D-glucuronide and D-glucuronate degradation|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_5676	0.0119696727439879	PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_5297	0.0119462605238195	PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_6521	0.0118229290812717	PWY-6507: 4-deoxy-L-threo-hex-4-enopyranuronate degradation|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_2510	0.0110685769622827	PWY0-1319: CDP-diacylglycerol biosynthesis II|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_5719	0.0109668092111393	PWY-5686: UMP biosynthesis|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_11124	0.0102112321311125	PWY-5097: L-lysine biosynthesis VI|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_3902	0.00948212350498974	PWY-6936: seleno-amino acid biosynthesis|unclassified
+PathID_169	0.00938280915405891	GLCMANNANAUT-PWY: superpathway of N-acetylglucosamine, N-acetylmannosamine and N-acetylneuraminate degradation|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_12506	0.00920459819157509	PWY-6305: putrescine biosynthesis IV|g__Blautia.s__Ruminococcus_obeum
+PathID_8166	0.00902948259249821	GALACTUROCAT-PWY: D-galacturonate degradation I|g__Faecalibacterium.s__Faecalibacterium_prausnitzii
+PathID_4244	0.00902287309681386	PWY-7111: pyruvate fermentation to isobutanol (engineered)|g__Eubacterium.s__Eubacterium_hallii
+PathID_10819	0.00867363211846794	PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Roseburia.s__Roseburia_intestinalis
+PathID_10816	0.00838585845133616	PWY66-422: D-galactose degradation V (Leloir pathway)|g__Roseburia.s__Roseburia_intestinalis
+PathID_10478	0.00813163689164238	PWY-5100: pyruvate fermentation to acetate and lactate II|g__Roseburia.s__Roseburia_intestinalis
+PathID_5405	0.00802592777501169	PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Roseburia.s__Roseburia_intestinalis
+PathID_3958	0.00690799061975493	PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Lachnospiraceae_noname.s__Lachnospiraceae_bacterium_5_1_63FAA
+PathID_6427	0.00651233568271442	PWY-6317: galactose degradation I (Leloir pathway)|g__Roseburia.s__Roseburia_intestinalis
+PathID_10946	0.00643558656461795	PWY-7208: superpathway of pyrimidine nucleobases salvage|g__Roseburia.s__Roseburia_intestinalis
+PathID_4211	0.00567112776586878	PWY-6737: starch degradation V|g__Roseburia.s__Roseburia_intestinalis
+PathID_12275	0.00496171342679879	PWY-6527: stachyose degradation|g__Roseburia.s__Roseburia_intestinalis
+PathID_5761	0.0048794062247095	PWY-5104: L-isoleucine biosynthesis IV|g__Roseburia.s__Roseburia_intestinalis
+PathID_5147	0.00486795956231366	GLYCOGENSYNTH-PWY: glycogen biosynthesis I (from ADP-D-Glucose)|g__Roseburia.s__Roseburia_intestinalis
+PathID_12342	0.00453785548838818	PANTO-PWY: phosphopantothenate biosynthesis I|g__Roseburia.s__Roseburia_intestinalis
+PathID_1033	0.00444277530031723	PWY-5097: L-lysine biosynthesis VI|g__Roseburia.s__Roseburia_intestinalis
+PathID_3434	0.00349674360606209	PWY-5695: urate biosynthesis/inosine 5'-phosphate degradation|g__Roseburia.s__Roseburia_intestinalis
+PathID_8305	0.00291226277821098	VALSYN-PWY: L-valine biosynthesis|g__Roseburia.s__Roseburia_intestinalis
+PathID_6472	0.00192437251858557	PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|g__Roseburia.s__Roseburia_intestinalis
+PathID_81	0.00102190539067757	NONOXIPENT-PWY: pentose phosphate pathway (non-oxidative branch)|g__Roseburia.s__Roseburia_intestinalis
