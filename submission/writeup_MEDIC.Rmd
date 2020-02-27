@@ -32,7 +32,7 @@ Data has not been processed.
 
 # Approach to train your classification model 
 
-We used the programming language *R* version 3.6.1 for all tasks. The Random Forest algorithm [@liawClassificationRegressionRandomForest2002] as implemented in the R package *randomForest* version 4.6-14 was used for feature selection as well as classification.
+We used the programming language *R* version 3.6.1 for all tasks. The Random Forest algorithm [@liawClassificationRegressionRandomForest2002] as implemented in the R package *randomForest* version 4.6-14 was used for feature selection as well as classification. Furthermore, the XGBoost algorithm [@chenXGBoostScalableTree2016] as implemented in the *R* package *xgboost* version 0.90.0.2 was used for classification.
 
 The dataset for model training consisted of all species (or genus or pathway) abundances. We tested for each taxonomic level or pathway, respectively, how the model performs. The following steps were performed similarly for each classification task and each taxonomic level (or pathway):
 
@@ -44,11 +44,11 @@ The dataset for model training consisted of all species (or genus or pathway) ab
 1.  Split dataset in 10 folds where each fold consists of 20% of the data.
 2. Fit 10 randomForest models  with `ntree = 5000` and `importance = TRUE` using 9 folds as training data and 1 fold as testdata. Other than specifying *ntree*, we used default parameters of the *randomForest* function in R.
 3. For each of the 10 models obtain the permutation based importance scores and retain a vector of *n* features, where the number *n* was treated as tuning parameter (see below). The intersection of all 10 vectors were the selected features.   
-4. Tuning *n*: For a range from 25 - max(n) for each task we obtained logloss and F1 score as evaluation metrics. We used the number *n* for which logloss and F1 score were lowest. If *n* differed between F1 and logloss scores we chose the lower *n*.
 
 
 ## Classification model 
-The classification model was a Random Forest model using `ntree = 10000`,  `importance = true` and the selected features as described above.
+We evaluated both Random Forest as well as XGBoost models based on 10-fold crossvalidation. Furthermore, we tuned the parameter *n* (see above) by testing a range from 25 - max(n). For each task we obtained logloss and F1 score as evaluation metrics. We used the number *n* and the classification algorithm (Random Forest versus XGBoost) for which logloss and F1 score were lowest. If *n* differed between lowest F1 and logloss models we chose the lower *n*.
+The final classification models turned out to be Random Forest models using `ntree = 10000`,  `importance = true` and the *n* selected features as described above.
 
 # Application to the testing dataset
 
