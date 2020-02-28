@@ -109,83 +109,43 @@ if (!is.na(n_features)) {
 features <- selected_features[, 1]
 features
 
-###### TUNE RF MODEL 
-if (classifier == "tuneRanger") {
-  if (!file.exists(here::here(glue("data/tuneRanger/pars_{task}_{feature_name}_{n_features}_{classifier}.Rds")))) {
-      tune_task <- makeClassifTask(
-        data = select(df, features, y),
-        target = y
-      )
-      estimateTimeTuneRanger(tune_task)
-      res <- tuneRanger(
-        tune_task,
-        parameters = list(
-          replace = FALSE, 
-          respect.unordered.factors = "order"),
-        tune.parameters = c(
-          "mtry", 
-          "min.node.size",
-          "sample.fraction"),
-        num.trees = ntree,
-        num.threads = 8, iters = 70
-      )
-      pars <- res$recommended.pars
-      save(pars, 
-        file = here::here(glue("data/tuneRanger/pars_{task}_{feature_name}_{n_features}_{classifier}.Rds"))
-      )
-  } else {
-    load(here::here(glue("data/tuneRanger/pars_{task}_{feature_name}_{n_features}_{classifier}.Rds")))
-  }
-}
 
+library(mlr)
+library(xgboost)
+df %>% head()
 
+train_indeces <- caret::createDataPartition(df[[y]], p = p, times = k)
+train <- df[train_indeces$Resample01, ]
+test <- df[-train_indeces$Resample01, ]
 
-model_and_data <- fit_cv(
-  data = df,
-  features = features,
-  y = "group",
-  p = p,
-  k = k,
-  model_type = classifier,
-  ntree = ntree  
+train_task <- makeClassifTask(data = train, target = y, positive = 1)
+test_task <- makeClassifTask(data = test, target = y, positive = 1)
+set.seed(seed)
+xgb_learner <- makeLearner(
+  "classif.xgboost",
+  predict.type = "response",
+  par.vals = list(
+    objective = "binary:logistic",
+    eval_metric = "error",
+    nrounds = 200
+  )
+)
+xgb_model <- train(xgb_learner, task = train_task )
+result <- predict(xgb_model, test_task)
+
+xgb_params <- makeParamSet(
+  makeIntegerParam("nrounds", lower = 1, upper = 1000),
+  makeIntegerParam("max_depth", lower = 1, upper = 10),
+  makeNumericParam("eta", lower = 0.1, upper = 0.5),
+  makeNumericParam("lambda", lower = -1, upper = 0, trafo = function(x) 10^x)
 )
 
-model_type = classifier 
-model_eval(model_and_data[[1]][[1]], model_and_data[[1]][[2]], features, y)
-model <- model_and_data[[1]][[1]]
-testdata <- model_and_data[[1]][[2]]
-
-
-y_true <- as.numeric(testdata[[y]]) -1 
-
-
-
-
-
-if (model_type == "extremely_randomized_trees") {
-  y_pred_prob <- predict(model, testdata)$predictions[, 2]
-  y_pred_resp <- ifelse(y_pred_prob > 0.5, 1, 0)
-}
-
-
-library(tuneRanger)
-library(mlr)
-
-# A mlr task has to be created in order to use the package
-data(iris)
-head(iris)
-iris.task = makeClassifTask(data = iris, target = "Species")
- 
-# Estimate runtime
-estimateTimeTuneRanger(iris.task)
-# Tuning
-res = tuneRanger(iris.task, measure = list(multiclass.brier), num.trees = 5000, 
-  num.threads = 8, iters = 70, save.file.path = NULL)
-  
-# Mean of best 5 % of the results
-res$recommended.pars
-# Model with the new tuned hyperparameters
-res$model
-# Prediction
-predict(res$model, newdata = iris[1:10,])
-# }
+control <- makeTuneControlRandom()
+resample_desc <- makeResampleDesc("CV", iters = 5)
+tuned_params <- tuneParams(
+  learner = xgb_learner,
+  task = train_task,
+  resampling = resample_desc,
+  par.set = xgb_params,
+  control = control
+)
