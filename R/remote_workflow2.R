@@ -187,7 +187,7 @@ fit_and_evaluate <- function(
 ###### CREATE TABLE OF ALL TASKS, FEATURES AND SOME N_FEATURES 
 # there are 12650, 5061 and 1450 features for path, spec and gen respectively
 # find the optimal n_features per task/feature 
-n_features_list <- as.list(c(seq(400, 700, 25), NA))
+n_features_list <- as.list(c(seq(800, 1000, 25), NA))
 tasks <- list("IBD_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_nonIBD", "UC_vs_CD")
 feature_list <- list("species", "genus", "pathway")
 classifier_list <- list(
