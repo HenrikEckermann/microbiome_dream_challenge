@@ -38,7 +38,11 @@ model_eval <- function(
         y_pred_resp <- ifelse(y_pred_prob == 0.5, 
           rbinom(n = 1, size = 1, p = 0.5), ifelse(y_pred_prob > 0.5,
             1, 0))
+      } else if (model_type %in% c("extremely_randomized_trees", "tuneRanger")) {
+        y_pred_prob <- predict(model, testdata)$predictions[, 2]
+        y_pred_resp <- ifelse(y_pred_prob > 0.5, 1, 0)
       }
+
       # logloss 
       log_l <- MLmetrics::LogLoss(y_pred_prob, y_true)
       
@@ -121,6 +125,34 @@ fit_cv <- function(
           maximize = FALSE,
           eval_metric = "logloss",
           verbose = 0
+        )
+      } else if (model_type == "extremely_randomized_trees") { 
+        # extremely randomized trees as in Geurts et al (2006)
+        model <- ranger::ranger(
+          data = select(train, features, y),
+          formula = as.formula(glue("{y} ~ .")),
+          num.trees = dots$ntree,
+          probability = TRUE,
+          importance = "permutation",
+          write.forest = TRUE,
+          splitrule = "extratrees",
+          sample.fraction = 1,
+          replace = FALSE,
+          num.random.splits = 1
+        )
+      } else if (model_type == "tuneRanger") {
+        model <- ranger::ranger(
+          data = select(train, features, y),
+          formula = as.formula(glue("{y} ~ .")),
+          num.trees = dots$ntree,
+          probability = TRUE,
+          importance = "permutation",
+          write.forest = TRUE,
+          splitrule = NULL,
+          sample.fraction = dots$sample.fraction,
+          min.node.size = dots$min.node.size,
+          mtry = dots$mtry,
+          replace = FALSE,
         )
       }
       # return fitted model and corresponding test data set
@@ -234,9 +266,9 @@ plot_importance <- function(model, regression = T, top_n = NULL) {
     var_imp <- importance(model, type = 1, scale = F)
     var_imp <- var_imp %>% as.data.frame() %>%
     rownames_to_column("feature") %>%
-    select(variable, inc_mse = `%IncMSE`) %>%
+    select(feature, inc_mse = `%IncMSE`) %>%
     arrange(inc_mse) %>%
-    mutate(variable = factor(feature, level = feature))
+    mutate(feature = factor(feature, level = feature))
     if (!is.null(top_n)) {
       var_imp <- tail(var_imp, top_n)
     }

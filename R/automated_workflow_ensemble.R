@@ -14,6 +14,9 @@ library(randomForest)
 library(xgboost)
 
 
+source(here("R/ml_helper.R"))
+
+
 
 ###### load datasets
 
@@ -50,68 +53,17 @@ fit_and_predict <- function(
   seed = 4,
   n_features = 50) {
         
-    ########## Select taxonomic level or pathway 
-
-    if (feature_name %in% names(taxa_by_level)) {
-      df <- taxa_by_level[[feature_name]] %>%
-        select(-sampleID)
-      } else if (feature_name == "pathway") {
-      df <- path_abu %>%
-        select(-sampleID)
-    } else if (feature_name == "all_taxa") {
-      df <- left_join(
-          taxa_by_level[["species"]],
-          select(taxa_by_level[["genus"]], - group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["family"]], - group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["order"]], - group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["class"]], - group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["phylum"]], - group),
-          by = "sampleID") %>%
-          left_join(
-          select(taxa_by_level[["superkingdom"]], - group),
-          by = "sampleID") %>%
-        select(-sampleID)
-    }
+  prepare_data(task, feature_name)
   
-  
-    ###### Select data accordings to task
-    
-    if (task == "IBD_vs_nonIBD") {
-      df <- df %>%
-          mutate(group = ifelse(group %in% c(1,2), 1, 0))
-      df$group <- as.factor(df$group)
-     } else if (task == "UC_vs_nonIBD") {
-         df <- df %>%
-             filter(group %in% c(0, 2)) %>%
-             mutate(group = ifelse(group == 2, 1, 0))
-         df$group <- as.factor(df$group)
-     } else if (task == "CD_vs_nonIBD") {
-         df <- df %>%
-             filter(group %in% c(0, 1))
-         df$group <- droplevels(df$group)
-     } else if (task == "UC_vs_CD") {
-         df <- df %>%
-             filter(group %in% c(1, 2)) %>%
-             mutate(group = ifelse(group == 1, 1, 0))
-         df$group <- as.factor(df$group)
-    }
-
-  
-    ########## k-fold Cross validation with p% of data as train
-    
+  if (!is.na(seed)) {
     set.seed(seed)
-    train_index <- caret::createDataPartition(df$group, times = k, p = p)
+  } 
+  
+  ########## k-fold Cross validation with p% of data as train
+  train_index <- caret::createDataPartition(df$group, times = k, p = p)
     
     
-    ######### Model fitting for feature selection
+  ######### Model fitting for feature selection
     
     
     # fit models
@@ -578,7 +530,7 @@ ensemble_predictions_rf <- map2(fold_names, train_index, function(fold_name, tr_
 })
 
 
-37ensemble_predictions_rf[[1]]$ensemble_preds[, 2]
+ensemble_predictions_rf[[1]]$ensemble_preds[, 2]
 
 ###### evaluate ensemble 
 logl_ens <- map2_dbl(ensemble_predictions_rf, train_index, function(predictions, tr_inds) {
