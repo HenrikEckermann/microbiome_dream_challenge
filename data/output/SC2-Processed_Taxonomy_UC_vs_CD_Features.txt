@@ -1,0 +1,12 @@
+TaxonomyID	Importance_Optional	Description
+TaxID_901	0.0171913942944817	Desulfovibrio piger
+TaxID_1879023	0.0153942143339027	Mycobacterium sp. djl-10
+TaxID_1160721	0.0132041859647564	Ruminococcus bicirculans
+TaxID_1450761	0.0128785199062783	Aneurinibacillus sp. XH2
+TaxID_28452	0.0123748132887492	Leptospira alstonii
+TaxID_1747	0.0123653522911973	Cutibacterium acnes
+TaxID_1816218	0.0095247139884008	Colwellia sp. PAMC 20917
+TaxID_1176587	0.00903805973495265	Niabella ginsenosidivorans
+TaxID_1702221	0.00608027449479806	Faecalibaculum rodentium
+TaxID_853	0.00437466931906074	Faecalibacterium prausnitzii
+TaxID_1756150	0.00293684914228013	Elizabethkingia ursingii

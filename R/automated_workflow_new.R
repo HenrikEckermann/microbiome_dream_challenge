@@ -284,14 +284,14 @@ example3
 ###### CREATE TABLE OF ALL TASKS, FEATURES AND SOME N_FEATURES 
 # there are 12650, 5061 and 1450 features for path, spec and gen respectively
 # find the optimal n_features per task/feature 
-n_features_list <- as.list(c(seq(50, 1000, 25), NA))
+n_features_list <- as.list(c(seq(400, 700, 25)))
 tasks <- list("IBD_vs_nonIBD", "CD_vs_nonIBD", "UC_vs_nonIBD", "UC_vs_CD")
 feature_list <- list("species", "genus", "pathway")
 classifier_list <- list(
   "tuneRanger"
 )
 # evaluate all non custom models  
-metrics_all <- map_dfr(n_features_list, function(n_features) {
+metrics_tune <- map_dfr(n_features_list, function(n_features) {
     map_dfr(tasks, function(task) {
       map_dfr(feature_list, function(feature_name) {
         map_dfr(classifier_list, function(classifier) {
@@ -330,8 +330,7 @@ metrics_all <- map_dfr(n_features_list, function(n_features) {
 
 load(here::here("data/output/metrics_all.Rds"))
 
-metrics_all <- metrics_et %>%
-  bind_rows(metrics_all)
+
 
 metrics_all <- metrics_all %>% mutate(id = c(1:dim(metrics_all)[1])) %>%
   select(id, everything())

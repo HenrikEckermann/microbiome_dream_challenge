@@ -1,4 +1,4 @@
-sampleID	Confidence_Value_CD	Confidence_Value_UC
+SampleID	Confidence_Value_CD	Confidence_Value_UC
 Sample_001	0.7237	0.2763
 Sample_002	0.8495	0.1505
 Sample_003	0.495	0.505

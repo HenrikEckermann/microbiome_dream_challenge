@@ -1,20 +1,20 @@
-PathID	Importance_Optional	Description
-PathID_10906	0.040790488915645	PWY-2942: L-lysine biosynthesis III
-PathID_49	0.0382182496485482	PWY-6700: queuosine biosynthesis
-PathID_9244	0.0219186540286717	PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II
-PathID_2146	0.0209429168859082	PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis
-PathID_3730	0.0208464297081665	PWY-6897: thiamin salvage II
-PathID_6307	0.0199975146326503	PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I
-PathID_6277	0.0169595525937798	UNMAPPED
-PathID_3241	0.0166851217555576	PWY-5097: L-lysine biosynthesis VI
-PathID_1908	0.0141366603390184	NONMEVIPP-PWY: methylerythritol phosphate pathway I
-PathID_2216	0.0125043877281765	PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis
-PathID_494	0.0110800026064805	COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis
-PathID_7508	0.0110358531724239	PWY-7219: adenosine ribonucleotides de novo biosynthesis
-PathID_997	0.0103507463110333	PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)
-PathID_544	0.00992472436403924	PWY-724: superpathway of L-lysine, L-threonine and L-methionine biosynthesis II
-PathID_4763	0.00977207917851003	PWY-6545: pyrimidine deoxyribonucleotides de novo biosynthesis III
-PathID_9903	0.00969884871304816	PWY-6151: S-adenosyl-L-methionine cycle I
-PathID_7784	0.00838286658792241	PWY-7197: pyrimidine deoxyribonucleotide phosphorylation
-PathID_5105	0.00585137640127396	PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)
-PathID_12600	0.0042853318084782	PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)
+PathwayID	Importance_Optional	Description
+PathID_10906	0.0391581978100236	PWY-2942: L-lysine biosynthesis III
+PathID_49	0.0367151781572874	PWY-6700: queuosine biosynthesis
+PathID_3730	0.0214868107904633	PWY-6897: thiamin salvage II
+PathID_9244	0.0211774739820337	PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II
+PathID_2146	0.0209405097448285	PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis
+PathID_6307	0.0182454268011616	PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I
+PathID_6277	0.0174624771092687	UNMAPPED
+PathID_3241	0.0167368420814398	PWY-5097: L-lysine biosynthesis VI
+PathID_2216	0.0137899859976927	PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis
+PathID_1908	0.0131661012485382	NONMEVIPP-PWY: methylerythritol phosphate pathway I
+PathID_7508	0.0118918160477202	PWY-7219: adenosine ribonucleotides de novo biosynthesis
+PathID_494	0.0113570002130209	COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis
+PathID_9903	0.0109932347611231	PWY-6151: S-adenosyl-L-methionine cycle I
+PathID_997	0.0105733380900809	PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)
+PathID_544	0.0102469859828751	PWY-724: superpathway of L-lysine, L-threonine and L-methionine biosynthesis II
+PathID_4763	0.0102339768477384	PWY-6545: pyrimidine deoxyribonucleotides de novo biosynthesis III
+PathID_7784	0.00857866147032984	PWY-7197: pyrimidine deoxyribonucleotide phosphorylation
+PathID_5105	0.00622432503034855	PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)
+PathID_12600	0.00421577094656016	PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)

@@ -1,0 +1,14 @@
+PathID	Importance_Optional	Description
+PathID_9357	0.0154840111529754	GLYCOLYSIS: glycolysis I (from glucose 6-phosphate)
+PathID_3730	0.012075936926164	PWY-6897: thiamin salvage II
+PathID_11937	0.0112187087158058	PWY66-400: glycolysis VI (metazoan)
+PathID_1324	0.0104152935721419	PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)
+PathID_7843	0.0103022167612963	PWY-5484: glycolysis II (from fructose 6-phosphate)
+PathID_171	0.00965223198909944	PWY0-1297: superpathway of purine deoxyribonucleosides degradation
+PathID_3673	0.00851414848440223	PWY-7221: guanosine ribonucleotides de novo biosynthesis
+PathID_1840	0.00815674121722603	PWY-5188: tetrapyrrole biosynthesis I (from glutamate)
+PathID_3567	0.00788131484041725	PANTO-PWY: phosphopantothenate biosynthesis I
+PathID_4972	0.00723973115431233	PWY-6151: S-adenosyl-L-methionine cycle I|g__Roseburia.s__Roseburia_intestinalis
+PathID_997	0.00673100960107263	PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)
+PathID_494	0.00570480633417903	COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis
+PathID_9170	0.00540614619135625	ANAEROFRUCAT-PWY: homolactic fermentation

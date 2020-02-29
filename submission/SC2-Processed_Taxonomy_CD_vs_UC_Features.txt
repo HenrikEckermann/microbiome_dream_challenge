@@ -1,4 +1,4 @@
-TaxID	Importance_Optional	Description
+TaxonomyID	Importance_Optional	Description
 TaxID_901	0.0172145504989073	Desulfovibrio piger
 TaxID_1879023	0.014779140635386	Mycobacterium sp. djl-10
 TaxID_1160721	0.0132432655924064	Ruminococcus bicirculans

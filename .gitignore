@@ -3,3 +3,4 @@ data/models/*.Rds
 data/top_predictors/*.Rds
 .Rproj.user
 data/raw/
+*.Rds

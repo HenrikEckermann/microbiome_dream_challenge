@@ -19,9 +19,9 @@ source(here("R/ml_helper.R"))
 
 ###### LOAD DATASETS
 
-load(here("data/processed/tax_abundances.RDS"))
-load("data/processed/pathway_abundances.RDS")
-load(file = here("data/processed/testdataset.RDS"))
+load(here::here("data/processed/tax_abundances.RDS"))
+load(here::here("data/processed/pathway_abundances.RDS"))
+load(file = here::here("data/processed/testdataset.RDS"))
 
 
 ###### FUNCTION THAT PRODUCES OUTPUT FILES 
@@ -67,7 +67,7 @@ create_pred_files <- function(
     }
     
     colnames(prediction) <- c(
-      "sampleID", 
+      "SampleID", 
       glue("Confidence_Value_{c_names[1]}"), 
       glue("Confidence_Value_{c_names[2]}")
     )
@@ -82,14 +82,14 @@ create_pred_files <- function(
       var_imp <- extract_importance(best_model, regression = FALSE)
       if (feature_name == "pathway") {
         var_imp <- var_imp %>%
-          rename(PathID = feature, Importance_Optional = MDA) %>% 
+          rename(PathwayID = feature, Importance_Optional = MDA) %>% 
           left_join(path_id_info, by = "PathID") %>%
-          rename(Description = Pathway)
+          select(TaxonomyID, Importance_Optional, Description = Pathway)
       } else {
         var_imp <- var_imp %>%
-          rename(TaxID = feature, Importance_Optional = MDA) %>% 
+          rename(TaxonomyID = feature, Importance_Optional = MDA) %>% 
           left_join(taxa_id_info, by = "TaxID") %>%
-          select(TaxID, Importance_Optional, Description = Taxon)
+          select(TaxonomyID, Importance_Optional, Description = Taxon)
       }
       write.table(
         var_imp, 
@@ -290,15 +290,15 @@ best_model
 
 ### UC_vs_CD
 
-# ll  pathway  randomForest  75
+# ll  pathway  extremely_randomized_trees  975
 
 task <- "UC_vs_CD"
 feature_name <- "pathway"
-classifier <- "randomForest"
-n_features <- 50
+classifier <- "extremely_randomized_trees"
+n_features <- 975
 
 # obtain stored top predictors 
-load(here(glue("data/top_predictors/{task}_{feature_name}_{classifier}_top{n_features}_predictors.Rds")))
+load(here(glue("data/top_predictors/{task}_{feature_name}_randomForest_top{n_features}_predictors.Rds")))
 
 df <- prepare_data(task, feature_name)
 

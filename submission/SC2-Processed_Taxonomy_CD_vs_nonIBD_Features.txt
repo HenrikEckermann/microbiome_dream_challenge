@@ -1,87 +1,87 @@
-TaxID	Importance_Optional	Description
-TaxID_1160721	0.0193915440531475	Ruminococcus bicirculans
-TaxID_39485	0.0191841894345417	[Eubacterium] eligens
-TaxID_649756	0.0189351343701238	Anaerostipes hadrus
-TaxID_853	0.0181792580078566	Faecalibacterium prausnitzii
-TaxID_39491	0.0153532377223561	[Eubacterium] rectale
-TaxID_1623	0.0105390693153631	Lactobacillus ruminis
-TaxID_1509	0.00965279046358805	Clostridium sporogenes
-TaxID_2109691	0.00957967319162012	Lachnospiraceae bacterium GAM79
-TaxID_301301	0.00734102991443202	Roseburia hominis
-TaxID_1680	0.00644982820138526	Bifidobacterium adolescentis
-TaxID_1834196	0.0045683528495153	Lachnoclostridium sp. YL32
-TaxID_861	0.00449367606819348	Fusobacterium ulcerans
-TaxID_1816218	0.00439992368493289	Colwellia sp. PAMC 20917
-TaxID_2109558	0.00432779280564382	Halobacteriovorax sp. BALOs_7
-TaxID_2027857	0.00409370055278659	Mariniflexile sp. TRM1-10
-TaxID_39488	0.00404568889769828	[Eubacterium] hallii
-TaxID_363852	0.00398882751248189	Pedobacter ginsengisoli
-TaxID_190893	0.00384756438484069	Vibrio coralliilyticus
-TaxID_1453352	0.00378940864751406	Sediminicola sp. YIK13
-TaxID_320787	0.00378383959030016	Cyclobacterium amurskyense
-TaxID_158841	0.00376834904061337	Leminorella richardii
-TaxID_1264	0.00355958419079922	Ruminococcus albus
-TaxID_1912897	0.00337652451282495	Blautia sp. N6H1-15
-TaxID_32051	0.00332485007945174	Synechococcus sp. WH 7803
-TaxID_1304	0.00332277580110889	Streptococcus salivarius
-TaxID_208479	0.00331973392009823	[Clostridium] bolteae
-TaxID_74109	0.00327504471901817	Photobacterium profundum
-TaxID_643214	0.00323239357559111	Staphylococcus stepanovicii
-TaxID_1816219	0.00321050466046441	Colwellia sp. PAMC 21821
-TaxID_446660	0.00306468429036173	Adlercreutzia equolifaciens
-TaxID_45972	0.00298448296892984	Staphylococcus pasteuri
-TaxID_28026	0.00280082937852559	Bifidobacterium pseudocatenulatum
-TaxID_2173034	0.00276218788808919	Clostridiales bacterium 70B-A
-TaxID_502394	0.00270034478331362	Deinococcus gobiensis
-TaxID_1522	0.00269304911136671	[Clostridium] innocuum
-TaxID_2003188	0.00266500550855835	Parolsenella catena
-TaxID_143393	0.00259687602644007	[Eubacterium] sulci
-TaxID_2497860	0.00253067444579353	Cellulosilyticum sp. WCF-2
-TaxID_1931241	0.00249013057277612	Pseudomonas sp. S-6-2
-TaxID_626937	0.00248123018781079	Christensenella minuta
-TaxID_2081703	0.00245458819405986	Peptostreptococcaceae bacterium oral taxon 929
-TaxID_65393	0.002441436008287	Cyanothece sp. PCC 7424
-TaxID_1548018	0.00242977452715069	Helicobacter saguini
-TaxID_1785995	0.00241309839284169	Gemella sp. oral taxon 928
-TaxID_1161942	0.00241272071032738	Ruminococcus champanellensis
-TaxID_1193095	0.00240076839616217	Lactobacillus hokkaidonensis
-TaxID_1850526	0.00237802062895461	Arachidicoccus sp. BS20
-TaxID_253245	0.00228153960155668	Owenweeksia hongkongensis
-TaxID_120	0.0022065061159285	Planctopirus limnophila
-TaxID_33033	0.00219627461305535	Parvimonas micra
-TaxID_1721091	0.00218545343654917	Chryseobacterium sp. IHB B 17019
-TaxID_271098	0.00217374577259717	Shewanella halifaxensis
-TaxID_729	0.00210634317546546	Haemophilus parainfluenzae
-TaxID_43305	0.00203175325829843	Butyrivibrio proteoclasticus
-TaxID_2486578	0.00201621215044456	Rickettsiales endosymbiont of Stachyamoeba lipophora
-TaxID_1488	0.00200017610048059	Clostridium acetobutylicum
-TaxID_1767	0.00195690505877089	Mycobacterium intracellulare
-TaxID_1565991	0.00193643122692594	Bacillus sp. X1(2014)
-TaxID_2015076	0.00191737953803755	Chryseobacterium sp. T16E-39
-TaxID_2493672	0.00191411975047248	Mesorhizobium sp. M1E.F.Ca.ET.045.02.1.1
-TaxID_1686	0.00190215900813262	Bifidobacterium catenulatum
-TaxID_269673	0.00189642883890609	Sporolactobacillus terrae
-TaxID_689	0.00181845084127293	Vibrio mediterranei
-TaxID_185008	0.00181621915116736	Butyrivibrio hungatei
-TaxID_1501	0.00179130915321717	Clostridium pasteurianum
-TaxID_220622	0.00177504406852151	Sulfurospirillum sp. JPD-1
-TaxID_271420	0.00174350884401385	Pseudomonas xanthomarina
-TaxID_292800	0.00173050312328166	Flavonifractor plautii
-TaxID_1702221	0.00166650230693175	Faecalibaculum rodentium
-TaxID_1834207	0.00163561424812727	Erysipelotrichaceae bacterium I46
-TaxID_1316593	0.00158307779504428	Capnocytophaga sp. oral taxon 864
-TaxID_588898	0.00146803547870731	Haloterrigena daqingensis
-TaxID_831	0.00143966374135548	Butyrivibrio fibrisolvens
-TaxID_617123	0.00139720095111628	Lachnoanaerobaculum umeaense
-TaxID_118000	0.00134804753555821	Denitrovibrio acetiphilus
-TaxID_151895	0.00131504694566539	Pseudopedobacter saltans
-TaxID_66219	0.00130170328406095	Lachnoclostridium phytofermentans
-TaxID_29322	0.00129305404561569	[Eubacterium] cellulosolvens
-TaxID_29555	0.00120848128068201	Mycoplasma canis
-TaxID_1517	0.00120724716372088	Thermoanaerobacterium thermosaccharolyticum
-TaxID_2011012	0.00109136957919457	Bacillus sp. FJAT-45348
-TaxID_884684	0.00102393522208682	Mageeibacillus indolicus
-TaxID_1572656	0.000947076226181863	Ruminococcaceae bacterium CPB6
-TaxID_75293	0.000854547498049381	Streptomyces autolyticus
-TaxID_70255	0.00078952385697827	Staphylococcus condimenti
-TaxID_288965	0.000341123933324914	Hungateiclostridium clariflavum
+TaxonomyID	Importance_Optional	Description
+TaxID_1160721	0.0199788270855511	Ruminococcus bicirculans
+TaxID_649756	0.0199179586140994	Anaerostipes hadrus
+TaxID_39485	0.0183467245833242	[Eubacterium] eligens
+TaxID_853	0.0182960163460922	Faecalibacterium prausnitzii
+TaxID_39491	0.0159075441777653	[Eubacterium] rectale
+TaxID_1623	0.0104172283386556	Lactobacillus ruminis
+TaxID_2109691	0.0101892475326719	Lachnospiraceae bacterium GAM79
+TaxID_1509	0.00910791761335181	Clostridium sporogenes
+TaxID_301301	0.00705139793021078	Roseburia hominis
+TaxID_1680	0.00622397769415813	Bifidobacterium adolescentis
+TaxID_1816218	0.00472920992424467	Colwellia sp. PAMC 20917
+TaxID_2109558	0.00467542648308094	Halobacteriovorax sp. BALOs_7
+TaxID_1834196	0.00438467294983626	Lachnoclostridium sp. YL32
+TaxID_158841	0.00415569614010718	Leminorella richardii
+TaxID_363852	0.00393548483360307	Pedobacter ginsengisoli
+TaxID_1264	0.00385819077416756	Ruminococcus albus
+TaxID_861	0.00381461020411818	Fusobacterium ulcerans
+TaxID_1453352	0.00378969826080553	Sediminicola sp. YIK13
+TaxID_39488	0.00371737654068434	[Eubacterium] hallii
+TaxID_190893	0.00368347126206001	Vibrio coralliilyticus
+TaxID_2027857	0.00363491642637451	Mariniflexile sp. TRM1-10
+TaxID_1304	0.00346089538501629	Streptococcus salivarius
+TaxID_208479	0.00340488394379069	[Clostridium] bolteae
+TaxID_320787	0.00334851995497421	Cyclobacterium amurskyense
+TaxID_502394	0.00308911889932642	Deinococcus gobiensis
+TaxID_643214	0.00302454940930687	Staphylococcus stepanovicii
+TaxID_446660	0.00301871318174707	Adlercreutzia equolifaciens
+TaxID_32051	0.00299188574760117	Synechococcus sp. WH 7803
+TaxID_1816219	0.00289869053582955	Colwellia sp. PAMC 21821
+TaxID_2497860	0.00289036413492215	Cellulosilyticum sp. WCF-2
+TaxID_1912897	0.00282491810945548	Blautia sp. N6H1-15
+TaxID_45972	0.00281020908644327	Staphylococcus pasteuri
+TaxID_2173034	0.00280358596568203	Clostridiales bacterium 70B-A
+TaxID_2003188	0.00275010784454603	Parolsenella catena
+TaxID_1931241	0.00274052590844923	Pseudomonas sp. S-6-2
+TaxID_28026	0.00273318878321533	Bifidobacterium pseudocatenulatum
+TaxID_1522	0.00264734133869175	[Clostridium] innocuum
+TaxID_74109	0.00260453438174738	Photobacterium profundum
+TaxID_253245	0.00257497056766869	Owenweeksia hongkongensis
+TaxID_2081703	0.00256934757318828	Peptostreptococcaceae bacterium oral taxon 929
+TaxID_1161942	0.00252339178646966	Ruminococcus champanellensis
+TaxID_1548018	0.00251257403449868	Helicobacter saguini
+TaxID_1721091	0.00251220945694403	Chryseobacterium sp. IHB B 17019
+TaxID_33033	0.00243784533524919	Parvimonas micra
+TaxID_143393	0.00240131828780844	[Eubacterium] sulci
+TaxID_1785995	0.0023367747923939	Gemella sp. oral taxon 928
+TaxID_271098	0.00231613918268274	Shewanella halifaxensis
+TaxID_1850526	0.0023105827362625	Arachidicoccus sp. BS20
+TaxID_1488	0.00230502922530954	Clostridium acetobutylicum
+TaxID_626937	0.0022394192286173	Christensenella minuta
+TaxID_43305	0.00223842879359042	Butyrivibrio proteoclasticus
+TaxID_65393	0.00222808172836845	Cyanothece sp. PCC 7424
+TaxID_1193095	0.00221308138261163	Lactobacillus hokkaidonensis
+TaxID_729	0.00215841204410777	Haemophilus parainfluenzae
+TaxID_1767	0.00209462840481954	Mycobacterium intracellulare
+TaxID_1565991	0.00207285783493915	Bacillus sp. X1(2014)
+TaxID_120	0.00206893589453933	Planctopirus limnophila
+TaxID_1501	0.00203471000564129	Clostridium pasteurianum
+TaxID_2486578	0.00201143068593259	Rickettsiales endosymbiont of Stachyamoeba lipophora
+TaxID_2015076	0.00196297599685855	Chryseobacterium sp. T16E-39
+TaxID_1702221	0.00189565440315483	Faecalibaculum rodentium
+TaxID_269673	0.00186137254316974	Sporolactobacillus terrae
+TaxID_2493672	0.00178946900497447	Mesorhizobium sp. M1E.F.Ca.ET.045.02.1.1
+TaxID_220622	0.00174563968729656	Sulfurospirillum sp. JPD-1
+TaxID_271420	0.00173650479312036	Pseudomonas xanthomarina
+TaxID_1686	0.00171165811597457	Bifidobacterium catenulatum
+TaxID_689	0.00171129545848201	Vibrio mediterranei
+TaxID_1834207	0.00167965471920735	Erysipelotrichaceae bacterium I46
+TaxID_292800	0.00165094672262071	Flavonifractor plautii
+TaxID_588898	0.00164663549201165	Haloterrigena daqingensis
+TaxID_185008	0.00163723242510737	Butyrivibrio hungatei
+TaxID_617123	0.00151940524040876	Lachnoanaerobaculum umeaense
+TaxID_1316593	0.00150837944823932	Capnocytophaga sp. oral taxon 864
+TaxID_29322	0.00143848848127231	[Eubacterium] cellulosolvens
+TaxID_831	0.00137257306029625	Butyrivibrio fibrisolvens
+TaxID_66219	0.0013608631551409	Lachnoclostridium phytofermentans
+TaxID_151895	0.00135615360867617	Pseudopedobacter saltans
+TaxID_29555	0.00124277439622792	Mycoplasma canis
+TaxID_118000	0.00122121689698828	Denitrovibrio acetiphilus
+TaxID_1572656	0.00113070934179623	Ruminococcaceae bacterium CPB6
+TaxID_884684	0.00106600536938181	Mageeibacillus indolicus
+TaxID_1517	0.00103263025624304	Thermoanaerobacterium thermosaccharolyticum
+TaxID_2011012	0.000922168483171405	Bacillus sp. FJAT-45348
+TaxID_70255	0.000732406556936848	Staphylococcus condimenti
+TaxID_75293	0.000698163284756198	Streptomyces autolyticus
+TaxID_288965	0.000525867919437395	Hungateiclostridium clariflavum
